@@ -1,33 +1,32 @@
+# Configuration file for the Sphinx documentation builder.
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../../chemin_vers_ton_code'))
+sys.path.insert(0, os.path.abspath('../..'))
 
-# Configuration file for the Sphinx documentation builder.
-#
-# For the full list of built-in configuration values, see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
+project = 'Computer Vision Cheating Detection System'
+copyright = '2024, Your Name'
+author = 'Your Name'
 
-# -- Project information -----------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+release = '0.1.0'
 
-project = 'Cheating for computer vision'
-copyright = '2025, BENALLA Ouissam'
-author = 'BENALLA Ouissam'
-release = '1.0'
-
-# -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
-
-extensions = ['sphinx.ext.autodoc']
-
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.imgmath',
+]
 
 templates_path = ['_templates']
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = []
 
-language = 'fr'
-
-# -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
-
-html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+
+# Add any paths that contain templates here, relative to this directory.
+templates_path = ['_templates']
+
+# The suffix of source filenames.
+source_suffix = '.rst'
+
+# The master toctree document.
+master_doc = 'index'
