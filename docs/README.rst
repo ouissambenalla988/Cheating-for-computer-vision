@@ -1,39 +1,53 @@
-My Project
-==========
+🕵️‍♂️ Computer Vision Cheating Detection System
+===============================================
 
-Bienvenue dans la documentation de My Project.
+Detect suspicious behaviors in exam environments using AI.  
+Dataset trained on Roboflow | Model: YOLOv5/YOLOv8
 
-Description
+.. image:: path_to_your_gif_or_image.gif
+   :alt: Demo GIF or image
+   :align: center
+   :width: 600px
+
+🚀 Features
 -----------
 
-Ceci est une courte description de ton projet.
+Real-time detection of:  
+- 📱 Phone usage  
+- 📄 Hidden notes  
+- 👥 Person-to-object interaction  
 
-Installation
-------------
+- Customizable confidence threshold  
+- Exportable detection logs (JSON/CSV)  
 
-Pour installer ce projet, exécutez :
+⚙️ Technical Stack
+------------------
+
++-------------------+---------------------+
+| Component         | Technology          |
++===================+=====================+
+| Model Training    | Roboflow            |
++-------------------+---------------------+
+| Framework         | YOLOv5 / YOLOv8     |
++-------------------+---------------------+
+| Inference         | OpenCV              |
++-------------------+---------------------+
+| Backend           | Python              |
++-------------------+---------------------+
+
+📦 Installation
+---------------
+
+Clone the repo and install dependencies:
 
 .. code-block:: bash
 
-    pip install myproject
+    git clone https://github.com/yourusername/cheating-detection.git
+    cd cheating-detection
+    pip install -r requirements.txt
 
-Usage
------
+---
 
-Voici un exemple simple d’utilisation :
+Replace the `path_to_your_gif_or_image.gif` above with the actual relative path to your demo GIF or image in the repo.
 
-.. code-block:: python
-
-    from myproject import main
-    main.run()
-
-Contribuer
-----------
-
-Les contributions sont les bienvenues ! Ouvre une issue ou une pull request.
-
-Licence
--------
-
-Ce projet est sous licence MIT.
-
+Veux-tu aussi un exemple de fichier `requirements.txt` ou un guide d’utilisation ?
