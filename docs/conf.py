@@ -1,21 +1,21 @@
 import os
 import sys
-sys.path.insert(0, os.path.abspath('..'))
+sys.path.insert(0, os.path.abspath('.'))
 
-# Informations du projet
-project = 'Nom de ton projet'
-author = 'Ton nom'
-release = '1.0.0'
+project = 'Cheating for computer vision'
+author = 'Ouissam BENALLA'
+release = '1.0'
 
-# Extensions Sphinx
-extensions = []
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.githubpages',
+]
 
-# Fichiers et dossiers à exclure
+templates_path = ['_templates']
 exclude_patterns = []
 
-# Thème Furo
 html_theme = 'furo'
-
-# Dossiers pour les templates
-templates_path = ['_templates']
 html_static_path = ['_static']
+html_css_files = ['custom.css']
+html_js_files = ['custom.js']
