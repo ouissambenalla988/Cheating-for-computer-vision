@@ -32,21 +32,21 @@
       }
     </style>
   </head>
-  <body class="bg-gray-100">
+  <body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
     <div class="min-h-screen">
       <!-- Header -->
-      <header class="bg-blue-900 text-white py-6 shadow-lg">
+      <header class="bg-blue-900 dark:bg-gray-800 text-white py-6 shadow-lg">
         <div class="container mx-auto px-4">
           <div class="flex justify-between items-center">
             <div>
               <h1 class="text-3xl font-bold">
                 <i class="fas fa-eye mr-2"></i> ExamGuard Pro
               </h1>
-              <p class="text-blue-200">
+              <p class="text-blue-200 dark:text-blue-300">
                 Système intelligent de surveillance d'examens
               </p>
             </div>
-            <div class="flex space-x-4">
+            <div class="flex space-x-4 items-center">
               <button
                 id="camera-btn"
                 class="bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded-lg transition"
@@ -57,6 +57,12 @@
                 class="bg-red-600 hover:bg-red-500 px-4 py-2 rounded-lg transition"
               >
                 <i class="fas fa-bell mr-2"></i> Alertes
+              </button>
+              <button
+                id="theme-toggle"
+                class="ml-2 px-3 py-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition"
+              >
+                <i id="theme-icon" class="fas fa-moon"></i>
               </button>
             </div>
           </div>
@@ -146,17 +152,12 @@
                       <p class="text-sm text-red-700">
                         Comportement suspect détecté!
                         <span id="alert-type" class="font-semibold"
-                          >Smartphone</span
+                          >Triche</span
                         >
                       </p>
                     </div>
                   </div>
                 </div>
-                <audio
-                  id="alert-sound"
-                  src="/static/sounds/alert.mp3"
-                  preload="auto"
-                ></audio>
               </div>
 
               <!-- Detection Results -->
@@ -240,24 +241,23 @@
           $("#alert-overlay").removeClass("hidden");
           $("#alert-status").removeClass("hidden");
 
-          // Play sound (with user interaction fallback)
-          if (alertSound.paused) {
-            alertSound.play().catch((e) => {
-              console.log("Audio play prevented:", e);
-              // Fallback: require user interaction
-              $("body").one("click", function () {
-                alertSound.play();
-              });
-            });
-          }
+          // Suppression de la lecture du son
+          // if (alertSound.paused) {
+          //   alertSound.play().catch((e) => {
+          //     console.log("Audio play prevented:", e);
+          //     $("body").one("click", function () {
+          //       alertSound.play();
+          //     });
+          //   });
+          // }
 
-          // Add to detection history
+          // Ajout à l'historique des détections
           const alertTime = new Date().toLocaleTimeString();
           $("#detection-results").prepend(`
                     <div class="bg-red-50 p-3 rounded-lg border border-red-200">
                         <div class="flex justify-between items-center">
                             <div>
-                                <span class="font-semibold text-red-600">Smartphone détecté</span>
+                                <span class="font-semibold text-red-600">Triche détecté</span>
                                 <p class="text-xs text-gray-500">${alertTime}</p>
                             </div>
                             <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">Alerte</span>
@@ -301,6 +301,36 @@
             triggerAlert();
           }
         }
+
+        // Dark/Light mode toggle
+        const themeToggle = document.getElementById("theme-toggle");
+        const themeIcon = document.getElementById("theme-icon");
+        function setTheme(dark) {
+          if (dark) {
+            document.documentElement.classList.add("dark");
+            themeIcon.classList.remove("fa-moon");
+            themeIcon.classList.add("fa-sun");
+          } else {
+            document.documentElement.classList.remove("dark");
+            themeIcon.classList.remove("fa-sun");
+            themeIcon.classList.add("fa-moon");
+          }
+        }
+        // Initial theme
+        if (
+          localStorage.getItem("theme") === "dark" ||
+          (window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          setTheme(true);
+        } else {
+          setTheme(false);
+        }
+        themeToggle.addEventListener("click", function () {
+          const isDark = document.documentElement.classList.toggle("dark");
+          setTheme(isDark);
+          localStorage.setItem("theme", isDark ? "dark" : "light");
+        });
       });
     </script>
   </body>

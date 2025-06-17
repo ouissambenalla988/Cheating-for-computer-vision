@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Simulation d'alerte (à remplacer par du vrai code de détection)
   function simulateAlert() {
     alertSound.play();
-    showAlertNotification("Comportement suspect détecté: Smartphone");
+    showAlertNotification("Comportement suspect détecté: Triche");
   }
 
   function showAlertNotification(message) {
