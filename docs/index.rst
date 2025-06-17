@@ -1,5 +1,5 @@
-Welcome to My Project
-=====================
+Welcome to Cheating for Computer Visio!
+========================================
 
 .. toctree::
    :maxdepth: 2
