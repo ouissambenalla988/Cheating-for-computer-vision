@@ -1,17 +1,38 @@
-.. Cheating for computer vision documentation master file, created by
-   sphinx-quickstart on Wed May 21 13:01:19 2025.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Bienvenue dans la documentation du projet Forex 📊
+==================================================
 
-Cheating for computer vision documentation
-==========================================
+.. image:: _static/forex_banner.png
+   :width: 100%
+   :align: center
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
+Ce projet implémente un tableau de bord complet pour l’analyse et la prédiction des mouvements du marché Forex à l’aide de **Facebook Prophet**, **Alpha Vantage** et **Streamlit**.
 
+📌 **Fonctionnalités principales** :
+
+- 📈 Visualisation de données historiques
+- 🧠 Prédiction de prix via Facebook Prophet
+- 📊 Indicateurs techniques (RSI, MACD ...)
+- 📡 Actualités spécifiques par devise avec analyse de sentiment
+- ✅ Génération de signaux de trading 
+- 💾 Export CSV et interface interactive
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Contenu
 
+   installation
+   utilisation
+   video_demo
+   limitations
+   notebook
+
+📽️ Aperçu Vidéo
+---------------
+
+.. raw:: html
+
+  
+
+.. image:: _static/graphique_dashboard.png
+   :width: 80%
+   :align: center

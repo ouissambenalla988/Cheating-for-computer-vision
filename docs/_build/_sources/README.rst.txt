@@ -1,99 +1,109 @@
-🕵️‍♂️ Computer Vision Cheating Detection System
-==============================================
+.. role:: red
+.. role:: green
+.. role:: blue
+.. role:: bold
 
-Detect suspicious behaviors in exam environments using AI.  
-This project leverages object detection models trained on custom datasets to identify cheating attempts in real-time.
+===============================
+📊 Forex Price Prediction App
+===============================
 
-📊 Dataset: Trained using Roboflow  
-🧠 Model: YOLOv5 / YOLOv8
+:blue:`Forex Forecasting Dashboard` est une plateforme complète d’analyse et de prédiction des mouvements de prix du marché des changes (**Forex**) avec une interface conviviale construite sous **Streamlit**.
 
-.. image:: docs/demo.gif
-   :alt: Demo of cheating detection
+----
+
+📸 Aperçu du tableau de bord
+-----------------------------
+
+.. image:: _static/logo.png
+   :alt: Tableau de bord principal
    :align: center
-   :width: 600px
+   :width: 80%
 
-🚀 Features
------------
+----
 
-- 📱 Detects phone usage during exams  
-- 📄 Identifies hidden notes  
-- 👥 Tracks person-to-object interactions  
-- Adjustable confidence threshold  
-- Real-time detection using webcam or video input  
-- Exportable detection logs (CSV or JSON)  
-- Easy integration into proctoring systems
+🎬 Démonstration Vidéo
+-----------------------
 
-⚙️ Technical Stack
-------------------
+.. raw:: html
 
-+-------------------+---------------------+
-| Component         | Technology          |
-+===================+=====================+
-| Model Training    | Roboflow            |
-+-------------------+---------------------+
-| Object Detection  | YOLOv5 / YOLOv8     |
-+-------------------+---------------------+
-| Inference Engine  | OpenCV              |
-+-------------------+---------------------+
-| Backend           | Python              |
-+-------------------+---------------------+
+   <video width="750" height="422" controls>
+     <source src="_static/video.mp4" type="video/mp4">
+     Votre navigateur ne supporte pas les vidéos HTML5.
+   </video>
+
+----
+
+🚀 Fonctionnalités Clés
+-----------------------
+
+:green:`✔` Récupération des données Forex via **Alpha Vantage**  
+:green:`✔` Prévision des prix avec **Facebook Prophet**  
+:green:`✔` Affichage des indicateurs techniques : *RSI*, *MACD*, *Bollinger Bands*  
+:green:`✔` Signaux de trading avec points d'entrée, TP et SL  
+:green:`✔` Intégration des actualités avec analyse de sentiment (News API + TextBlob)  
+:green:`✔` Exportation CSV et graphiques interactifs **Plotly**
+
+----
 
 📦 Installation
 ---------------
 
-Clone the repository and install the dependencies:
+1. Cloner le dépôt :
+   .. code-block:: bash
 
-.. code-block:: bash
+      git clone <repository-url>
+      cd quant-model-for-forex-predict-prediction
 
-   git clone https://github.com/yourusername/cheating-detection.git
-   cd cheating-detection
-   pip install -r requirements.txt
+2. Installer les dépendances :
+   .. code-block:: bash
 
-📂 Directory Structure
+      pip install -r requirements.txt
+      pip install textblob
+      python -m textblob.download_corpora
+
+3. Créer un fichier `.env` :
+
+   .. code-block:: text
+
+      ALPHA_VANTAGE_API_KEY=your_alpha_key
+      NEWS_API_KEY=your_news_key
+
+----
+
+▶️ Lancer le Dashboard
 ----------------------
 
-.. code-block:: text
-
-   cheating-detection/
-   ├── detect.py
-   ├── models/
-   ├── data/
-   ├── logs/
-   ├── requirements.txt
-   └── README.rst
-
-🚀 Usage
---------
-
-Run detection in real-time with your webcam:
-
 .. code-block:: bash
 
-   python detect.py --source 0 --weights models/best.pt --conf 0.5
+   streamlit run app.py
 
-To analyze a video file:
+Une interface conviviale s’ouvre dans votre navigateur.
 
-.. code-block:: bash
+----
 
-   python detect.py --source path/to/video.mp4 --weights models/best.pt
-
-📁 Output
----------
-
-All detections are logged to the `logs/` directory in CSV and JSON formats.
-
-🤝 Contributing
----------------
-
-Contributions are welcome!  
-Please open an issue or submit a pull request.
-
-📜 License
-----------
-
-This project is licensed under the MIT License.
-
-🌐 Documentation
+📘 Guide Complet
 ----------------
 
-Coming soon: https://cheating.readthedocs.io
+.. toctree::
+   :maxdepth: 2
+   :caption: Table des matières
+
+   
+
+----
+
+🔖 Licence
+----------
+
+Distribué sous la licence :bold:`MIT`.
+
+----
+
+🙏 Remerciements
+----------------
+
+- :blue:`Alpha Vantage` — pour les données Forex
+- :blue:`News API` — pour les articles d’actualité
+- :blue:`Facebook Prophet` — pour la modélisation temporelle
+- :blue:`Streamlit` — pour le tableau de bord interactif
+- :blue:`TextBlob` — pour l’analyse de sentiment
