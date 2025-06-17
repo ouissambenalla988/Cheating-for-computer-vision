@@ -6,3 +6,4 @@ waitress==2.1.2
 sphinx>=6.0
 sphinx-rtd-theme
 python-dotenv==1.0.0
+myst-parser  # Si vous utilisez Markdown
