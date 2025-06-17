@@ -6,8 +6,11 @@ build:
     python: "3.10"
 
 sphinx:
-  configuration: docs/conf.py
+  configuration: docs/conf.py # Chemin vers votre conf.py
+  fail_on_warning: true # Optionnel : échoue si des warnings
 
 python:
   install:
-    - requirements: docs/requirements.txt
+    - method: pip
+      path: . # Installe votre projet (si nécessaire)
+    - requirements: docs/requirements.txt # Dépendances
