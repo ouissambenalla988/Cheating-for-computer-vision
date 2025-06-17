@@ -7,3 +7,7 @@ sphinx>=6.0
 sphinx-rtd-theme
 python-dotenv==1.0.0
 myst-parser  # Si vous utilisez Markdown
+furo
+sphinx>=7.0
+sphinx-rtd-theme>=2.0
+myst-parser>=2.0  # Si vous utilisez Markdown
