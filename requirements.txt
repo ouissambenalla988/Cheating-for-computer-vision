@@ -3,4 +3,6 @@ ultralytics==8.0.0
 opencv-python-headless==4.7.0.72
 numpy==1.24.3
 waitress==2.1.2
+sphinx>=6.0
+sphinx-rtd-theme
 python-dotenv==1.0.0
