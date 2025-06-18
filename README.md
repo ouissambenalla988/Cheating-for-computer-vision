@@ -1,32 +1,22 @@
-# 🕵️‍♂️ Computer Vision Cheating Detection System
+ExamGuard Pro Documentation
+Unsupported image
 
-**Detect suspicious behaviors in exam environments using AI.**  
-_Dataset trained on Roboflow | Model: YOLOv5/YOLOv8_
+Unsupported image
 
-![Demo](assets/demo.gif) _(Replace with your GIF/Image)_
+Unsupported image
 
-## 🚀 Features
+Unsupported image
 
-- Real-time detection of:
-  - 📱 Phone usage
-  - 📄 Hidden notes
-  - 👥 Person-to-object interaction
-- Customizable confidence threshold
-- Exportable detection logs (JSON/CSV)
+Documentation complète d'ExamGuard Pro - Système intelligent de surveillance d'examens utilisant l'intelligence artificielle et la vision par ordinateur.
 
-## ⚙️ Technical Stack
+📖 À propos
+Ce repository contient la documentation complète d'ExamGuard Pro, un système open-source de détection automatique de triche pour les examens en ligne. La documentation est construite avec Sphinx et hébergée sur Read the Docs.
 
-| Component      | Technology |
-| -------------- | ---------- |
-| Model Training | Roboflow   |
-| Framework      | YOLOv5/v8  |
-| Inference      | OpenCV     |
-| Backend        | Python     |
-
-## 📦 Installation
-
-```bash
-git clone https://github.com/yourusername/cheating-detection.git
-cd cheating-detection
-pip install -r requirements.txt
-```
+🚀 Fonctionnalités documentées
+🎯 Introduction : Présentation du projet et de ses objectifs
+⚙️ Installation : Guide complet d'installation sur différents systèmes
+🖥️ Utilisation : Manuel d'utilisation détaillé avec exemples
+🔌 API Documentation : Documentation complète de l'API REST
+🧠 Modèles IA : Guide des modèles d'intelligence artificielle
+📥 Téléchargement : Liens et instructions de téléchargement
+📋 Structure du projet

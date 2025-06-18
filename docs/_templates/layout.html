@@ -1,0 +1,279 @@
+{# Custom layout template for ExamGuard Pro documentation #}
+{% extends "!layout.html" %}
+
+{# Custom CSS and JavaScript #}
+{% set css_files = css_files + ['_static/custom.css'] %}
+
+{# Custom title #}
+{% block htmltitle %}
+  {% if pagename == 'index' %}
+    {{ title }} - {{ _('Documentation') }}
+  {% else %}
+    {{ title|striptags|e }} - ExamGuard Pro
+  {% endif %}
+{% endblock %}
+
+{# Custom meta tags #}
+{% block extrahead %}
+  {{ super() }}
+  <meta name="description" content="Documentation complète d'ExamGuard Pro - Système intelligent de surveillance d'examens utilisant l'IA et la vision par ordinateur">
+  <meta name="keywords" content="ExamGuard Pro, détection triche, surveillance examens, IA, vision par ordinateur, Flask, OpenCV, TensorFlow">
+  <meta name="author" content="ExamGuard Pro Team">
+  <meta property="og:title" content="ExamGuard Pro Documentation">
+  <meta property="og:description" content="Système intelligent de surveillance d'examens avec détection automatique de triche">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="{{ pathto('_static/logo.svg', 1) }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ExamGuard Pro Documentation">
+  <meta name="twitter:description" content="Documentation complète du système de surveillance d'examens">
+  
+  {# Favicon #}
+  <link rel="icon" type="image/svg+xml" href="{{ pathto('_static/logo.svg', 1) }}">
+  <link rel="shortcut icon" type="image/svg+xml" href="{{ pathto('_static/logo.svg', 1) }}">
+  
+  {# Custom fonts #}
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  {# Font Awesome for icons #}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  {# Custom JavaScript #}
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add copy buttons to code blocks
+      const codeBlocks = document.querySelectorAll('pre');
+      codeBlocks.forEach(function(block) {
+        const button = document.createElement('button');
+        button.className = 'copy-btn';
+        button.innerHTML = '<i class="fas fa-copy"></i> Copier';
+        button.addEventListener('click', function() {
+          const code = block.querySelector('code') || block;
+          navigator.clipboard.writeText(code.textContent).then(function() {
+            button.innerHTML = '<i class="fas fa-check"></i> Copié!';
+            setTimeout(function() {
+              button.innerHTML = '<i class="fas fa-copy"></i> Copier';
+            }, 2000);
+          });
+        });
+        block.appendChild(button);
+      });
+      
+      // Add version badge
+      const versionElement = document.querySelector('.wy-side-nav-search .version');
+      if (versionElement) {
+        versionElement.innerHTML += ' <span class="version-badge">Latest</span>';
+      }
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    });
+  </script>
+{% endblock %}
+
+{# Custom sidebar #}
+{% block sidebartitle %}
+  <div class="sidebar-brand">
+    <a href="{{ pathto(master_doc) }}">
+      <img src="{{ pathto('_static/logo.svg', 1) }}" alt="ExamGuard Pro" class="logo">
+      <span class="brand-text">ExamGuard Pro</span>
+    </a>
+  </div>
+  <div class="version-info">
+    <span class="version">{{ version }}</span>
+    <span class="version-badge">Latest</span>
+  </div>
+{% endblock %}
+
+{# Custom footer #}
+{% block footer %}
+  <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+    {% if next %}
+      <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}" accesskey="n" rel="next">
+        <span class="fa fa-arrow-circle-right"></span> {{ _('Next') }}
+      </a>
+    {% endif %}
+    {% if prev %}
+      <a href="{{ prev.link|e }}" class="btn btn-neutral" title="{{ prev.title|striptags|e }}" accesskey="p" rel="prev">
+        <span class="fa fa-arrow-circle-left"></span> {{ _('Previous') }}
+      </a>
+    {% endif %}
+  </div>
+
+  <hr/>
+
+  <div role="contentinfo" class="custom-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4><i class="fas fa-link"></i> Liens utiles</h4>
+        <ul>
+          <li><a href="https://github.com/examguard-pro/examguard-pro" target="_blank">
+            <i class="fab fa-github"></i> Repository GitHub
+          </a></li>
+          <li><a href="https://github.com/examguard-pro/examguard-pro/issues" target="_blank">
+            <i class="fas fa-bug"></i> Signaler un bug
+          </a></li>
+          <li><a href="https://github.com/examguard-pro/examguard-pro/discussions" target="_blank">
+            <i class="fas fa-comments"></i> Discussions
+          </a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4><i class="fas fa-life-ring"></i> Support</h4>
+        <ul>
+          <li><a href="mailto:support@examguard-pro.com">
+            <i class="fas fa-envelope"></i> Support technique
+          </a></li>
+          <li><a href="mailto:sales@examguard-pro.com">
+            <i class="fas fa-shopping-cart"></i> Contact commercial
+          </a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4><i class="fas fa-info-circle"></i> À propos</h4>
+        <p>ExamGuard Pro est un système open-source de surveillance d'examens utilisant l'intelligence artificielle.</p>
+        <p>
+          <a href="https://github.com/examguard-pro/examguard-pro/blob/main/LICENSE" target="_blank">
+            <i class="fas fa-balance-scale"></i> Licence MIT
+          </a>
+        </p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>
+        &copy; {{ copyright }}. 
+        {% trans %}Construit avec{% endtrans %} 
+        <a href="https://www.sphinx-doc.org/" target="_blank">Sphinx</a> 
+        {% trans %}en utilisant un{% endtrans %}
+        <a href="https://github.com/readthedocs/sphinx_rtd_theme" target="_blank">thème</a>
+        {% trans %}fourni par{% endtrans %} 
+        <a href="https://readthedocs.org" target="_blank">Read the Docs</a>.
+      </p>
+      <p class="built-date">
+        <i class="fas fa-clock"></i> 
+        {% trans %}Dernière mise à jour{% endtrans %}: {{ last_updated }}
+      </p>
+    </div>
+  </div>
+  
+  <style>
+    .sidebar-brand {
+      display: flex;
+      align-items: center;
+      padding: 1em;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .sidebar-brand .logo {
+      width: 32px;
+      height: 32px;
+      margin-right: 0.5em;
+    }
+    
+    .sidebar-brand .brand-text {
+      font-weight: 600;
+      color: white;
+      font-size: 1.1em;
+    }
+    
+    .version-info {
+      text-align: center;
+      padding: 0.5em;
+      font-size: 0.9em;
+    }
+    
+    .custom-footer {
+      margin-top: 2em;
+      padding: 2em 0;
+      border-top: 1px solid #e1e4e5;
+      background-color: #f8f9fa;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2em;
+      margin-bottom: 2em;
+    }
+    
+    .footer-section h4 {
+      color: var(--examguard-blue, #2980b9);
+      margin-bottom: 1em;
+      font-size: 1.1em;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-section li {
+      margin-bottom: 0.5em;
+    }
+    
+    .footer-section a {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    
+    .footer-section a:hover {
+      color: var(--examguard-blue, #2980b9);
+    }
+    
+    .footer-section i {
+      width: 1.2em;
+      margin-right: 0.5em;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2em;
+      border-top: 1px solid #e1e4e5;
+      color: #666;
+      font-size: 0.9em;
+    }
+    
+    .footer-bottom p {
+      margin-bottom: 0.5em;
+    }
+    
+    .built-date {
+      font-style: italic;
+    }
+    
+    @media (max-width: 768px) {
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1em;
+      }
+      
+      .custom-footer {
+        padding: 1em 0;
+      }
+    }
+  </style>
+{% endblock %}
+
+{# Analytics and tracking #}
+{% block analytics %}
+  {# Add Google Analytics or other tracking code here if needed #}
+  <script>
+    // Custom analytics code can go here
+    console.log('ExamGuard Pro Documentation loaded');
+  </script>
+{% endblock %}
+

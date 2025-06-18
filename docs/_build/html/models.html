@@ -1,0 +1,1315 @@
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+    Modèles - ExamGuard Pro
+  
+
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=ff5c896b" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+  
+    <link rel="shortcut icon" href="_static/logo.svg"/>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=3dfacf08"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=30646c52"></script>
+      <script src="_static/translations.js?v=e6b791cb"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Téléchargement" href="download.html" />
+    <link rel="prev" title="API Documentation" href="api.html" />
+   
+  <meta name="description" content="Documentation complète d'ExamGuard Pro - Système intelligent de surveillance d'examens utilisant l'IA et la vision par ordinateur">
+  <meta name="keywords" content="ExamGuard Pro, détection triche, surveillance examens, IA, vision par ordinateur, Flask, OpenCV, TensorFlow">
+  <meta name="author" content="ExamGuard Pro Team">
+  <meta property="og:title" content="ExamGuard Pro Documentation">
+  <meta property="og:description" content="Système intelligent de surveillance d'examens avec détection automatique de triche">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="_static/logo.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ExamGuard Pro Documentation">
+  <meta name="twitter:description" content="Documentation complète du système de surveillance d'examens">
+  
+  
+  <link rel="icon" type="image/svg+xml" href="_static/logo.svg">
+  <link rel="shortcut icon" type="image/svg+xml" href="_static/logo.svg">
+  
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add copy buttons to code blocks
+      const codeBlocks = document.querySelectorAll('pre');
+      codeBlocks.forEach(function(block) {
+        const button = document.createElement('button');
+        button.className = 'copy-btn';
+        button.innerHTML = '<i class="fas fa-copy"></i> Copier';
+        button.addEventListener('click', function() {
+          const code = block.querySelector('code') || block;
+          navigator.clipboard.writeText(code.textContent).then(function() {
+            button.innerHTML = '<i class="fas fa-check"></i> Copié!';
+            setTimeout(function() {
+              button.innerHTML = '<i class="fas fa-copy"></i> Copier';
+            }, 2000);
+          });
+        });
+        block.appendChild(button);
+      });
+      
+      // Add version badge
+      const versionElement = document.querySelector('.wy-side-nav-search .version');
+      if (versionElement) {
+        versionElement.innerHTML += ' <span class="version-badge">Latest</span>';
+      }
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    });
+  </script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980b9" >
+  <div class="sidebar-brand">
+    <a href="index.html">
+      <img src="_static/logo.svg" alt="ExamGuard Pro" class="logo">
+      <span class="brand-text">ExamGuard Pro</span>
+    </a>
+  </div>
+  <div class="version-info">
+    <span class="version">3.1</span>
+    <span class="version-badge">Latest</span>
+  </div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contenu:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#vision-du-projet">Vision du projet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#problematique">Problématique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#solution-proposee">Solution proposée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#fonctionnalites-principales">Fonctionnalités principales</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="introduction.html#detection-en-temps-reel">Détection en temps réel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction.html#ia-avancee">IA Avancée</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction.html#rapports-detailles">Rapports détaillés</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction.html#interface-web">Interface Web</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#architecture-technique">Architecture technique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#technologies-utilisees">Technologies utilisées</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#cas-d-usage">Cas d’usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#avantages">Avantages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#prochaines-etapes">Prochaines étapes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#prerequis">Prérequis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#configuration-systeme-recommandee">Configuration système recommandée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-des-dependances">Installation des dépendances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-via-docker">Installation via Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-manuelle-des-dependances">Installation manuelle des dépendances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-sur-differents-os">Installation sur différents OS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#ubuntu-debian">Ubuntu/Debian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#windows">Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#macos">macOS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#verification-de-l-installation">Vérification de l’installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#depannage">Dépannage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#variables-d-environnement">Variables d’environnement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#mise-a-jour">Mise à jour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#prochaine-etape">Prochaine étape</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utilisation.html">Utilisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utilisation.html#demarrage-rapide">Démarrage rapide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilisation.html#interface-principale">Interface principale</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="utilisation.html#tableau-de-bord">Tableau de bord</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utilisation.html#gestion-des-sessions">Gestion des sessions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="utilisation.html#configuration-d-une-session-d-examen">Configuration d’une session d’examen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilisation.html#surveillance-en-temps-reel">Surveillance en temps réel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="utilisation.html#pendant-l-examen">Pendant l’examen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="utilisation.html#types-de-detections">Types de détections</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="utilisation.html#mouvement-des-yeux">Mouvement des yeux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utilisation.html#detection-d-objets">Détection d’objets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utilisation.html#presence-multiple">Présence multiple</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="utilisation.html#rapports-et-analyses">Rapports et analyses</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="utilisation.html#rapport-de-session">Rapport de session</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="utilisation.html#configuration-avancee">Configuration avancée</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="utilisation.html#personnalisation-des-modeles-ia">Personnalisation des modèles IA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utilisation.html#integrations">Intégrations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="utilisation.html#bonnes-pratiques">Bonnes pratiques</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="utilisation.html#preparation-de-l-examen">Préparation de l’examen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utilisation.html#id1">Pendant l’examen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utilisation.html#apres-l-examen">Après l’examen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="utilisation.html#resolution-de-problemes">Résolution de problèmes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="utilisation.html#problemes-frequents">Problèmes fréquents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="utilisation.html#support-technique">Support technique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilisation.html#prochaine-etape">Prochaine étape</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#vue-d-ensemble">Vue d’ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#base-url">Base URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#authentification">Authentification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#endpoints-de-l-api">Endpoints de l’API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#sessions-d-examen">Sessions d’examen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#detections">Détections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#participants">Participants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#controle-en-temps-reel">Contrôle en temps réel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#rapports">Rapports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#websocket-api">WebSocket API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#codes-d-erreur">Codes d’erreur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#exemples-d-integration">Exemples d’intégration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#python">Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#javascript">JavaScript</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#limites-de-taux">Limites de taux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#sdk-officiels">SDK officiels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#support-et-documentation">Support et documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Modèles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#vue-d-ensemble">Vue d’ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#architecture-des-modeles">Architecture des modèles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modeles-de-detection-faciale">Modèles de détection faciale</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#haar-cascade-par-defaut">Haar Cascade (Par défaut)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mtcnn-multi-task-cnn">MTCNN (Multi-task CNN)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mediapipe-face-detection">MediaPipe Face Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modeles-de-detection-d-objets">Modèles de détection d’objets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#yolo-you-only-look-once">YOLO (You Only Look Once)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tensorflow-object-detection">TensorFlow Object Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modeles-de-suivi-oculaire">Modèles de suivi oculaire</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mediapipe-face-mesh">MediaPipe Face Mesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#opencv-eye-cascade">OpenCV Eye Cascade</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gaze-estimation">Gaze Estimation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modeles-d-analyse-audio">Modèles d’analyse audio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#detection-de-voix">Détection de voix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#classification-des-sons">Classification des sons</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modeles-personnalises">Modèles personnalisés</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#entrainement-d-un-modele-personnalise">Entraînement d’un modèle personnalisé</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transfer-learning">Transfer Learning</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#optimisation-des-performances">Optimisation des performances</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#optimisation-gpu">Optimisation GPU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quantification-des-modeles">Quantification des modèles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parallelisation">Parallélisation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#evaluation-des-modeles">Évaluation des modèles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#metriques-de-performance">Métriques de performance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#benchmarking">Benchmarking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#deploiement-des-modeles">Déploiement des modèles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sauvegarde-et-chargement">Sauvegarde et chargement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#versioning-des-modeles">Versioning des modèles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#monitoring-des-modeles">Monitoring des modèles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#problemes-frequents">Problèmes fréquents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#documentation-des-modeles">Documentation des modèles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="download.html">Téléchargement</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="download.html#versions-disponibles">Versions disponibles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="download.html#version-stable">Version stable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#version-de-developpement">Version de développement</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#methodes-de-telechargement">Méthodes de téléchargement</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="download.html#github-release">GitHub Release</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#git-clone">Git Clone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#docker-hub">Docker Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#pypi-package">PyPI Package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#installateurs">Installateurs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="download.html#windows">Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#macos">macOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#linux">Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#assets-et-modeles">Assets et modèles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="download.html#modeles-pre-entraines">Modèles pré-entraînés</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#modeles-gpu-optimises">Modèles GPU optimisés</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#bases-de-donnees-d-exemple">Bases de données d’exemple</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#documentation-hors-ligne">Documentation hors ligne</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#checksums-et-signatures">Checksums et signatures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="download.html#verification-d-integrite">Vérification d’intégrité</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#signature-gpg">Signature GPG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#installation-rapide">Installation rapide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="download.html#script-d-installation-automatique">Script d’installation automatique</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#docker-compose">Docker Compose</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#versions-anterieures">Versions antérieures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="download.html#historique-des-versions">Historique des versions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#support-et-maintenance">Support et maintenance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="download.html#cycle-de-vie-des-versions">Cycle de vie des versions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#mises-a-jour-automatiques">Mises à jour automatiques</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#licences-et-conditions">Licences et conditions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="download.html#licence-open-source">Licence Open Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#licence-commerciale">Licence commerciale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#dependances-tierces">Dépendances tierces</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#faq-telechargement">FAQ Téléchargement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#assistance-telechargement">Assistance téléchargement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#prochaine-etape">Prochaine étape</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980b9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ExamGuard Pro</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Modèles</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/examguard-pro/examguard-pro/blob/main/docs/models.rst" class="fa fa-github"> Éditer sur GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="modeles">
+<h1>Modèles<a class="headerlink" href="#modeles" title="Lien vers cette rubrique"></a></h1>
+<p>ExamGuard Pro utilise plusieurs modèles d’intelligence artificielle pour détecter les comportements de triche. Cette section détaille les modèles disponibles, leur configuration et leur personnalisation.</p>
+<section id="vue-d-ensemble">
+<h2>Vue d’ensemble<a class="headerlink" href="#vue-d-ensemble" title="Lien vers cette rubrique"></a></h2>
+<p>Le système intègre différents types de modèles :</p>
+<ul class="simple">
+<li><p><strong>Détection de visages</strong> : Identification et vérification d’identité</p></li>
+<li><p><strong>Détection d’objets</strong> : Reconnaissance d’objets interdits</p></li>
+<li><p><strong>Suivi oculaire</strong> : Analyse des mouvements des yeux</p></li>
+<li><p><strong>Analyse audio</strong> : Détection de voix et bruits suspects</p></li>
+<li><p><strong>Classification comportementale</strong> : Évaluation des patterns suspects</p></li>
+</ul>
+</section>
+<section id="architecture-des-modeles">
+<h2>Architecture des modèles<a class="headerlink" href="#architecture-des-modeles" title="Lien vers cette rubrique"></a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>┌─────────────────────┐
+│   Flux Vidéo        │
+│   (Webcam)          │
+└─────────────────────┘
+          │
+┌─────────────────────┐
+│   Préprocessing     │
+│   - Redimensionnement│
+│   - Normalisation   │
+│   - Augmentation    │
+└─────────────────────┘
+          │
+┌─────────────────────┐
+│   Modèles IA        │
+│   - Face Detection  │
+│   - Object Detection│
+│   - Eye Tracking    │
+└─────────────────────┘
+          │
+┌─────────────────────┐
+│   Post-processing   │
+│   - Filtrage        │
+│   - Fusion          │
+│   - Classification  │
+└─────────────────────┘
+          │
+┌─────────────────────┐
+│   Résultats         │
+│   (Détections)      │
+└─────────────────────┘
+</pre></div>
+</div>
+</section>
+<section id="modeles-de-detection-faciale">
+<h2>Modèles de détection faciale<a class="headerlink" href="#modeles-de-detection-faciale" title="Lien vers cette rubrique"></a></h2>
+<section id="haar-cascade-par-defaut">
+<h3>Haar Cascade (Par défaut)<a class="headerlink" href="#haar-cascade-par-defaut" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Caractéristiques :</strong></p>
+<ul class="simple">
+<li><p>Rapide et léger</p></li>
+<li><p>Faible consommation CPU</p></li>
+<li><p>Bonne précision pour la détection frontale</p></li>
+<li><p>Pré-entraîné sur des milliers d’images</p></li>
+</ul>
+<p><strong>Configuration :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">FACE_DETECTION</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="s1">&#39;haarcascade&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cascade_file&#39;</span><span class="p">:</span> <span class="s1">&#39;models/haarcascade_frontalface_default.xml&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;scale_factor&#39;</span><span class="p">:</span> <span class="mf">1.1</span><span class="p">,</span>
+    <span class="s1">&#39;min_neighbors&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;min_size&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+    <span class="s1">&#39;max_size&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Avantages :</strong></p>
+<ul class="simple">
+<li><p>Temps de traitement rapide</p></li>
+<li><p>Faible utilisation mémoire</p></li>
+<li><p>Stable et fiable</p></li>
+</ul>
+<p><strong>Inconvénients :</strong></p>
+<ul class="simple">
+<li><p>Moins précis avec des visages en angle</p></li>
+<li><p>Sensible aux conditions d’éclairage</p></li>
+</ul>
+</section>
+<section id="mtcnn-multi-task-cnn">
+<h3>MTCNN (Multi-task CNN)<a class="headerlink" href="#mtcnn-multi-task-cnn" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Caractéristiques :</strong></p>
+<ul class="simple">
+<li><p>Détection multi-étapes</p></li>
+<li><p>Localisation précise des points faciaux</p></li>
+<li><p>Robuste aux rotations et éclairage</p></li>
+<li><p>Meilleure qualité de détection</p></li>
+</ul>
+<p><strong>Configuration :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">FACE_DETECTION</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="s1">&#39;mtcnn&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;min_face_size&#39;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+    <span class="s1">&#39;threshold&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">],</span>
+    <span class="s1">&#39;factor&#39;</span><span class="p">:</span> <span class="mf">0.709</span><span class="p">,</span>
+    <span class="s1">&#39;post_process&#39;</span><span class="p">:</span> <span class="kc">True</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Installation :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>mtcnn
+</pre></div>
+</div>
+<p><strong>Utilisation :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mtcnn</span><span class="w"> </span><span class="kn">import</span> <span class="n">MTCNN</span>
+
+<span class="n">detector</span> <span class="o">=</span> <span class="n">MTCNN</span><span class="p">()</span>
+<span class="n">faces</span> <span class="o">=</span> <span class="n">detector</span><span class="o">.</span><span class="n">detect_faces</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="mediapipe-face-detection">
+<h3>MediaPipe Face Detection<a class="headerlink" href="#mediapipe-face-detection" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Caractéristiques :</strong></p>
+<ul class="simple">
+<li><p>Optimisé pour le temps réel</p></li>
+<li><p>Haute précision</p></li>
+<li><p>Support GPU/CPU</p></li>
+<li><p>Points de repère faciaux inclus</p></li>
+</ul>
+<p><strong>Configuration :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">FACE_DETECTION</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="s1">&#39;mediapipe&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;model_selection&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># 0 ou 1</span>
+    <span class="s1">&#39;min_detection_confidence&#39;</span><span class="p">:</span> <span class="mf">0.7</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Utilisation :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">mediapipe</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mp</span>
+
+<span class="n">mp_face_detection</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">solutions</span><span class="o">.</span><span class="n">face_detection</span>
+<span class="n">mp_drawing</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">solutions</span><span class="o">.</span><span class="n">drawing_utils</span>
+
+<span class="k">with</span> <span class="n">mp_face_detection</span><span class="o">.</span><span class="n">FaceDetection</span><span class="p">(</span>
+    <span class="n">model_selection</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">min_detection_confidence</span><span class="o">=</span><span class="mf">0.7</span>
+<span class="p">)</span> <span class="k">as</span> <span class="n">face_detection</span><span class="p">:</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">face_detection</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="modeles-de-detection-d-objets">
+<h2>Modèles de détection d’objets<a class="headerlink" href="#modeles-de-detection-d-objets" title="Lien vers cette rubrique"></a></h2>
+<section id="yolo-you-only-look-once">
+<h3>YOLO (You Only Look Once)<a class="headerlink" href="#yolo-you-only-look-once" title="Lien vers cette rubrique"></a></h3>
+<p><strong>YOLOv5 (Recommandé)</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">OBJECT_DETECTION</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="s1">&#39;yolo_v5&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;weights&#39;</span><span class="p">:</span> <span class="s1">&#39;models/yolov5s.pt&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;confidence_threshold&#39;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">,</span>
+    <span class="s1">&#39;iou_threshold&#39;</span><span class="p">:</span> <span class="mf">0.45</span><span class="p">,</span>
+    <span class="s1">&#39;classes&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">67</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">76</span><span class="p">],</span>  <span class="c1"># phone, book, laptop</span>
+    <span class="s1">&#39;device&#39;</span><span class="p">:</span> <span class="s1">&#39;cpu&#39;</span>  <span class="c1"># ou &#39;cuda:0&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Classes détectées :</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p>Nom</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>67</p></td>
+<td><p>cell phone</p></td>
+<td><p>Téléphone mobile</p></td>
+</tr>
+<tr class="row-odd"><td><p>73</p></td>
+<td><p>book</p></td>
+<td><p>Livre/cahier</p></td>
+</tr>
+<tr class="row-even"><td><p>76</p></td>
+<td><p>laptop</p></td>
+<td><p>Ordinateur</p></td>
+</tr>
+<tr class="row-odd"><td><p>63</p></td>
+<td><p>couch</p></td>
+<td><p>Canapé</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>person</p></td>
+<td><p>Personne</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Installation et utilisation :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>ultralytics
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ultralytics</span><span class="w"> </span><span class="kn">import</span> <span class="n">YOLO</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s1">&#39;yolov5s.pt&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>YOLOv8 (Plus récent)</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">OBJECT_DETECTION</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="s1">&#39;yolo_v8&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;weights&#39;</span><span class="p">:</span> <span class="s1">&#39;models/yolov8n.pt&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;confidence_threshold&#39;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">,</span>
+    <span class="s1">&#39;iou_threshold&#39;</span><span class="p">:</span> <span class="mf">0.45</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="tensorflow-object-detection">
+<h3>TensorFlow Object Detection<a class="headerlink" href="#tensorflow-object-detection" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Modèles disponibles :</strong></p>
+<ul class="simple">
+<li><p>SSD MobileNet (Rapide)</p></li>
+<li><p>SSD ResNet (Précis)</p></li>
+<li><p>Faster R-CNN (Très précis)</p></li>
+</ul>
+<p><strong>Configuration SSD MobileNet :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">OBJECT_DETECTION</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="s1">&#39;ssd_mobilenet&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;model_path&#39;</span><span class="p">:</span> <span class="s1">&#39;models/ssd_mobilenet_v2/frozen_inference_graph.pb&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;config_path&#39;</span><span class="p">:</span> <span class="s1">&#39;models/ssd_mobilenet_v2/config.pbtxt&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;confidence_threshold&#39;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">,</span>
+    <span class="s1">&#39;input_size&#39;</span><span class="p">:</span> <span class="mi">300</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="modeles-de-suivi-oculaire">
+<h2>Modèles de suivi oculaire<a class="headerlink" href="#modeles-de-suivi-oculaire" title="Lien vers cette rubrique"></a></h2>
+<section id="mediapipe-face-mesh">
+<h3>MediaPipe Face Mesh<a class="headerlink" href="#mediapipe-face-mesh" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Caractéristiques :</strong></p>
+<ul class="simple">
+<li><p>468 points de repère faciaux</p></li>
+<li><p>Suivi précis des yeux</p></li>
+<li><p>Estimation de la direction du regard</p></li>
+<li><p>Optimisé temps réel</p></li>
+</ul>
+<p><strong>Configuration :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">EYE_TRACKING</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="s1">&#39;mediapipe_mesh&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;max_num_faces&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;refine_landmarks&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;min_detection_confidence&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="s1">&#39;min_tracking_confidence&#39;</span><span class="p">:</span> <span class="mf">0.5</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Points d’intérêt pour les yeux :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Indices des points pour l&#39;œil gauche</span>
+<span class="n">LEFT_EYE</span> <span class="o">=</span> <span class="p">[</span><span class="mi">362</span><span class="p">,</span> <span class="mi">382</span><span class="p">,</span> <span class="mi">381</span><span class="p">,</span> <span class="mi">380</span><span class="p">,</span> <span class="mi">374</span><span class="p">,</span> <span class="mi">373</span><span class="p">,</span> <span class="mi">390</span><span class="p">,</span> <span class="mi">249</span><span class="p">,</span> <span class="mi">263</span><span class="p">,</span> <span class="mi">466</span><span class="p">,</span> <span class="mi">388</span><span class="p">,</span> <span class="mi">387</span><span class="p">,</span> <span class="mi">386</span><span class="p">,</span> <span class="mi">385</span><span class="p">,</span> <span class="mi">384</span><span class="p">,</span> <span class="mi">398</span><span class="p">]</span>
+
+<span class="c1"># Indices des points pour l&#39;œil droit</span>
+<span class="n">RIGHT_EYE</span> <span class="o">=</span> <span class="p">[</span><span class="mi">33</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">163</span><span class="p">,</span> <span class="mi">144</span><span class="p">,</span> <span class="mi">145</span><span class="p">,</span> <span class="mi">153</span><span class="p">,</span> <span class="mi">154</span><span class="p">,</span> <span class="mi">155</span><span class="p">,</span> <span class="mi">133</span><span class="p">,</span> <span class="mi">173</span><span class="p">,</span> <span class="mi">157</span><span class="p">,</span> <span class="mi">158</span><span class="p">,</span> <span class="mi">159</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">161</span><span class="p">,</span> <span class="mi">246</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="opencv-eye-cascade">
+<h3>OpenCV Eye Cascade<a class="headerlink" href="#opencv-eye-cascade" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Configuration simple :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">EYE_TRACKING</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="s1">&#39;opencv_cascade&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cascade_file&#39;</span><span class="p">:</span> <span class="s1">&#39;models/haarcascade_eye.xml&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;scale_factor&#39;</span><span class="p">:</span> <span class="mf">1.1</span><span class="p">,</span>
+    <span class="s1">&#39;min_neighbors&#39;</span><span class="p">:</span> <span class="mi">5</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="gaze-estimation">
+<h3>Gaze Estimation<a class="headerlink" href="#gaze-estimation" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Estimation de la direction du regard :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">estimate_gaze_direction</span><span class="p">(</span><span class="n">left_eye_landmarks</span><span class="p">,</span> <span class="n">right_eye_landmarks</span><span class="p">):</span>
+    <span class="c1"># Calculer le centre des yeux</span>
+    <span class="n">left_center</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">left_eye_landmarks</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">right_center</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">right_eye_landmarks</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># Calculer la direction</span>
+    <span class="n">gaze_vector</span> <span class="o">=</span> <span class="n">right_center</span> <span class="o">-</span> <span class="n">left_center</span>
+    <span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">gaze_vector</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">gaze_vector</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">angle</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="modeles-d-analyse-audio">
+<h2>Modèles d’analyse audio<a class="headerlink" href="#modeles-d-analyse-audio" title="Lien vers cette rubrique"></a></h2>
+<section id="detection-de-voix">
+<h3>Détection de voix<a class="headerlink" href="#detection-de-voix" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Configuration :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">AUDIO_DETECTION</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;enabled&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="s1">&#39;webrtcvad&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;aggressiveness&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>  <span class="c1"># 0-3</span>
+    <span class="s1">&#39;frame_duration&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>  <span class="c1"># ms</span>
+    <span class="s1">&#39;sample_rate&#39;</span><span class="p">:</span> <span class="mi">16000</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Utilisation WebRTC VAD :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">webrtcvad</span>
+
+<span class="n">vad</span> <span class="o">=</span> <span class="n">webrtcvad</span><span class="o">.</span><span class="n">Vad</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Aggressiveness level</span>
+
+<span class="c1"># Détecter la voix dans un frame audio</span>
+<span class="n">is_speech</span> <span class="o">=</span> <span class="n">vad</span><span class="o">.</span><span class="n">is_speech</span><span class="p">(</span><span class="n">audio_frame</span><span class="p">,</span> <span class="n">sample_rate</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="classification-des-sons">
+<h3>Classification des sons<a class="headerlink" href="#classification-des-sons" title="Lien vers cette rubrique"></a></h3>
+<p><strong>TensorFlow Audio Models :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">AUDIO_CLASSIFICATION</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="s1">&#39;yamnet&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;model_path&#39;</span><span class="p">:</span> <span class="s1">&#39;models/yamnet.tflite&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;confidence_threshold&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="s1">&#39;target_classes&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Speech&#39;</span><span class="p">,</span> <span class="s1">&#39;Conversation&#39;</span><span class="p">,</span> <span class="s1">&#39;Whispering&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="modeles-personnalises">
+<h2>Modèles personnalisés<a class="headerlink" href="#modeles-personnalises" title="Lien vers cette rubrique"></a></h2>
+<section id="entrainement-d-un-modele-personnalise">
+<h3>Entraînement d’un modèle personnalisé<a class="headerlink" href="#entrainement-d-un-modele-personnalise" title="Lien vers cette rubrique"></a></h3>
+<p><strong>1. Préparation des données</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Structure des dossiers</span>
+datasets/
+├──<span class="w"> </span>cheating/
+│<span class="w">   </span>├──<span class="w"> </span>phone_usage/
+│<span class="w">   </span>├──<span class="w"> </span>looking_away/
+│<span class="w">   </span>└──<span class="w"> </span>multiple_persons/
+└──<span class="w"> </span>normal/
+<span class="w">    </span>├──<span class="w"> </span>focused/
+<span class="w">    </span>├──<span class="w"> </span>writing/
+<span class="w">    </span>└──<span class="w"> </span>thinking/
+</pre></div>
+</div>
+<p><strong>2. Script d’entraînement</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras</span><span class="w"> </span><span class="kn">import</span> <span class="n">layers</span><span class="p">,</span> <span class="n">models</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">create_custom_model</span><span class="p">(</span><span class="n">input_shape</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
+        <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="n">input_shape</span><span class="p">),</span>
+        <span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+        <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+        <span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+        <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+        <span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(),</span>
+        <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+        <span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span>
+        <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">num_classes</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">)</span>
+    <span class="p">])</span>
+
+    <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+        <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>
+        <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;categorical_crossentropy&#39;</span><span class="p">,</span>
+        <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">model</span>
+
+<span class="c1"># Entraîner le modèle</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">create_custom_model</span><span class="p">((</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">validation_data</span><span class="o">=</span><span class="n">val_dataset</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;models/custom_cheating_detector.h5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>3. Intégration du modèle</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CUSTOM_MODEL</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;enabled&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;model_path&#39;</span><span class="p">:</span> <span class="s1">&#39;models/custom_cheating_detector.h5&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;input_size&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">),</span>
+    <span class="s1">&#39;confidence_threshold&#39;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span>
+    <span class="s1">&#39;classes&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span> <span class="s1">&#39;cheating&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="transfer-learning">
+<h3>Transfer Learning<a class="headerlink" href="#transfer-learning" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Utilisation d’un modèle pré-entraîné :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.applications</span><span class="w"> </span><span class="kn">import</span> <span class="n">ResNet50</span>
+
+<span class="c1"># Charger le modèle pré-entraîné</span>
+<span class="n">base_model</span> <span class="o">=</span> <span class="n">ResNet50</span><span class="p">(</span>
+    <span class="n">weights</span><span class="o">=</span><span class="s1">&#39;imagenet&#39;</span><span class="p">,</span>
+    <span class="n">include_top</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># Ajouter des couches personnalisées</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
+    <span class="n">base_model</span><span class="p">,</span>
+    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">GlobalAveragePooling2D</span><span class="p">(),</span>
+    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span>
+    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="c1"># Geler les couches du modèle de base</span>
+<span class="n">base_model</span><span class="o">.</span><span class="n">trainable</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+    <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>
+    <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;categorical_crossentropy&#39;</span><span class="p">,</span>
+    <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="optimisation-des-performances">
+<h2>Optimisation des performances<a class="headerlink" href="#optimisation-des-performances" title="Lien vers cette rubrique"></a></h2>
+<section id="optimisation-gpu">
+<h3>Optimisation GPU<a class="headerlink" href="#optimisation-gpu" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Configuration CUDA :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
+
+<span class="c1"># Vérifier la disponibilité GPU</span>
+<span class="n">gpus</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">experimental</span><span class="o">.</span><span class="n">list_physical_devices</span><span class="p">(</span><span class="s1">&#39;GPU&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">gpus</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Limiter la mémoire GPU</span>
+        <span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">experimental</span><span class="o">.</span><span class="n">set_memory_growth</span><span class="p">(</span><span class="n">gpus</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Configuration pour OpenCV :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+
+<span class="c1"># Utiliser OpenCL si disponible</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">ocl</span><span class="o">.</span><span class="n">setUseOpenCL</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="quantification-des-modeles">
+<h3>Quantification des modèles<a class="headerlink" href="#quantification-des-modeles" title="Lien vers cette rubrique"></a></h3>
+<p><strong>TensorFlow Lite :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
+
+<span class="c1"># Convertir en TensorFlow Lite</span>
+<span class="n">converter</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">lite</span><span class="o">.</span><span class="n">TFLiteConverter</span><span class="o">.</span><span class="n">from_saved_model</span><span class="p">(</span><span class="s1">&#39;models/my_model&#39;</span><span class="p">)</span>
+<span class="n">converter</span><span class="o">.</span><span class="n">optimizations</span> <span class="o">=</span> <span class="p">[</span><span class="n">tf</span><span class="o">.</span><span class="n">lite</span><span class="o">.</span><span class="n">Optimize</span><span class="o">.</span><span class="n">DEFAULT</span><span class="p">]</span>
+
+<span class="c1"># Quantification</span>
+<span class="n">converter</span><span class="o">.</span><span class="n">representative_dataset</span> <span class="o">=</span> <span class="n">representative_data_gen</span>
+<span class="n">converter</span><span class="o">.</span><span class="n">target_spec</span><span class="o">.</span><span class="n">supported_ops</span> <span class="o">=</span> <span class="p">[</span><span class="n">tf</span><span class="o">.</span><span class="n">lite</span><span class="o">.</span><span class="n">OpsSet</span><span class="o">.</span><span class="n">TFLITE_BUILTINS_INT8</span><span class="p">]</span>
+<span class="n">converter</span><span class="o">.</span><span class="n">inference_input_type</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">uint8</span>
+<span class="n">converter</span><span class="o">.</span><span class="n">inference_output_type</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">uint8</span>
+
+<span class="n">tflite_model</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">convert</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;models/my_model.tflite&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">tflite_model</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="parallelisation">
+<h3>Parallélisation<a class="headerlink" href="#parallelisation" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Traitement multi-thread :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">concurrent.futures</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ModelPipeline</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">face_model</span> <span class="o">=</span> <span class="n">load_face_model</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">object_model</span> <span class="o">=</span> <span class="n">load_object_model</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">eye_model</span> <span class="o">=</span> <span class="n">load_eye_model</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">process_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">concurrent</span><span class="o">.</span><span class="n">futures</span><span class="o">.</span><span class="n">ThreadPoolExecutor</span><span class="p">()</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+            <span class="c1"># Lancer les détections en parallèle</span>
+            <span class="n">face_future</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">detect_faces</span><span class="p">,</span> <span class="n">frame</span><span class="p">)</span>
+            <span class="n">object_future</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">detect_objects</span><span class="p">,</span> <span class="n">frame</span><span class="p">)</span>
+            <span class="n">eye_future</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">track_eyes</span><span class="p">,</span> <span class="n">frame</span><span class="p">)</span>
+
+            <span class="c1"># Récupérer les résultats</span>
+            <span class="n">faces</span> <span class="o">=</span> <span class="n">face_future</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+            <span class="n">objects</span> <span class="o">=</span> <span class="n">object_future</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+            <span class="n">eyes</span> <span class="o">=</span> <span class="n">eye_future</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">combine_results</span><span class="p">(</span><span class="n">faces</span><span class="p">,</span> <span class="n">objects</span><span class="p">,</span> <span class="n">eyes</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="evaluation-des-modeles">
+<h2>Évaluation des modèles<a class="headerlink" href="#evaluation-des-modeles" title="Lien vers cette rubrique"></a></h2>
+<section id="metriques-de-performance">
+<h3>Métriques de performance<a class="headerlink" href="#metriques-de-performance" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Précision, Rappel, F1-Score :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">evaluate_model</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">classes</span><span class="p">):</span>
+    <span class="c1"># Matrice de confusion</span>
+    <span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matrice de confusion:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
+
+    <span class="c1"># Rapport de classification</span>
+    <span class="n">report</span> <span class="o">=</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">target_names</span><span class="o">=</span><span class="n">classes</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Rapport de classification:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">report</span><span class="p">)</span>
+
+    <span class="c1"># Précision par classe</span>
+    <span class="n">precision</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">recall</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">f1</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">precision</span> <span class="o">*</span> <span class="n">recall</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">precision</span> <span class="o">+</span> <span class="n">recall</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s1">&#39;precision&#39;</span><span class="p">:</span> <span class="n">precision</span><span class="p">,</span>
+        <span class="s1">&#39;recall&#39;</span><span class="p">:</span> <span class="n">recall</span><span class="p">,</span>
+        <span class="s1">&#39;f1&#39;</span><span class="p">:</span> <span class="n">f1</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Courbe ROC :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_roc_curve</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_scores</span><span class="p">):</span>
+    <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_scores</span><span class="p">)</span>
+    <span class="n">roc_auc</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;ROC curve (AUC = </span><span class="si">{</span><span class="n">roc_auc</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;k--&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Taux de faux positifs&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Taux de vrais positifs&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Courbe ROC&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="benchmarking">
+<h3>Benchmarking<a class="headerlink" href="#benchmarking" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Test de performance :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">benchmark_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">test_images</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">total_time</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">):</span>
+        <span class="c1"># Sélectionner une image aléatoire</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">test_images</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_images</span><span class="p">)]</span>
+
+        <span class="c1"># Mesurer le temps d&#39;inférence</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+        <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+        <span class="n">total_time</span> <span class="o">+=</span> <span class="p">(</span><span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span>
+
+    <span class="n">avg_time</span> <span class="o">=</span> <span class="n">total_time</span> <span class="o">/</span> <span class="n">iterations</span>
+    <span class="n">fps</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">avg_time</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Temps moyen par image: </span><span class="si">{</span><span class="n">avg_time</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;FPS théorique: </span><span class="si">{</span><span class="n">fps</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">avg_time</span><span class="p">,</span> <span class="n">fps</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="deploiement-des-modeles">
+<h2>Déploiement des modèles<a class="headerlink" href="#deploiement-des-modeles" title="Lien vers cette rubrique"></a></h2>
+<section id="sauvegarde-et-chargement">
+<h3>Sauvegarde et chargement<a class="headerlink" href="#sauvegarde-et-chargement" title="Lien vers cette rubrique"></a></h3>
+<p><strong>TensorFlow/Keras :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sauvegarder un modèle</span>
+<span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;models/my_model.h5&#39;</span><span class="p">)</span>
+
+<span class="c1"># Charger un modèle</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;models/my_model.h5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>PyTorch :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+
+<span class="c1"># Sauvegarder</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="s1">&#39;models/my_model.pth&#39;</span><span class="p">)</span>
+
+<span class="c1"># Charger</span>
+<span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;models/my_model.pth&#39;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="versioning-des-modeles">
+<h3>Versioning des modèles<a class="headerlink" href="#versioning-des-modeles" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Structure recommandée :</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>models/
+├── face_detection/
+│   ├── v1.0/
+│   ├── v1.1/
+│   └── latest -&gt; v1.1/
+├── object_detection/
+│   ├── v2.0/
+│   └── latest -&gt; v2.0/
+└── eye_tracking/
+    ├── v1.5/
+    └── latest -&gt; v1.5/
+</pre></div>
+</div>
+<p><strong>Configuration de version :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MODEL_VERSIONS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;face_detection&#39;</span><span class="p">:</span> <span class="s1">&#39;v1.1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;object_detection&#39;</span><span class="p">:</span> <span class="s1">&#39;v2.0&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;eye_tracking&#39;</span><span class="p">:</span> <span class="s1">&#39;v1.5&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="monitoring-des-modeles">
+<h3>Monitoring des modèles<a class="headerlink" href="#monitoring-des-modeles" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Surveillance des performances :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ModelMonitor</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stats</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;total_predictions&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s1">&#39;avg_confidence&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s1">&#39;error_count&#39;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">log_prediction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">confidence</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">[</span><span class="s1">&#39;total_predictions&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="n">error</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">[</span><span class="s1">&#39;error_count&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Mise à jour de la confiance moyenne</span>
+            <span class="n">old_avg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">[</span><span class="s1">&#39;avg_confidence&#39;</span><span class="p">]</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">[</span><span class="s1">&#39;total_predictions&#39;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">[</span><span class="s1">&#39;avg_confidence&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">old_avg</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">confidence</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+
+        <span class="c1"># Log si erreur fréquente</span>
+        <span class="n">error_rate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">[</span><span class="s1">&#39;error_count&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">[</span><span class="s1">&#39;total_predictions&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">error_rate</span> <span class="o">&gt;</span> <span class="mf">0.1</span><span class="p">:</span>  <span class="c1"># Plus de 10% d&#39;erreurs</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Taux d&#39;erreur élevé: </span><span class="si">{</span><span class="n">error_rate</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Lien vers cette rubrique"></a></h2>
+<section id="problemes-frequents">
+<h3>Problèmes fréquents<a class="headerlink" href="#problemes-frequents" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Modèle ne charge pas :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;models/my_model.h5&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erreur de chargement: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># Utiliser un modèle de fallback</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">load_default_model</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Performance dégradée :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vérifier l&#39;utilisation des ressources</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">psutil</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">GPUtil</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">check_system_resources</span><span class="p">():</span>
+    <span class="c1"># CPU</span>
+    <span class="n">cpu_percent</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">cpu_percent</span><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Mémoire</span>
+    <span class="n">memory</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">virtual_memory</span><span class="p">()</span>
+
+    <span class="c1"># GPU</span>
+    <span class="n">gpus</span> <span class="o">=</span> <span class="n">GPUtil</span><span class="o">.</span><span class="n">getGPUs</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;CPU: </span><span class="si">{</span><span class="n">cpu_percent</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RAM: </span><span class="si">{</span><span class="n">memory</span><span class="o">.</span><span class="n">percent</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">gpus</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;GPU: </span><span class="si">{</span><span class="n">gpus</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">load</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Faux positifs élevés :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ajuster les seuils de confiance</span>
+<span class="k">if</span> <span class="n">false_positive_rate</span> <span class="o">&gt;</span> <span class="mf">0.15</span><span class="p">:</span>
+    <span class="n">CONFIDENCE_THRESHOLD</span> <span class="o">+=</span> <span class="mf">0.1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nouveau seuil: </span><span class="si">{</span><span class="n">CONFIDENCE_THRESHOLD</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="documentation-des-modeles">
+<h2>Documentation des modèles<a class="headerlink" href="#documentation-des-modeles" title="Lien vers cette rubrique"></a></h2>
+<p>Chaque modèle doit être documenté avec :</p>
+<ul class="simple">
+<li><p><strong>Description</strong> et cas d’usage</p></li>
+<li><p><strong>Architecture</strong> et paramètres</p></li>
+<li><p><strong>Données d’entraînement</strong></p></li>
+<li><p><strong>Métriques de performance</strong></p></li>
+<li><p><strong>Instructions d’utilisation</strong></p></li>
+<li><p><strong>Limitations connues</strong></p></li>
+</ul>
+<p><strong>Exemple de documentation :</strong></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># models/face_detection_v1.1.yaml</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Face</span><span class="nv"> </span><span class="s">Detection</span><span class="nv"> </span><span class="s">v1.1&quot;</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Détection</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">visages</span><span class="nv"> </span><span class="s">optimisée</span><span class="nv"> </span><span class="s">pour</span><span class="nv"> </span><span class="s">les</span><span class="nv"> </span><span class="s">examens&quot;</span>
+<span class="nt">architecture</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Haar</span><span class="nv"> </span><span class="s">Cascade&quot;</span>
+
+<span class="nt">training_data</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">dataset</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Custom</span><span class="nv"> </span><span class="s">exam</span><span class="nv"> </span><span class="s">faces&quot;</span>
+<span class="w">  </span><span class="nt">samples</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10000</span>
+<span class="w">  </span><span class="nt">validation_split</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2</span>
+
+<span class="nt">performance</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">precision</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.92</span>
+<span class="w">  </span><span class="nt">recall</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.89</span>
+<span class="w">  </span><span class="nt">f1_score</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.90</span>
+<span class="w">  </span><span class="nt">fps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">45</span>
+
+<span class="nt">parameters</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">scale_factor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.1</span>
+<span class="w">  </span><span class="nt">min_neighbors</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">  </span><span class="nt">min_size</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">30</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">30</span><span class="p p-Indicator">]</span>
+
+<span class="nt">limitations</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Performances</span><span class="nv"> </span><span class="s">réduites</span><span class="nv"> </span><span class="s">avec</span><span class="nv"> </span><span class="s">éclairage</span><span class="nv"> </span><span class="s">faible&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Moins</span><span class="nv"> </span><span class="s">précis</span><span class="nv"> </span><span class="s">pour</span><span class="nv"> </span><span class="s">les</span><span class="nv"> </span><span class="s">visages</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">profil&quot;</span>
+
+<span class="nt">usage</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">  </span><span class="no">face_cascade = cv2.CascadeClassifier(&#39;models/haarcascade_frontalface_default.xml&#39;)</span>
+<span class="w">  </span><span class="no">faces = face_cascade.detectMultiScale(gray, 1.1, 5)</span>
+</pre></div>
+</div>
+<p>Cette documentation complète des modèles vous permet de comprendre, configurer et optimiser les différents composants IA d’ExamGuard Pro selon vos besoins spécifiques.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="api.html" class="btn btn-neutral float-left" title="API Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="download.html" class="btn btn-neutral float-right" title="Téléchargement" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2025, ExamGuard Pro Team.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+  <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+    
+      <a href="download.html" class="btn btn-neutral float-right" title="Téléchargement" accesskey="n" rel="next">
+        <span class="fa fa-arrow-circle-right"></span> Suivant
+      </a>
+    
+    
+      <a href="api.html" class="btn btn-neutral" title="API Documentation" accesskey="p" rel="prev">
+        <span class="fa fa-arrow-circle-left"></span> Précédent
+      </a>
+    
+  </div>
+
+  <hr/>
+
+  <div role="contentinfo" class="custom-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4><i class="fas fa-link"></i> Liens utiles</h4>
+        <ul>
+          <li><a href="https://github.com/examguard-pro/examguard-pro" target="_blank">
+            <i class="fab fa-github"></i> Repository GitHub
+          </a></li>
+          <li><a href="https://github.com/examguard-pro/examguard-pro/issues" target="_blank">
+            <i class="fas fa-bug"></i> Signaler un bug
+          </a></li>
+          <li><a href="https://github.com/examguard-pro/examguard-pro/discussions" target="_blank">
+            <i class="fas fa-comments"></i> Discussions
+          </a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4><i class="fas fa-life-ring"></i> Support</h4>
+        <ul>
+          <li><a href="mailto:support@examguard-pro.com">
+            <i class="fas fa-envelope"></i> Support technique
+          </a></li>
+          <li><a href="mailto:sales@examguard-pro.com">
+            <i class="fas fa-shopping-cart"></i> Contact commercial
+          </a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4><i class="fas fa-info-circle"></i> À propos</h4>
+        <p>ExamGuard Pro est un système open-source de surveillance d'examens utilisant l'intelligence artificielle.</p>
+        <p>
+          <a href="https://github.com/examguard-pro/examguard-pro/blob/main/LICENSE" target="_blank">
+            <i class="fas fa-balance-scale"></i> Licence MIT
+          </a>
+        </p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>
+        &copy; 2025, ExamGuard Pro Team. 
+        Construit avec 
+        <a href="https://www.sphinx-doc.org/" target="_blank">Sphinx</a> 
+        en utilisant un
+        <a href="https://github.com/readthedocs/sphinx_rtd_theme" target="_blank">thème</a>
+        fourni par 
+        <a href="https://readthedocs.org" target="_blank">Read the Docs</a>.
+      </p>
+      <p class="built-date">
+        <i class="fas fa-clock"></i> 
+        Dernière mise à jour: None
+      </p>
+    </div>
+  </div>
+  
+  <style>
+    .sidebar-brand {
+      display: flex;
+      align-items: center;
+      padding: 1em;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .sidebar-brand .logo {
+      width: 32px;
+      height: 32px;
+      margin-right: 0.5em;
+    }
+    
+    .sidebar-brand .brand-text {
+      font-weight: 600;
+      color: white;
+      font-size: 1.1em;
+    }
+    
+    .version-info {
+      text-align: center;
+      padding: 0.5em;
+      font-size: 0.9em;
+    }
+    
+    .custom-footer {
+      margin-top: 2em;
+      padding: 2em 0;
+      border-top: 1px solid #e1e4e5;
+      background-color: #f8f9fa;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2em;
+      margin-bottom: 2em;
+    }
+    
+    .footer-section h4 {
+      color: var(--examguard-blue, #2980b9);
+      margin-bottom: 1em;
+      font-size: 1.1em;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-section li {
+      margin-bottom: 0.5em;
+    }
+    
+    .footer-section a {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    
+    .footer-section a:hover {
+      color: var(--examguard-blue, #2980b9);
+    }
+    
+    .footer-section i {
+      width: 1.2em;
+      margin-right: 0.5em;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2em;
+      border-top: 1px solid #e1e4e5;
+      color: #666;
+      font-size: 0.9em;
+    }
+    
+    .footer-bottom p {
+      margin-bottom: 0.5em;
+    }
+    
+    .built-date {
+      font-style: italic;
+    }
+    
+    @media (max-width: 768px) {
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1em;
+      }
+      
+      .custom-footer {
+        padding: 1em 0;
+      }
+    }
+  </style>
+
+
+</body>
+</html>

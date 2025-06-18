@@ -1,0 +1,250 @@
+# MkDocs configuration for ExamGuard Pro (alternative to Sphinx)
+# This file provides an alternative documentation setup using MkDocs instead of Sphinx
+
+site_name: ExamGuard Pro Documentation
+site_description: Documentation complète d'ExamGuard Pro - Système intelligent de surveillance d'examens
+site_author: ExamGuard Pro Team
+site_url: https://examguard-pro.readthedocs.io
+
+# Repository information
+repo_name: examguard-pro/examguard-pro
+repo_url: https://github.com/examguard-pro/examguard-pro
+edit_uri: edit/main/docs/
+
+# Copyright
+copyright: Copyright &copy; 2025 ExamGuard Pro Team
+
+# Configuration
+theme:
+  name: material
+  language: fr
+  logo: _static/logo.svg
+  favicon: _static/logo.svg
+
+  # Color scheme
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: green
+      toggle:
+        icon: material/brightness-7
+        name: Passer au mode sombre
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: green
+      toggle:
+        icon: material/brightness-4
+        name: Passer au mode clair
+
+  # Features
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.footnote.tooltips
+    - content.tabs.link
+    - content.tooltips
+    - header.autohide
+    - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - toc.integrate
+
+  # Custom CSS and JavaScript
+  custom_dir: docs/overrides
+
+# Plugins
+plugins:
+  - search:
+      lang: fr
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+      locale: fr
+  - git-committers:
+      repository: examguard-pro/examguard-pro
+      branch: main
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+      cache_css: true
+      cache_js: true
+  - social:
+      cards_layout_options:
+        background_color: "#2980b9"
+        color: "#ffffff"
+  - tags:
+      tags_file: tags.md
+  - redirects:
+      redirect_maps:
+        # Add any URL redirects here
+        # 'old-page.md': 'new-page.md'
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: slide
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: true
+      auto_caption: false
+      caption_position: bottom
+
+# Customization
+extra:
+  version:
+    provider: mike
+    default: stable
+
+  # Analytics
+  analytics:
+    provider: google
+    property: !ENV [GOOGLE_ANALYTICS_KEY, "G-XXXXXXXXXX"]
+    feedback:
+      title: Cette page vous a-t-elle été utile ?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: Cette page était utile
+          data: 1
+          note: >-
+            Merci pour votre retour !
+        - icon: material/emoticon-sad-outline
+          name: Cette page pourrait être améliorée
+          data: 0
+          note: >-
+            Merci pour votre retour ! Aidez-nous à améliorer cette page en
+            <a href="https://github.com/examguard-pro/examguard-pro/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">nous faisant part de vos suggestions</a>.
+
+  # Social links
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/examguard-pro/examguard-pro
+      name: ExamGuard Pro sur GitHub
+    - icon: fontawesome/solid/envelope
+      link: mailto:support@examguard-pro.com
+      name: Contact support
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/examguard-pro
+      name: Rejoindre Discord
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/examguardpro
+      name: Suivre sur Twitter
+
+  # Alternate languages
+  alternate:
+    - name: Français
+      link: /fr/
+      lang: fr
+    - name: English
+      link: /en/
+      lang: en
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      title: Sur cette page
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: examguard-pro
+      repo: examguard-pro
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/mkdocs.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Extra CSS and JavaScript
+extra_css:
+  - _static/custom.css
+  - https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js
+
+# Page tree
+nav:
+  - Accueil: index.md
+  - Introduction: introduction.md
+  - Installation: installation.md
+  - Utilisation: utilisation.md
+  - API Documentation: api.md
+  - Modèles: models.md
+  - Téléchargement: download.md
+  - Tags: tags.md
+
+# Validation
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+  anchors: warn
+
+# Watch additional directories for changes during development
+watch:
+  - docs/
+  - mkdocs.yml

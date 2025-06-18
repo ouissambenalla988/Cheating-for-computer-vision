@@ -1,0 +1,918 @@
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+    Utilisation - ExamGuard Pro
+  
+
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=ff5c896b" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+  
+    <link rel="shortcut icon" href="_static/logo.svg"/>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=3dfacf08"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=30646c52"></script>
+      <script src="_static/translations.js?v=e6b791cb"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="API Documentation" href="api.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
+   
+  <meta name="description" content="Documentation complète d'ExamGuard Pro - Système intelligent de surveillance d'examens utilisant l'IA et la vision par ordinateur">
+  <meta name="keywords" content="ExamGuard Pro, détection triche, surveillance examens, IA, vision par ordinateur, Flask, OpenCV, TensorFlow">
+  <meta name="author" content="ExamGuard Pro Team">
+  <meta property="og:title" content="ExamGuard Pro Documentation">
+  <meta property="og:description" content="Système intelligent de surveillance d'examens avec détection automatique de triche">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="_static/logo.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ExamGuard Pro Documentation">
+  <meta name="twitter:description" content="Documentation complète du système de surveillance d'examens">
+  
+  
+  <link rel="icon" type="image/svg+xml" href="_static/logo.svg">
+  <link rel="shortcut icon" type="image/svg+xml" href="_static/logo.svg">
+  
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add copy buttons to code blocks
+      const codeBlocks = document.querySelectorAll('pre');
+      codeBlocks.forEach(function(block) {
+        const button = document.createElement('button');
+        button.className = 'copy-btn';
+        button.innerHTML = '<i class="fas fa-copy"></i> Copier';
+        button.addEventListener('click', function() {
+          const code = block.querySelector('code') || block;
+          navigator.clipboard.writeText(code.textContent).then(function() {
+            button.innerHTML = '<i class="fas fa-check"></i> Copié!';
+            setTimeout(function() {
+              button.innerHTML = '<i class="fas fa-copy"></i> Copier';
+            }, 2000);
+          });
+        });
+        block.appendChild(button);
+      });
+      
+      // Add version badge
+      const versionElement = document.querySelector('.wy-side-nav-search .version');
+      if (versionElement) {
+        versionElement.innerHTML += ' <span class="version-badge">Latest</span>';
+      }
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    });
+  </script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980b9" >
+  <div class="sidebar-brand">
+    <a href="index.html">
+      <img src="_static/logo.svg" alt="ExamGuard Pro" class="logo">
+      <span class="brand-text">ExamGuard Pro</span>
+    </a>
+  </div>
+  <div class="version-info">
+    <span class="version">3.1</span>
+    <span class="version-badge">Latest</span>
+  </div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contenu:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#vision-du-projet">Vision du projet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#problematique">Problématique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#solution-proposee">Solution proposée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#fonctionnalites-principales">Fonctionnalités principales</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="introduction.html#detection-en-temps-reel">Détection en temps réel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction.html#ia-avancee">IA Avancée</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction.html#rapports-detailles">Rapports détaillés</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction.html#interface-web">Interface Web</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#architecture-technique">Architecture technique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#technologies-utilisees">Technologies utilisées</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#cas-d-usage">Cas d’usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#avantages">Avantages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#prochaines-etapes">Prochaines étapes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#prerequis">Prérequis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#configuration-systeme-recommandee">Configuration système recommandée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-des-dependances">Installation des dépendances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-via-docker">Installation via Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-manuelle-des-dependances">Installation manuelle des dépendances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-sur-differents-os">Installation sur différents OS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#ubuntu-debian">Ubuntu/Debian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#windows">Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#macos">macOS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#verification-de-l-installation">Vérification de l’installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#depannage">Dépannage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#variables-d-environnement">Variables d’environnement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#mise-a-jour">Mise à jour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#prochaine-etape">Prochaine étape</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Utilisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#demarrage-rapide">Démarrage rapide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interface-principale">Interface principale</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tableau-de-bord">Tableau de bord</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gestion-des-sessions">Gestion des sessions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-d-une-session-d-examen">Configuration d’une session d’examen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#surveillance-en-temps-reel">Surveillance en temps réel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pendant-l-examen">Pendant l’examen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#types-de-detections">Types de détections</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mouvement-des-yeux">Mouvement des yeux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#detection-d-objets">Détection d’objets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#presence-multiple">Présence multiple</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#rapports-et-analyses">Rapports et analyses</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rapport-de-session">Rapport de session</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-avancee">Configuration avancée</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#personnalisation-des-modeles-ia">Personnalisation des modèles IA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#integrations">Intégrations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#bonnes-pratiques">Bonnes pratiques</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#preparation-de-l-examen">Préparation de l’examen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Pendant l’examen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#apres-l-examen">Après l’examen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#resolution-de-problemes">Résolution de problèmes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#problemes-frequents">Problèmes fréquents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#support-technique">Support technique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prochaine-etape">Prochaine étape</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#vue-d-ensemble">Vue d’ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#base-url">Base URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#authentification">Authentification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#endpoints-de-l-api">Endpoints de l’API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#sessions-d-examen">Sessions d’examen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#detections">Détections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#participants">Participants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#controle-en-temps-reel">Contrôle en temps réel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#rapports">Rapports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#websocket-api">WebSocket API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#codes-d-erreur">Codes d’erreur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#exemples-d-integration">Exemples d’intégration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#python">Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#javascript">JavaScript</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#limites-de-taux">Limites de taux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#sdk-officiels">SDK officiels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#support-et-documentation">Support et documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Modèles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="models.html#vue-d-ensemble">Vue d’ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#architecture-des-modeles">Architecture des modèles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#modeles-de-detection-faciale">Modèles de détection faciale</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#haar-cascade-par-defaut">Haar Cascade (Par défaut)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#mtcnn-multi-task-cnn">MTCNN (Multi-task CNN)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#mediapipe-face-detection">MediaPipe Face Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#modeles-de-detection-d-objets">Modèles de détection d’objets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#yolo-you-only-look-once">YOLO (You Only Look Once)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#tensorflow-object-detection">TensorFlow Object Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#modeles-de-suivi-oculaire">Modèles de suivi oculaire</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#mediapipe-face-mesh">MediaPipe Face Mesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#opencv-eye-cascade">OpenCV Eye Cascade</a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#gaze-estimation">Gaze Estimation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#modeles-d-analyse-audio">Modèles d’analyse audio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#detection-de-voix">Détection de voix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#classification-des-sons">Classification des sons</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#modeles-personnalises">Modèles personnalisés</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#entrainement-d-un-modele-personnalise">Entraînement d’un modèle personnalisé</a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#transfer-learning">Transfer Learning</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#optimisation-des-performances">Optimisation des performances</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#optimisation-gpu">Optimisation GPU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#quantification-des-modeles">Quantification des modèles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#parallelisation">Parallélisation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#evaluation-des-modeles">Évaluation des modèles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#metriques-de-performance">Métriques de performance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#benchmarking">Benchmarking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#deploiement-des-modeles">Déploiement des modèles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#sauvegarde-et-chargement">Sauvegarde et chargement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#versioning-des-modeles">Versioning des modèles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#monitoring-des-modeles">Monitoring des modèles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#problemes-frequents">Problèmes fréquents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#documentation-des-modeles">Documentation des modèles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="download.html">Téléchargement</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="download.html#versions-disponibles">Versions disponibles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="download.html#version-stable">Version stable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#version-de-developpement">Version de développement</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#methodes-de-telechargement">Méthodes de téléchargement</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="download.html#github-release">GitHub Release</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#git-clone">Git Clone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#docker-hub">Docker Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#pypi-package">PyPI Package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#installateurs">Installateurs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="download.html#windows">Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#macos">macOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#linux">Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#assets-et-modeles">Assets et modèles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="download.html#modeles-pre-entraines">Modèles pré-entraînés</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#modeles-gpu-optimises">Modèles GPU optimisés</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#bases-de-donnees-d-exemple">Bases de données d’exemple</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#documentation-hors-ligne">Documentation hors ligne</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#checksums-et-signatures">Checksums et signatures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="download.html#verification-d-integrite">Vérification d’intégrité</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#signature-gpg">Signature GPG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#installation-rapide">Installation rapide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="download.html#script-d-installation-automatique">Script d’installation automatique</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#docker-compose">Docker Compose</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#versions-anterieures">Versions antérieures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="download.html#historique-des-versions">Historique des versions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#support-et-maintenance">Support et maintenance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="download.html#cycle-de-vie-des-versions">Cycle de vie des versions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#mises-a-jour-automatiques">Mises à jour automatiques</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#licences-et-conditions">Licences et conditions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="download.html#licence-open-source">Licence Open Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#licence-commerciale">Licence commerciale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html#dependances-tierces">Dépendances tierces</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#faq-telechargement">FAQ Téléchargement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#assistance-telechargement">Assistance téléchargement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#prochaine-etape">Prochaine étape</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980b9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ExamGuard Pro</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Utilisation</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/examguard-pro/examguard-pro/blob/main/docs/utilisation.rst" class="fa fa-github"> Éditer sur GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="utilisation">
+<h1>Utilisation<a class="headerlink" href="#utilisation" title="Lien vers cette rubrique"></a></h1>
+<p>Ce guide vous explique comment utiliser ExamGuard Pro pour surveiller vos examens.</p>
+<section id="demarrage-rapide">
+<h2>Démarrage rapide<a class="headerlink" href="#demarrage-rapide" title="Lien vers cette rubrique"></a></h2>
+<p><strong>1. Lancer l’application</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>app.py
+</pre></div>
+</div>
+<p><strong>2. Accéder à l’interface</strong></p>
+<p>Ouvrez votre navigateur et rendez-vous sur <code class="docutils literal notranslate"><span class="pre">http://localhost:5000</span></code></p>
+<p><strong>3. Première connexion</strong></p>
+<p>Utilisez les identifiants par défaut :
+- <strong>Utilisateur</strong> : <code class="docutils literal notranslate"><span class="pre">admin</span></code>
+- <strong>Mot de passe</strong> : <code class="docutils literal notranslate"><span class="pre">admin123</span></code></p>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Changez le mot de passe par défaut lors de votre première connexion !</p>
+</div>
+</section>
+<section id="interface-principale">
+<h2>Interface principale<a class="headerlink" href="#interface-principale" title="Lien vers cette rubrique"></a></h2>
+<p>L’interface ExamGuard Pro se compose de plusieurs sections :</p>
+<section id="tableau-de-bord">
+<h3>Tableau de bord<a class="headerlink" href="#tableau-de-bord" title="Lien vers cette rubrique"></a></h3>
+<p>Le tableau de bord principal affiche :</p>
+<ul class="simple">
+<li><p><strong>État du système</strong> : Statut de la caméra, modèles IA chargés</p></li>
+<li><p><strong>Sessions actives</strong> : Liste des examens en cours</p></li>
+<li><p><strong>Statistiques</strong> : Nombre de détections, alertes récentes</p></li>
+<li><p><strong>Alertes en temps réel</strong> : Notifications des comportements suspects</p></li>
+</ul>
+<img alt="Tableau de bord principal" class="align-center" src="_static/dashboard.png" />
+</section>
+<section id="gestion-des-sessions">
+<h3>Gestion des sessions<a class="headerlink" href="#gestion-des-sessions" title="Lien vers cette rubrique"></a></h3>
+<p>La section « Sessions » permet de :</p>
+<ul class="simple">
+<li><p>Créer de nouvelles sessions d’examen</p></li>
+<li><p>Configurer les paramètres de détection</p></li>
+<li><p>Voir l’historique des sessions</p></li>
+<li><p>Gérer les candidats</p></li>
+</ul>
+</section>
+</section>
+<section id="configuration-d-une-session-d-examen">
+<h2>Configuration d’une session d’examen<a class="headerlink" href="#configuration-d-une-session-d-examen" title="Lien vers cette rubrique"></a></h2>
+<p><strong>1. Créer une nouvelle session</strong></p>
+<p>Cliquez sur « Nouvelle session » et remplissez les informations :</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Nom de la session : Examen Final Mathématiques
+Date et heure : 2025-06-20 14:00
+Durée : 120 minutes
+Nombre de candidats : 30
+</pre></div>
+</div>
+<p><strong>2. Configurer les paramètres de détection</strong></p>
+<p>Ajustez la sensibilité selon vos besoins :</p>
+<p><strong>3. Ajouter les candidats</strong></p>
+<p>Plusieurs méthodes disponibles :</p>
+<ul class="simple">
+<li><p><strong>Import CSV</strong> : Téléchargez un fichier avec la liste des candidats</p></li>
+<li><p><strong>Saisie manuelle</strong> : Ajoutez individuellement chaque candidat</p></li>
+<li><p><strong>Intégration LDAP</strong> : Synchronisation avec l’annuaire</p></li>
+</ul>
+<p>Format CSV attendu :</p>
+<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span>nom,prenom,email,numero_etudiant
+Dupont,Jean,jean.dupont@example.com,12345
+Martin,Marie,marie.martin@example.com,12346
+</pre></div>
+</div>
+</section>
+<section id="surveillance-en-temps-reel">
+<h2>Surveillance en temps réel<a class="headerlink" href="#surveillance-en-temps-reel" title="Lien vers cette rubrique"></a></h2>
+<section id="pendant-l-examen">
+<h3>Pendant l’examen<a class="headerlink" href="#pendant-l-examen" title="Lien vers cette rubrique"></a></h3>
+<p>L’interface de surveillance affiche :</p>
+<p><strong>Vue d’ensemble</strong></p>
+<ul class="simple">
+<li><p>Grille de toutes les webcams actives</p></li>
+<li><p>Codes couleur : Vert (normal), Orange (suspect), Rouge (alerte)</p></li>
+<li><p>Compteur de détections par candidat</p></li>
+</ul>
+<p><strong>Détails par candidat</strong></p>
+<p>Cliquez sur une webcam pour voir :</p>
+<ul class="simple">
+<li><p>Flux vidéo en haute résolution</p></li>
+<li><p>Historique des détections</p></li>
+<li><p>Score de confiance</p></li>
+<li><p>Actions recommandées</p></li>
+</ul>
+<p><strong>Gestion des alertes</strong></p>
+<p>Quand une alerte se déclenche :</p>
+<ol class="arabic simple">
+<li><p><strong>Notification sonore</strong> (si activée)</p></li>
+<li><p><strong>Popup avec détails</strong> de la détection</p></li>
+<li><p><strong>Enregistrement automatique</strong> de la séquence</p></li>
+<li><p><strong>Options d’action</strong> :
+- Ignorer (fausse alerte)
+- Avertir le candidat
+- Marquer comme triche
+- Contacter le surveillant</p></li>
+</ol>
+</section>
+</section>
+<section id="types-de-detections">
+<h2>Types de détections<a class="headerlink" href="#types-de-detections" title="Lien vers cette rubrique"></a></h2>
+<section id="mouvement-des-yeux">
+<h3>Mouvement des yeux<a class="headerlink" href="#mouvement-des-yeux" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Ce qui est détecté :</strong></p>
+<ul class="simple">
+<li><p>Regard fixe prolongé vers un point (&gt; 10 secondes)</p></li>
+<li><p>Mouvements rapides et répétitifs</p></li>
+<li><p>Direction du regard hors écran</p></li>
+</ul>
+<p><strong>Paramètres configurables :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">EYE_TRACKING</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;sensitivity&#39;</span><span class="p">:</span> <span class="s1">&#39;medium&#39;</span><span class="p">,</span>  <span class="c1"># low, medium, high</span>
+    <span class="s1">&#39;gaze_threshold&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>     <span class="c1"># secondes</span>
+    <span class="s1">&#39;movement_speed&#39;</span><span class="p">:</span> <span class="mf">0.5</span>     <span class="c1"># pixels/frame</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="detection-d-objets">
+<h3>Détection d’objets<a class="headerlink" href="#detection-d-objets" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Objets détectés :</strong></p>
+<ul class="simple">
+<li><p>Téléphones mobiles</p></li>
+<li><p>Livres et cahiers</p></li>
+<li><p>Écrans supplémentaires</p></li>
+<li><p>Calculatrices (si interdites)</p></li>
+</ul>
+<p><strong>Configuration :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">OBJECT_DETECTION</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;phone&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;book&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;laptop&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;calculator&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>  <span class="c1"># Autorisé</span>
+    <span class="s1">&#39;confidence_threshold&#39;</span><span class="p">:</span> <span class="mf">0.7</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="presence-multiple">
+<h3>Présence multiple<a class="headerlink" href="#presence-multiple" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Détection de :</strong></p>
+<ul class="simple">
+<li><p>Visages supplémentaires dans le champ de vision</p></li>
+<li><p>Voix en arrière-plan (si microphone activé)</p></li>
+<li><p>Mouvements suspects hors champ</p></li>
+</ul>
+<p><strong>Paramètres :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">PERSON_DETECTION</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;max_persons&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;face_recognition&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;audio_detection&#39;</span><span class="p">:</span> <span class="kc">False</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="rapports-et-analyses">
+<h2>Rapports et analyses<a class="headerlink" href="#rapports-et-analyses" title="Lien vers cette rubrique"></a></h2>
+<section id="rapport-de-session">
+<h3>Rapport de session<a class="headerlink" href="#rapport-de-session" title="Lien vers cette rubrique"></a></h3>
+<p>À la fin de chaque examen, un rapport détaillé est généré :</p>
+<p><strong>Informations générales :</strong></p>
+<ul class="simple">
+<li><p>Durée de la session</p></li>
+<li><p>Nombre de participants</p></li>
+<li><p>Taux de détection global</p></li>
+<li><p>Statistiques par type de détection</p></li>
+</ul>
+<p><strong>Détails par candidat :</strong></p>
+<ul class="simple">
+<li><p>Timeline des événements</p></li>
+<li><p>Captures d’écran des moments suspects</p></li>
+<li><p>Score de risque de triche</p></li>
+<li><p>Recommandations</p></li>
+</ul>
+<p><strong>Export des données :</strong></p>
+<ul class="simple">
+<li><p>PDF pour archivage</p></li>
+<li><p>CSV pour analyse statistique</p></li>
+<li><p>JSON pour intégration système</p></li>
+</ul>
+<p>Exemple de rapport :</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>===========================================
+RAPPORT D&#39;EXAMEN - ExamGuard Pro
+===========================================
+
+Session : Examen Final Mathématiques
+Date : 20/06/2025 14:00-16:00
+Candidats : 28/30 présents
+
+STATISTIQUES GLOBALES
+----------------------
+Détections totales : 47
+- Mouvement yeux : 23 (49%)
+- Objets suspects : 12 (26%)
+- Présence multiple : 8 (17%)
+- Autres : 4 (8%)
+
+CANDIDATS À RISQUE
+------------------
+1. Martin, Pierre (Score: 85%)
+   - 8 détections majeures
+   - Téléphone détecté à 14:45
+   - Recommendation: Investigation
+
+2. Durand, Sophie (Score: 72%)
+   - 5 détections mineures
+   - Regard suspect répété
+   - Recommendation: Surveillance
+</pre></div>
+</div>
+</section>
+</section>
+<section id="configuration-avancee">
+<h2>Configuration avancée<a class="headerlink" href="#configuration-avancee" title="Lien vers cette rubrique"></a></h2>
+<section id="personnalisation-des-modeles-ia">
+<h3>Personnalisation des modèles IA<a class="headerlink" href="#personnalisation-des-modeles-ia" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Ajustement des seuils :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># config.py</span>
+<span class="n">AI_MODELS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;face_detection&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="s1">&#39;haarcascade&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;confidence&#39;</span><span class="p">:</span> <span class="mf">0.8</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;object_detection&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="s1">&#39;yolo_v5&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;confidence&#39;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">,</span>
+        <span class="s1">&#39;nms_threshold&#39;</span><span class="p">:</span> <span class="mf">0.4</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;eye_tracking&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="s1">&#39;mediapipe&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;landmark_confidence&#39;</span><span class="p">:</span> <span class="mf">0.5</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Modèles personnalisés :</strong></p>
+<p>Vous pouvez entraîner vos propres modèles :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Entraîner un modèle personnalisé</span>
+python<span class="w"> </span>scripts/train_custom_model.py<span class="w"> </span>--dataset<span class="w"> </span>my_dataset/<span class="w"> </span>--epochs<span class="w"> </span><span class="m">100</span>
+</pre></div>
+</div>
+</section>
+<section id="integrations">
+<h3>Intégrations<a class="headerlink" href="#integrations" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Système de notation :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Intégration avec Moodle</span>
+<span class="n">MOODLE_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://your-moodle.com&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;token&#39;</span><span class="p">:</span> <span class="s1">&#39;your-api-token&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;auto_grade&#39;</span><span class="p">:</span> <span class="kc">True</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Notifications :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Configuration des alertes</span>
+<span class="n">NOTIFICATIONS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;enabled&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s1">&#39;smtp_server&#39;</span><span class="p">:</span> <span class="s1">&#39;smtp.gmail.com&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;recipients&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;admin@school.com&#39;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;slack&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;enabled&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s1">&#39;webhook_url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://hooks.slack.com/...&#39;</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;teams&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;enabled&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s1">&#39;webhook_url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://outlook.office.com/...&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="bonnes-pratiques">
+<h2>Bonnes pratiques<a class="headerlink" href="#bonnes-pratiques" title="Lien vers cette rubrique"></a></h2>
+<section id="preparation-de-l-examen">
+<h3>Préparation de l’examen<a class="headerlink" href="#preparation-de-l-examen" title="Lien vers cette rubrique"></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Testez le système</strong> avant l’examen réel</p></li>
+<li><p><strong>Informez les candidats</strong> des règles et du système de surveillance</p></li>
+<li><p><strong>Vérifiez l’éclairage</strong> et la qualité des webcams</p></li>
+<li><p><strong>Configurez les seuils</strong> selon le niveau de l’examen</p></li>
+</ol>
+</section>
+<section id="id1">
+<h3>Pendant l’examen<a class="headerlink" href="#id1" title="Lien vers cette rubrique"></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Surveillez le tableau de bord</strong> régulièrement</p></li>
+<li><p><strong>Ne réagissez pas immédiatement</strong> aux fausses alertes</p></li>
+<li><p><strong>Documentez les incidents</strong> pour le rapport final</p></li>
+<li><p><strong>Gardez une trace</strong> des décisions prises</p></li>
+</ol>
+</section>
+<section id="apres-l-examen">
+<h3>Après l’examen<a class="headerlink" href="#apres-l-examen" title="Lien vers cette rubrique"></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Révisez tous les rapports</strong> avant de finaliser les notes</p></li>
+<li><p><strong>Archivez les données</strong> selon votre politique de rétention</p></li>
+<li><p><strong>Analysez les statistiques</strong> pour améliorer le système</p></li>
+<li><p><strong>Collectez les feedbacks</strong> des candidats et surveillants</p></li>
+</ol>
+</section>
+</section>
+<section id="resolution-de-problemes">
+<h2>Résolution de problèmes<a class="headerlink" href="#resolution-de-problemes" title="Lien vers cette rubrique"></a></h2>
+<section id="problemes-frequents">
+<h3>Problèmes fréquents<a class="headerlink" href="#problemes-frequents" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Webcam ne fonctionne pas :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vérifier les permissions</span>
+python<span class="w"> </span>scripts/test_camera.py
+
+<span class="c1"># Changer l&#39;index de caméra</span>
+<span class="nv">CAMERA_INDEX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w">  </span><span class="c1"># dans config.py</span>
+</pre></div>
+</div>
+<p><strong>Détections incorrectes :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ajuster la sensibilité</span>
+<span class="n">DETECTION_SENSITIVITY</span> <span class="o">=</span> <span class="s1">&#39;low&#39;</span>  <span class="c1"># au lieu de &#39;high&#39;</span>
+
+<span class="c1"># Réentraîner le modèle avec vos données</span>
+<span class="n">python</span> <span class="n">scripts</span><span class="o">/</span><span class="n">retrain_model</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p><strong>Performance lente :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Réduire la résolution vidéo</span>
+<span class="n">VIDEO_RESOLUTION</span> <span class="o">=</span> <span class="p">(</span><span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">)</span>  <span class="c1"># au lieu de (1280, 720)</span>
+
+<span class="c1"># Limiter le nombre de FPS</span>
+<span class="n">MAX_FPS</span> <span class="o">=</span> <span class="mi">15</span>  <span class="c1"># au lieu de 30</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="support-technique">
+<h2>Support technique<a class="headerlink" href="#support-technique" title="Lien vers cette rubrique"></a></h2>
+<p>En cas de problème :</p>
+<ol class="arabic simple">
+<li><p><strong>Consultez les logs</strong> : <code class="docutils literal notranslate"><span class="pre">logs/examguard.log</span></code></p></li>
+<li><p><strong>Vérifiez la FAQ</strong> : <span class="xref std std-doc">faq</span></p></li>
+<li><p><strong>Contactez le support</strong> : <a class="reference external" href="mailto:support&#37;&#52;&#48;examguard-pro&#46;com">support<span>&#64;</span>examguard-pro<span>&#46;</span>com</a></p></li>
+<li><p><strong>Créez une issue</strong> : <a class="reference external" href="https://github.com/examguard-pro/examguard-pro/issues">GitHub Issues</a></p></li>
+</ol>
+</section>
+<section id="prochaine-etape">
+<h2>Prochaine étape<a class="headerlink" href="#prochaine-etape" title="Lien vers cette rubrique"></a></h2>
+<p>Pour une utilisation avancée, consultez la documentation <a class="reference internal" href="api.html"><span class="doc">API Documentation</span></a> pour intégrer ExamGuard Pro avec vos systèmes existants.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="api.html" class="btn btn-neutral float-right" title="API Documentation" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2025, ExamGuard Pro Team.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+  <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+    
+      <a href="api.html" class="btn btn-neutral float-right" title="API Documentation" accesskey="n" rel="next">
+        <span class="fa fa-arrow-circle-right"></span> Suivant
+      </a>
+    
+    
+      <a href="installation.html" class="btn btn-neutral" title="Installation" accesskey="p" rel="prev">
+        <span class="fa fa-arrow-circle-left"></span> Précédent
+      </a>
+    
+  </div>
+
+  <hr/>
+
+  <div role="contentinfo" class="custom-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4><i class="fas fa-link"></i> Liens utiles</h4>
+        <ul>
+          <li><a href="https://github.com/examguard-pro/examguard-pro" target="_blank">
+            <i class="fab fa-github"></i> Repository GitHub
+          </a></li>
+          <li><a href="https://github.com/examguard-pro/examguard-pro/issues" target="_blank">
+            <i class="fas fa-bug"></i> Signaler un bug
+          </a></li>
+          <li><a href="https://github.com/examguard-pro/examguard-pro/discussions" target="_blank">
+            <i class="fas fa-comments"></i> Discussions
+          </a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4><i class="fas fa-life-ring"></i> Support</h4>
+        <ul>
+          <li><a href="mailto:support@examguard-pro.com">
+            <i class="fas fa-envelope"></i> Support technique
+          </a></li>
+          <li><a href="mailto:sales@examguard-pro.com">
+            <i class="fas fa-shopping-cart"></i> Contact commercial
+          </a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4><i class="fas fa-info-circle"></i> À propos</h4>
+        <p>ExamGuard Pro est un système open-source de surveillance d'examens utilisant l'intelligence artificielle.</p>
+        <p>
+          <a href="https://github.com/examguard-pro/examguard-pro/blob/main/LICENSE" target="_blank">
+            <i class="fas fa-balance-scale"></i> Licence MIT
+          </a>
+        </p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>
+        &copy; 2025, ExamGuard Pro Team. 
+        Construit avec 
+        <a href="https://www.sphinx-doc.org/" target="_blank">Sphinx</a> 
+        en utilisant un
+        <a href="https://github.com/readthedocs/sphinx_rtd_theme" target="_blank">thème</a>
+        fourni par 
+        <a href="https://readthedocs.org" target="_blank">Read the Docs</a>.
+      </p>
+      <p class="built-date">
+        <i class="fas fa-clock"></i> 
+        Dernière mise à jour: None
+      </p>
+    </div>
+  </div>
+  
+  <style>
+    .sidebar-brand {
+      display: flex;
+      align-items: center;
+      padding: 1em;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .sidebar-brand .logo {
+      width: 32px;
+      height: 32px;
+      margin-right: 0.5em;
+    }
+    
+    .sidebar-brand .brand-text {
+      font-weight: 600;
+      color: white;
+      font-size: 1.1em;
+    }
+    
+    .version-info {
+      text-align: center;
+      padding: 0.5em;
+      font-size: 0.9em;
+    }
+    
+    .custom-footer {
+      margin-top: 2em;
+      padding: 2em 0;
+      border-top: 1px solid #e1e4e5;
+      background-color: #f8f9fa;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2em;
+      margin-bottom: 2em;
+    }
+    
+    .footer-section h4 {
+      color: var(--examguard-blue, #2980b9);
+      margin-bottom: 1em;
+      font-size: 1.1em;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-section li {
+      margin-bottom: 0.5em;
+    }
+    
+    .footer-section a {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    
+    .footer-section a:hover {
+      color: var(--examguard-blue, #2980b9);
+    }
+    
+    .footer-section i {
+      width: 1.2em;
+      margin-right: 0.5em;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2em;
+      border-top: 1px solid #e1e4e5;
+      color: #666;
+      font-size: 0.9em;
+    }
+    
+    .footer-bottom p {
+      margin-bottom: 0.5em;
+    }
+    
+    .built-date {
+      font-style: italic;
+    }
+    
+    @media (max-width: 768px) {
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1em;
+      }
+      
+      .custom-footer {
+        padding: 1em 0;
+      }
+    }
+  </style>
+
+
+</body>
+</html>
