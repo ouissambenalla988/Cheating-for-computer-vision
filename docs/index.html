@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheating Detection - Documentation</title>
+  <meta name="description"
+    content="Documentation complète du projet Cheating Detection - Système de détection de triche par vision par ordinateur utilisant Flask et l'intelligence artificielle">
+  <meta property="og:title" content="Cheating Detection - Documentation">
+  <meta property="og:description" content="Système avancé de détection de triche par vision par ordinateur">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-white font-sans">
+  <!-- Mobile menu button -->
+  <button id="mobile-menu-btn"
+    class="lg:hidden fixed top-4 left-4 z-50 bg-rtd-blue text-white p-2 rounded-lg shadow-lg">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- Sidebar -->
+  <aside id="sidebar"
+    class="fixed left-0 top-0 w-80 h-full bg-rtd-sidebar border-r border-rtd-border transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-40 sidebar-scroll overflow-y-auto">
+    <!-- Header -->
+    <div class="bg-rtd-blue text-white p-4">
+      <div class="flex items-center space-x-2">
+        <i class="fas fa-eye text-xl"></i>
+        <h1 class="text-lg font-semibold">Cheating Detection</h1>
+      </div>
+      <p class="text-sm text-blue-100 mt-1">latest</p>
+    </div>
+
+    <!-- Search -->
+    <div class="p-4 border-b border-rtd-border">
+      <div class="relative">
+        <input type="text" id="search-input" placeholder="Rechercher docs"
+          class="w-full px-3 py-2 bg-white border border-gray-300 rounded text-sm focus:outline-none focus:border-rtd-blue">
+        <i class="fas fa-search absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="p-4">
+      <div class="mb-6">
+        <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">CONTENTS:</h3>
+        <ul class="space-y-1">
+          <li><a href="#introduction"
+              class="nav-link block py-2 px-3 text-sm text-rtd-gray hover:bg-blue-50 hover:text-rtd-blue rounded transition-colors"
+              onclick="showSection('introduction')">Introduction</a></li>
+          <li><a href="#installation"
+              class="nav-link block py-2 px-3 text-sm text-rtd-gray hover:bg-blue-50 hover:text-rtd-blue rounded transition-colors"
+              onclick="showSection('installation')">Installation</a></li>
+          <li><a href="#utilisation"
+              class="nav-link block py-2 px-3 text-sm text-rtd-gray hover:bg-blue-50 hover:text-rtd-blue rounded transition-colors"
+              onclick="showSection('utilisation')">Utilisation</a></li>
+          <li><a href="#api"
+              class="nav-link block py-2 px-3 text-sm text-rtd-gray hover:bg-blue-50 hover:text-rtd-blue rounded transition-colors"
+              onclick="showSection('api')">API Documentation</a></li>
+          <li><a href="#models"
+              class="nav-link block py-2 px-3 text-sm text-rtd-gray hover:bg-blue-50 hover:text-rtd-blue rounded transition-colors"
+              onclick="showSection('models')">Modèles</a></li>
+          <li><a href="#download"
+              class="nav-link block py-2 px-3 text-sm text-rtd-gray hover:bg-blue-50 hover:text-rtd-blue rounded transition-colors"
+              onclick="showSection('download')">Téléchargement</a></li>
+        </ul>
+      </div>
+
+      <!-- Versions -->
+      <div class="bg-gray-800 rounded-lg p-4 mb-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-white text-sm font-medium">Version 3.1</span>
+          <span class="bg-green-500 text-white px-2 py-1 rounded text-xs">Latest</span>
+        </div>
+        <div class="text-orange-400 text-sm mb-1">PR #378</div>
+        <div class="text-red-400 text-sm mb-3">PR #379</div>
+        <p class="text-gray-300 text-xs mb-3">Détection automatique de triche avec intelligence artificielle avancée.
+        </p>
+        <a href="https://github.com/votre-username/cheating-detection"
+          class="w-full bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded text-sm transition-colors block text-center">
+          Voir sur GitHub
+        </a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Overlay for mobile -->
+  <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden lg:hidden" onclick="closeMobileMenu()">
+  </div>
+
+  <!-- Main Content -->
+  <main class="lg:ml-80 min-h-screen">
+    <!-- Top Bar -->
+    <div class="bg-white border-b border-rtd-border px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-2 text-sm text-gray-500">
+        <i class="fas fa-home"></i>
+        <span>/</span>
+        <span class="text-rtd-blue" id="breadcrumb">Introduction</span>
+      </div>
+      <a href="https://github.com/votre-username/cheating-detection"
+        class="text-rtd-blue hover:underline text-sm">Afficher la source de la page</a>
+    </div>
+
+    <!-- Content Container -->
+    <div class="px-6 py-8 max-w-4xl">
+      <!-- Introduction Section -->
+      <section id="introduction" class="content-section">
+        <h1 class="text-3xl font-bold text-rtd-gray mb-6">Introduction</h1>
+
+        <p class="text-gray-700 mb-6">
+          Bienvenue dans la documentation du projet <strong>Cheating Detection</strong>.
+        </p>
+
+        <p class="text-gray-700 mb-6">
+          Ce projet vise à détecter automatiquement les comportements de triche via des techniques de vision par
+          ordinateur. Il utilise des modèles d'intelligence artificielle pour analyser les mouvements suspects pendant
+          les examens en ligne.
+        </p>
+
+        <!-- Note Box -->
+        <div class="bg-blue-50 border-l-4 border-rtd-blue p-4 mb-6">
+          <div class="flex items-center mb-2">
+            <i class="fas fa-info-circle text-rtd-blue mr-2"></i>
+            <span class="font-semibold text-rtd-blue">Note</span>
+          </div>
+          <p class="text-gray-700">Ce projet est open-source et en constante amélioration.</p>
+        </div>
+
+        <!-- Features -->
+        <h2 class="text-2xl font-semibold text-rtd-gray mb-4">Fonctionnalités principales</h2>
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+            <div class="flex items-center mb-3">
+              <i class="fas fa-video text-rtd-blue text-xl mr-3"></i>
+              <h3 class="font-semibold text-gray-800">Détection en temps réel</h3>
+            </div>
+            <p class="text-gray-600">Analyse les mouvements suspects en temps réel pendant les examens</p>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+            <div class="flex items-center mb-3">
+              <i class="fas fa-brain text-rtd-blue text-xl mr-3"></i>
+              <h3 class="font-semibold text-gray-800">IA Avancée</h3>
+            </div>
+            <p class="text-gray-600">Utilise des modèles de deep learning pour une détection précise</p>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+            <div class="flex items-center mb-3">
+              <i class="fas fa-chart-line text-rtd-blue text-xl mr-3"></i>
+              <h3 class="font-semibold text-gray-800">Rapports détaillés</h3>
+            </div>
+            <p class="text-gray-600">Génère des rapports complets sur les comportements détectés</p>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+            <div class="flex items-center mb-3">
+              <i class="fas fa-flask text-rtd-blue text-xl mr-3"></i>
+              <h3 class="font-semibold text-gray-800">Interface Web</h3>
+            </div>
+            <p class="text-gray-600">Interface Flask moderne et intuitive</p>
+          </div>
+        </div>
+
+        <!-- Demo Video Placeholder -->
+        <h2 class="text-2xl font-semibold text-rtd-gray mb-4">Démonstration</h2>
+        <div class="bg-gray-100 rounded-lg p-8 text-center mb-8">
+          <div class="bg-white rounded-lg shadow-lg p-6 inline-block">
+            <i class="fas fa-play-circle text-6xl text-rtd-blue mb-4"></i>
+            <p class="text-gray-600">Vidéo de démonstration du système de détection</p>
+            <p class="text-sm text-gray-500 mt-2">Remplacez cette section par votre vidéo de démonstration</p>
+          </div>
+        </div>
+
+        <!-- Screenshots -->
+        <h2 class="text-2xl font-semibold text-rtd-gray mb-4">Captures d'écran</h2>
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-gray-100 rounded-lg p-4">
+            <div class="bg-white rounded shadow-lg p-4 text-center">
+              <i class="fas fa-image text-4xl text-gray-400 mb-2"></i>
+              <p class="text-sm text-gray-600">Interface principale</p>
+            </div>
+          </div>
+          <div class="bg-gray-100 rounded-lg p-4">
+            <div class="bg-white rounded shadow-lg p-4 text-center">
+              <i class="fas fa-image text-4xl text-gray-400 mb-2"></i>
+              <p class="text-sm text-gray-600">Résultats de détection</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Installation Section -->
+      <section id="installation" class="content-section hidden">
+        <h1 class="text-3xl font-bold text-rtd-gray mb-6">Installation</h1>
+
+        <h2 class="text-2xl font-semibold text-rtd-gray mb-4">Prérequis</h2>
+        <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+          <li>Python 3.8 ou supérieur</li>
+          <li>OpenCV 4.5+</li>
+          <li>TensorFlow 2.x</li>
+          <li>Flask</li>
+          <li>Une webcam pour la détection en temps réel</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold text-rtd-gray mb-4">Installation des dépendances</h2>
+        <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-6 font-mono text-sm">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-gray-400"># Cloner le repository</span>
+            <button onclick="copyToClipboard('git clone https://github.com/votre-username/cheating-detection.git')"
+              class="text-gray-400 hover:text-white">
+              <i class="fas fa-copy"></i>
+            </button>
+          </div>
+          <div class="mb-2">git clone https://github.com/votre-username/cheating-detection.git</div>
+          <div class="mb-2">cd cheating-detection</div>
+          <div class="text-gray-400 mb-2"># Installer les dépendances</div>
+          <div>pip install -r requirements.txt</div>
+        </div>
+
+        <!-- GitHub Integration -->
+        <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
+          <h3 class="font-semibold text-gray-800 mb-4 flex items-center">
+            <i class="fab fa-github text-gray-700 mr-2"></i>
+            Repository GitHub
+          </h3>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://github.com/votre-username/cheating-detection"
+              class="inline-flex items-center px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-colors">
+              <i class="fab fa-github mr-2"></i>Voir sur GitHub
+            </a>
+            <a href="https://github.com/votre-username/cheating-detection/archive/refs/heads/main.zip"
+              class="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors">
+              <i class="fas fa-download mr-2"></i>Download ZIP
+            </a>
+            <a href="https://github.com/votre-username/cheating-detection"
+              class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
+              <i class="fas fa-star mr-2"></i>Star Project
+            </a>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-semibold text-rtd-gray mb-4">Configuration</h2>
+        <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-6 font-mono text-sm">
+          <div class="text-gray-400 mb-2"># Créer un environnement virtuel</div>
+          <div class="mb-2">python -m venv venv</div>
+          <div class="mb-2">source venv/bin/activate # Linux/Mac</div>
+          <div class="mb-2">venv\Scripts\activate # Windows</div>
+        </div>
+      </section>
+
+      <!-- Utilisation Section -->
+      <section id="utilisation" class="content-section hidden">
+        <h1 class="text-3xl font-bold text-rtd-gray mb-6">Utilisation</h1>
+
+        <h2 class="text-2xl font-semibold text-rtd-gray mb-4">Lancement de l'application Flask</h2>
+        <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-6 font-mono text-sm">
+          <div class="flex items-center justify-between">
+            <span>python app.py</span>
+            <button onclick="copyToClipboard('python app.py')" class="text-gray-400 hover:text-white">
+              <i class="fas fa-copy"></i>
+            </button>
+          </div>
+        </div>
+
+        <p class="text-gray-700 mb-6">L'application sera disponible sur <code
+            class="bg-gray-100 px-2 py-1 rounded">http://localhost:5000</code></p>
+
+        <h2 class="text-2xl font-semibold text-rtd-gray mb-4">Interface Web</h2>
+        <div class="bg-gray-100 rounded-lg p-6 mb-6">
+          <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+            <i class="fas fa-desktop text-6xl text-gray-400 mb-4"></i>
+            <p class="text-gray-600">Interface web Flask montrant le flux caméra et les résultats de détection</p>
+            <p class="text-sm text-gray-500 mt-2">Ajoutez ici une capture d'écran de votre interface</p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-semibold text-rtd-gray mb-4">Utilisation via ligne de commande</h2>
+        <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-6 font-mono text-sm">
+          <div class="mb-2"># Détection sur une vidéo</div>
+          <div class="mb-2">python detection.py --input video.mp4</div>
+          <div class="mb-2 text-gray-400"># Détection en temps réel</div>
+          <div>python detection.py --camera</div>
+        </div>
+
+        <!-- Warning Box -->
+        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+          <div class="flex items-center mb-2">
+            <i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>
+            <span class="font-semibold text-yellow-700">Attention</span>
+          </div>
+          <p class="text-yellow-700">Assurez-vous d'avoir une webcam connectée pour la détection en temps réel.</p>
+        </div>
+
+        <h2 class="text-2xl font-semibold text-rtd-gray mb-4">Paramètres de configuration</h2>
+        <div class="overflow-x-auto mb-6">
+          <table class="min-w-full bg-white border border-gray-200">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Paramètre</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Description</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Valeur par défaut</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">--confidence</td>
+                <td class="px-6 py-4 text-sm text-gray-500">Seuil de confiance pour la détection</td>
+                <td class="px-6 py-4 text-sm text-gray-500">0.5</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">--model</td>
+                <td class="px-6 py-4 text-sm text-gray-500">Modèle à utiliser pour la détection</td>
+                <td class="px-6 py-4 text-sm text-gray-500">yolov5</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">--output</td>
+                <td class="px-6 py-4 text-sm text-gray-500">Dossier de sortie des résultats</td>
+                <td class="px-6 py-4 text-sm text-gray-500">./results</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- API Section -->
+      <section id="api" class="content-section hidden">
+        <h1 class="text-3xl font-bold text-rtd-gray mb-6">API Documentation</h1>
+
+        <p class="text-gray-700 mb-6">Cette section décrit les endpoints API disponibles pour interagir avec le système
+          de détection de triche.</p>
+
+        <h2 class="text-2xl font-semibold text-rtd-gray mb-4">Endpoints disponibles</h2>
+
+        <div class="space-y-6">
+          <!-- API Endpoint -->
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <div class="bg-gray-50 px-4 py-3 border-b border-gray-200">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-sm">POST /api/detect</span>
+                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">POST</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <p class="text-gray-700 mb-3">Lance la détection sur une image ou un flux vidéo</p>
+              <h4 class="font-semibold mb-2">Paramètres:</h4>
+              <div class="bg-gray-900 text-green-400 p-3 rounded font-mono text-sm mb-3">
+                {
+                "image": "base64_encoded_image",
+                "confidence": 0.5,
+                "model": "yolov5"
+                }
+              </div>
+              <h4 class="font-semibold mb-2">Réponse:</h4>
+              <div class="bg-gray-900 text-green-400 p-3 rounded font-mono text-sm">
+                {
+                "success": true,
+                "detections": [
+                {
+                "type": "suspicious_movement",
+                "confidence": 0.87,
+                "bbox": [100, 50, 200, 150]
+                }
+                ]
+                }
+              </div>
+            </div>
+          </div>
+
+          <!-- Another API Endpoint -->
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <div class="bg-gray-50 px-4 py-3 border-b border-gray-200">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-sm">GET /api/status</span>
+                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-semibold">GET</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <p class="text-gray-700 mb-3">Vérifie le statut du service de détection</p>
+              <h4 class="font-semibold mb-2">Réponse:</h4>
+              <div class="bg-gray-900 text-green-400 p-3 rounded font-mono text-sm">
+                {
+                "status": "running",
+                "model_loaded": true,
+                "version": "3.1"
+                }
+              </div>
+            </div>
+          </div>
+
+          <!-- WebSocket API -->
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <div class="bg-gray-50 px-4 py-3 border-b border-gray-200">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-sm">WS /api/stream</span>
+                <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-semibold">WebSocket</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <p class="text-gray-700 mb-3">Connexion WebSocket pour la détection en temps réel</p>
+              <h4 class="font-semibold mb-2">Message entrant:</h4>
+              <div class="bg-gray-900 text-green-400 p-3 rounded font-mono text-sm mb-3">
+                {
+                "type": "frame",
+                "data": "base64_encoded_frame"
+                }
+              </div>
+              <h4 class="font-semibold mb-2">Message sortant:</h4>
+              <div class="bg-gray-900 text-green-400 p-3 rounded font-mono text-sm">
+                {
+                "type": "detection_result",
+                "timestamp": "2024-01-01T12:00:00Z",
+                "detections": []
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-semibold text-rtd-gray mb-4 mt-8">Codes d'erreur</h2>
+        <div class="overflow-x-auto">
+          <table class="min-w-full bg-white border border-gray-200">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Code</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Description</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">400</td>
+                <td class="px-6 py-4 text-sm text-gray-500">Données d'entrée invalides</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">404</td>
+                <td class="px-6 py-4 text-sm text-gray-500">Endpoint non trouvé</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">500</td>
+                <td class="px-6 py-4 text-sm text-gray-500">Erreur interne du serveur</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Models Section -->
+      <section id="models" class="content-section hidden">
+        <h1 class="text-3xl font-bold text-rtd-gray mb-6">Modèles</h1>
+
+        <p class="text-gray-700 mb-6">Cette section présente les différents modèles d'intelligence artificielle utilisés
+          pour la détection de triche.</p>
+
+        <h2 class="text-2xl font-semibold text-rtd-gray mb-4">Modèles disponibles</h2>
+
+        <div class="grid gap-6 mb-8">
+          <!-- Model 1 -->
+          <div class="bg-white border border-gray-200 rounded-lg p-6">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-semibold text-gray-800">YOLOv5 - Détection d'objets</h3>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">Recommandé</span>
+            </div>
+            <p class="text-gray-600 mb-4">Modèle optimisé pour détecter les objets suspects comme les téléphones,
+              papiers, etc.</p>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <span class="text-sm font-medium text-gray-500">Précision:</span>
+                <span class="ml-2 text-sm text-gray-700">92.5%</span>
+              </div>
+              <div>
+                <span class="text-sm font-medium text-gray-500">Vitesse:</span>
+                <span class="ml-2 text-sm text-gray-700">45 FPS</span>
+              </div>
+              <div>
+                <span class="text-sm font-medium text-gray-500">Taille:</span>
+                <span class="ml-2 text-sm text-gray-700">28.7 MB</span>
+              </div>
+              <div>
+                <span class="text-sm font-medium text-gray-500">Format:</span>
+                <span class="ml-2 text-sm text-gray-700">PyTorch (.pt)</span>
+              </div>
+            </div>
+            <div class="flex space-x-3">
+              <a href="#"
+                class="bg-rtd-blue hover:bg-rtd-blue-light text-white px-4 py-2 rounded text-sm transition-colors">
+                <i class="fas fa-download mr-2"></i>Télécharger
+              </a>
+              <a href="#"
+                class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded text-sm transition-colors">
+                <i class="fas fa-info-circle mr-2"></i>Documentation
+              </a>
+            </div>
+          </div>
+
+          <!-- Model 2 -->
+          <div class="bg-white border border-gray-200 rounded-lg p-6">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-semibold text-gray-800">MediaPipe - Détection de pose</h3>
+              <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">Stable</span>
+            </div>
+            <p class="text-gray-600 mb-4">Analyse les mouvements corporels pour détecter les comportements suspects.</p>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <span class="text-sm font-medium text-gray-500">Précision:</span>
+                <span class="ml-2 text-sm text-gray-700">89.2%</span>
+              </div>
+              <div>
+                <span class="text-sm font-medium text-gray-500">Vitesse:</span>
+                <span class="ml-2 text-sm text-gray-700">60 FPS</span>
+              </div>
+              <div>
+                <span class="text-sm font-medium text-gray-500">Taille:</span>
+                <span class="ml-2 text-sm text-gray-700">12.3 MB</span>
+              </div>
+              <div>
+                <span class="text-sm font-medium text-gray-500">Format:</span>
+                <span class="ml-2 text-sm text-gray-700">TensorFlow Lite</span>
+              </div>
+            </div>
+            <div class="flex space-x-3">
+              <a href="#"
+                class="bg-rtd-blue hover:bg-rtd-blue-light text-white px-4 py-2 rounded text-sm transition-colors">
+                <i class="fas fa-download mr-2"></i>Télécharger
+              </a>
+              <a href="#"
+                class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded text-sm transition-colors">
+                <i class="fas fa-info-circle mr-2"></i>Documentation
+              </a>
+            </div>
+          </div>
+
+          <!-- Model 3 -->
+          <div class="bg-white border border-gray-200 rounded-lg p-6">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-semibold text-gray-800">Custom CNN - Détection faciale</h3>
+              <span
+                class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">Expérimental</span>
+            </div>
+            <p class="text-gray-600 mb-4">Réseau de neurones personnalisé pour analyser les expressions faciales.</p>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <span class="text-sm font-medium text-gray-500">Précision:</span>
+                <span class="ml-2 text-sm text-gray-700">86.7%</span>
+              </div>
+              <div>
+                <span class="text-sm font-medium text-gray-500">Vitesse:</span>
+                <span class="ml-2 text-sm text-gray-700">30 FPS</span>
+              </div>
+              <div>
+                <span class="text-sm font-medium text-gray-500">Taille:</span>
+                <span class="ml-2 text-sm text-gray-700">45.1 MB</span>
+              </div>
+              <div>
+                <span class="text-sm font-medium text-gray-500">Format:</span>
+                <span class="ml-2 text-sm text-gray-700">TensorFlow (.h5)</span>
+              </div>
+            </div>
+            <div class="flex space-x-3">
+              <a href="#"
+                class="bg-rtd-blue hover:bg-rtd-blue-light text-white px-4 py-2 rounded text-sm transition-colors">
+                <i class="fas fa-download mr-2"></i>Télécharger
+              </a>
+              <a href="#"
+                class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded text-sm transition-colors">
+                <i class="fas fa-info-circle mr-2"></i>Documentation
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-semibold text-rtd-gray mb-4">Configuration des modèles</h2>
+        <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-6 font-mono text-sm">
+          <div class="text-gray-400 mb-2"># Configuration dans config.py</div>
+          <div class="mb-2">MODEL_CONFIG = {</div>
+          <div class="mb-2"> 'yolov5': {</div>
+          <div class="mb-2"> 'path': 'models/yolov5s.pt',</div>
+          <div class="mb-2"> 'confidence': 0.5,</div>
+          <div class="mb-2"> 'device': 'cpu' # ou 'cuda'</div>
+          <div class="mb-2"> },</div>
+          <div class="mb-2"> 'mediapipe': {</div>
+          <div class="mb-2"> 'min_detection_confidence': 0.5,</div>
+          <div class="mb-2"> 'min_tracking_confidence': 0.5</div>
+          <div class="mb-2"> }</div>
+          <div>}</div>
+        </div>
+      </section>
+
+      <!-- Download Section -->
+      <section id="download" class="content-section hidden">
+        <h1 class="text-3xl font-bold text-rtd-gray mb-6">Téléchargement</h1>
+
+        <p class="text-gray-700 mb-6">Téléchargez le projet complet avec tous les fichiers nécessaires pour démarrer
+          rapidement.</p>
+
+        <h2 class="text-2xl font-semibold text-rtd-gray mb-4">Options de téléchargement</h2>
+
+        <div class="grid gap-6 mb-8">
+          <!-- GitHub Download -->
+          <div class="bg-white border border-gray-200 rounded-lg p-6">
+            <div class="flex items-center mb-4">
+              <i class="fab fa-github text-3xl text-gray-700 mr-4"></i>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-800">Repository GitHub</h3>
+                <p class="text-gray-600">Code source complet avec historique Git</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-3 mb-4">
+              <a href="https://github.com/votre-username/cheating-detection"
+                class="inline-flex items-center px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-colors">
+                <i class="fab fa-github mr-2"></i>Voir sur GitHub
+              </a>
+              <a href="https://github.com/votre-username/cheating-detection/archive/refs/heads/main.zip"
+                class="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors">
+                <i class="fas fa-download mr-2"></i>Download ZIP
+              </a>
+            </div>
+            <div class="bg-gray-900 text-green-400 p-3 rounded font-mono text-sm">
+              git clone https://github.com/votre-username/cheating-detection.git
+            </div>
+          </div>
+
+          <!-- Flask Project Download -->
+          <div class="bg-white border border-gray-200 rounded-lg p-6">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-flask text-3xl text-green-600 mr-4"></i>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-800">Projet Flask complet</h3>
+                <p class="text-gray-600">Application web prête à l'emploi avec interface utilisateur</p>
+              </div>
+            </div>
+            <div class="mb-4">
+              <span
+                class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold mr-2">v3.1</span>
+              <span
+                class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">Stable</span>
+            </div>
+            <p class="text-gray-600 mb-4">Inclut:</p>
+            <ul class="list-disc list-inside text-gray-600 mb-4 space-y-1">
+              <li>Application Flask avec interface web</li>
+              <li>Modèles pré-entraînés</li>
+              <li>Scripts de configuration</li>
+              <li>Documentation complète</li>
+              <li>Exemples d'utilisation</li>
+            </ul>
+            <div class="flex flex-wrap gap-3">
+              <a href="#"
+                class="inline-flex items-center px-4 py-2 bg-rtd-blue hover:bg-rtd-blue-light text-white rounded-lg transition-colors">
+                <i class="fas fa-download mr-2"></i>Télécharger Flask App
+              </a>
+              <a href="#"
+                class="inline-flex items-center px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors">
+                <i class="fas fa-file-archive mr-2"></i>Version ZIP
+              </a>
+            </div>
+          </div>
+
+          <!-- Docker Version -->
+          <div class="bg-white border border-gray-200 rounded-lg p-6">
+            <div class="flex items-center mb-4">
+              <i class="fab fa-docker text-3xl text-blue-600 mr-4"></i>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-800">Version Docker</h3>
+                <p class="text-gray-600">Container prêt à déployer</p>
+              </div>
+            </div>
+            <div class="bg-gray-900 text-green-400 p-3 rounded font-mono text-sm mb-4">
+              <div class="mb-2">docker pull cheating-detection:latest</div>
+              <div>docker run -p 5000:5000 cheating-detection</div>
+            </div>
+            <a href="#"
+              class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
+              <i class="fab fa-docker mr-2"></i>Docker Hub
+            </a>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-semibold text-rtd-gray mb-4">Structure des fichiers</h2>
+        <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-6 font-mono text-sm">
+          <div class="text-gray-400 mb-2">cheating-detection/</div>
+          <div>├── app.py # Application Flask principale</div>
+          <div>├── detection.py # Script de détection</div>
+          <div>├── requirements.txt # Dépendances Python</div>
+          <div>├── models/ # Modèles d'IA</div>
+          <div>│ ├── yolov5s.pt</div>
+          <div>│ └── pose_model.tflite</div>
+          <div>├── templates/ # Templates HTML</div>
+          <div>├── static/ # Fichiers statiques</div>
+          <div>├── docs/ # Documentation</div>
+          <div>└── README.md # Guide de démarrage</div>
+        </div>
+
+        <h2 class="text-2xl font-semibold text-rtd-gray mb-4">Installation rapide</h2>
+        <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-6 font-mono text-sm">
+          <div class="text-gray-400 mb-2"># 1. Télécharger et extraire</div>
+          <div class="mb-2">wget https://github.com/votre-username/cheating-detection/archive/main.zip</div>
+          <div class="mb-2">unzip main.zip && cd cheating-detection-main</div>
+          <div class="mb-2 text-gray-400"># 2. Installer les dépendances</div>
+          <div class="mb-2">pip install -r requirements.txt</div>
+          <div class="mb-2 text-gray-400"># 3. Lancer l'application</div>
+          <div>python app.py</div>
+        </div>
+
+        <!-- Requirements -->
+        <h2 class="text-2xl font-semibold text-rtd-gray mb-4">Configuration requise</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-gray-50 rounded-lg p-4">
+            <h3 class="font-semibold text-gray-800 mb-3">Minimum</h3>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li><i class="fas fa-microchip mr-2"></i>CPU: Intel i5 ou équivalent</li>
+              <li><i class="fas fa-memory mr-2"></i>RAM: 8 GB</li>
+              <li><i class="fas fa-hdd mr-2"></i>Stockage: 2 GB libre</li>
+              <li><i class="fas fa-video mr-2"></i>Webcam: 720p minimum</li>
+            </ul>
+          </div>
+          <div class="bg-gray-50 rounded-lg p-4">
+            <h3 class="font-semibold text-gray-800 mb-3">Recommandé</h3>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li><i class="fas fa-microchip mr-2"></i>CPU: Intel i7 ou équivalent</li>
+              <li><i class="fas fa-memory mr-2"></i>RAM: 16 GB</li>
+              <li><i class="fas fa-hdd mr-2"></i>Stockage: 5 GB libre</li>
+              <li><i class="fas fa-video mr-2"></i>Webcam: 1080p ou plus</li>
+              <li><i class="fas fa-microchip mr-2"></i>GPU: NVIDIA GTX 1060+</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Navigation Footer -->
+    <div class="lg:ml-80 px-6 py-4 border-t border-rtd-border">
+      <div class="flex justify-between items-center">
+        <button id="prev-btn" onclick="navigatePage('prev')"
+          class="flex items-center px-4 py-2 text-rtd-blue hover:bg-blue-50 rounded transition-colors">
+          <i class="fas fa-chevron-left mr-2"></i>Précédent
+        </button>
+        <button id="next-btn" onclick="navigatePage('next')"
+          class="flex items-center px-4 py-2 text-rtd-blue hover:bg-blue-50 rounded transition-colors">
+          Suivant<i class="fas fa-chevron-right ml-2"></i>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="lg:ml-80 bg-gray-50 border-t border-rtd-border px-6 py-8">
+    <div class="max-w-4xl">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <p class="text-sm text-gray-600">© Droits d'auteur 2024, VOTRE NOM.</p>
+          <p class="text-xs text-gray-500 mt-1">
+            Compilé avec <a href="https://www.sphinx-doc.org/" class="text-rtd-blue hover:underline">Sphinx</a>
+            en utilisant un <a href="https://readthedocs.org/" class="text-rtd-blue hover:underline">thème fourni par
+              Read the Docs</a>.
+          </p>
+        </div>
+        <div class="flex space-x-4">
+          <a href="https://github.com/votre-username/cheating-detection" class="text-gray-600 hover:text-rtd-blue">
+            <i class="fab fa-github text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-600 hover:text-rtd-blue">
+            <i class="fas fa-envelope text-xl"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
