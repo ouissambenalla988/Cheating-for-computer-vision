@@ -1,40 +1,28 @@
 # Configuration file for the Sphinx documentation builder.
+#
+# For the full list of built-in configuration values, see the documentation:
+# https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-project = "Cheating-for-computer-vision"
-copyright = "2025, BENALLA"
-author = "BENALLA Ouissam"
+# -- Project information -----------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-# ---- Extensions Sphinx ----
-extensions = [
-    'myst_parser',         # Support des fichiers Markdown
-    'sphinx_rtd_theme',    # Thème ReadTheDocs
-    # 'sphinx.ext.autodoc',
-    # 'sphinx.ext.viewcode',
-]
+project = 'Cheating'
+copyright = '2025, Ouissam'
+author = 'Ouissam'
+release = '1.0'
 
-# ---- Types de fichiers supportés ----
-source_suffix = {
-    '.rst': 'restructuredtext',
-    '.md': 'markdown',
-}
+# -- General configuration ---------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-# ---- Thème HTML ----
-html_theme = 'sphinx_rtd_theme'
+extensions = []
 
-html_theme_options = {
-    'style_external_links': True,
-    'collapse_navigation': False,
-    'navigation_depth': 4,
-    'titles_only': False,
-    # 'analytics_id': 'G-XXXXXX',  # Tu peux ajouter un ID Google Analytics ici si besoin
-}
+templates_path = ['_templates']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
+language = 'fr'
+
+# -- Options for HTML output -------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
+
+html_theme = 'alabaster'
 html_static_path = ['_static']
-html_css_files = []  # Tu peux ajouter ton CSS personnalisé ici
-html_js_files = []   # Ou un JS personnalisé
-
-# ---- Extensions Myst Markdown ----
-myst_enable_extensions = [
-    "amsmath",
-    "dollarmath",
-]
