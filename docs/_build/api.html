@@ -1,0 +1,734 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Documentation &mdash; Cheating-for-computer-vision 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Modèles" href="models.html" />
+    <link rel="prev" title="Utilisation" href="utilisation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Cheating-for-computer-vision
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contenu:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilisation.html">Utilisation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#vue-d-ensemble">Vue d’ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#base-url">Base URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#authentification">Authentification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#endpoints-de-l-api">Endpoints de l’API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sessions-d-examen">Sessions d’examen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#detections">Détections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#participants">Participants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controle-en-temps-reel">Contrôle en temps réel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rapports">Rapports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#websocket-api">WebSocket API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#codes-d-erreur">Codes d’erreur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exemples-d-integration">Exemples d’intégration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#python">Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#javascript">JavaScript</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#limites-de-taux">Limites de taux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sdk-officiels">SDK officiels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#support-et-documentation">Support et documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Modèles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="download.html">Téléchargement</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Cheating-for-computer-vision</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">API Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="api-documentation">
+<h1>API Documentation<a class="headerlink" href="#api-documentation" title="Link to this heading"></a></h1>
+<p>ExamGuard Pro fournit une API REST complète pour intégrer le système de détection de triche dans vos applications existantes.</p>
+<section id="vue-d-ensemble">
+<h2>Vue d’ensemble<a class="headerlink" href="#vue-d-ensemble" title="Link to this heading"></a></h2>
+<p>L’API ExamGuard Pro permet de :</p>
+<ul class="simple">
+<li><p>Gérer les sessions d’examen</p></li>
+<li><p>Contrôler la détection en temps réel</p></li>
+<li><p>Récupérer les rapports et statistiques</p></li>
+<li><p>Configurer les paramètres de détection</p></li>
+<li><p>Gérer les utilisateurs et permissions</p></li>
+</ul>
+</section>
+<section id="base-url">
+<h2>Base URL<a class="headerlink" href="#base-url" title="Link to this heading"></a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>http://localhost:5000/api/v1/
+</pre></div>
+</div>
+</section>
+<section id="authentification">
+<h2>Authentification<a class="headerlink" href="#authentification" title="Link to this heading"></a></h2>
+<p>L’API utilise l’authentification par token JWT.</p>
+<p><strong>Obtenir un token :</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">POST /api/v1/auth/login</span>
+<span class="err">Content-Type: application/json</span>
+
+<span class="err">{</span>
+<span class="err">    &quot;username&quot;: &quot;admin&quot;,</span>
+<span class="err">    &quot;password&quot;: &quot;your-password&quot;</span>
+<span class="err">}</span>
+</pre></div>
+</div>
+<p><strong>Réponse :</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;expires_in&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3600</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;role&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;administrator&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Utiliser le token :</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">GET /api/v1/sessions</span>
+<span class="err">Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...</span>
+</pre></div>
+</div>
+</section>
+<section id="endpoints-de-l-api">
+<h2>Endpoints de l’API<a class="headerlink" href="#endpoints-de-l-api" title="Link to this heading"></a></h2>
+<section id="sessions-d-examen">
+<h3>Sessions d’examen<a class="headerlink" href="#sessions-d-examen" title="Link to this heading"></a></h3>
+<p><strong>Lister les sessions</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">GET /api/v1/sessions</span>
+</pre></div>
+</div>
+<p><strong>Paramètres de requête :</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">page</span></code> (int) : Numéro de page (défaut: 1)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">per_page</span></code> (int) : Éléments par page (défaut: 10)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">status</span></code> (string) : Filtrer par statut (active, completed, scheduled)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">date_from</span></code> (string) : Date de début (YYYY-MM-DD)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">date_to</span></code> (string) : Date de fin (YYYY-MM-DD)</p></li>
+</ul>
+<p><strong>Réponse :</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;sessions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Examen Final Mathématiques&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;active&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;start_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-06-20T14:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;end_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-06-20T16:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;participants&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;detections_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;pagination&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;per_page&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;pages&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Créer une session</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">POST /api/v1/sessions</span>
+<span class="err">Content-Type: application/json</span>
+
+<span class="err">{</span>
+<span class="err">    &quot;name&quot;: &quot;Examen Final Physique&quot;,</span>
+<span class="err">    &quot;description&quot;: &quot;Examen final de physique - Semestre 2&quot;,</span>
+<span class="err">    &quot;start_time&quot;: &quot;2025-06-25T09:00:00Z&quot;,</span>
+<span class="err">    &quot;duration&quot;: 120,</span>
+<span class="err">    &quot;max_participants&quot;: 30,</span>
+<span class="err">    &quot;settings&quot;: {</span>
+<span class="err">        &quot;face_detection&quot;: true,</span>
+<span class="err">        &quot;object_detection&quot;: true,</span>
+<span class="err">        &quot;eye_tracking&quot;: &quot;medium&quot;,</span>
+<span class="err">        &quot;audio_monitoring&quot;: false</span>
+<span class="err">    }</span>
+<span class="err">}</span>
+</pre></div>
+</div>
+<p><strong>Réponse :</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Examen Final Physique&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;scheduled&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;start_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-06-25T09:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;end_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-06-25T11:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-06-18T10:30:00Z&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Obtenir une session</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">GET /api/v1/sessions/1</span>
+</pre></div>
+</div>
+<p><strong>Réponse :</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Examen Final Mathématiques&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Examen final de mathématiques&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;active&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;start_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-06-20T14:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;end_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-06-20T16:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;duration&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;participants&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jean Dupont&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jean.dupont@example.com&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;active&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;detections_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;risk_score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.25</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;face_detection&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;object_detection&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;eye_tracking&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;medium&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;audio_monitoring&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Mettre à jour une session</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">PUT /api/v1/sessions/1</span>
+<span class="err">Content-Type: application/json</span>
+
+<span class="err">{</span>
+<span class="err">    &quot;name&quot;: &quot;Examen Final Mathématiques - Modifié&quot;,</span>
+<span class="err">    &quot;settings&quot;: {</span>
+<span class="err">        &quot;eye_tracking&quot;: &quot;high&quot;</span>
+<span class="err">    }</span>
+<span class="err">}</span>
+</pre></div>
+</div>
+<p><strong>Supprimer une session</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">DELETE /api/v1/sessions/1</span>
+</pre></div>
+</div>
+</section>
+<section id="detections">
+<h3>Détections<a class="headerlink" href="#detections" title="Link to this heading"></a></h3>
+<p><strong>Lister les détections</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">GET /api/v1/sessions/1/detections</span>
+</pre></div>
+</div>
+<p><strong>Paramètres de requête :</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code> (string) : Type de détection (face, object, eye_movement, audio)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">severity</span></code> (string) : Niveau de gravité (low, medium, high)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">participant_id</span></code> (int) : ID du participant</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">timestamp_from</span></code> (string) : Timestamp de début</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">timestamp_to</span></code> (string) : Timestamp de fin</p></li>
+</ul>
+<p><strong>Réponse :</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;detections&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;session_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;participant_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;subtype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;phone&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;confidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.87</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;severity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;high&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-06-20T14:15:30Z&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;bbox&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">120</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">160</span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;screenshot_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/screenshots/123.jpg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Téléphone mobile détecté&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">47</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Obtenir une détection</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">GET /api/v1/detections/123</span>
+</pre></div>
+</div>
+<p><strong>Marquer une détection</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">PUT /api/v1/detections/123</span>
+<span class="err">Content-Type: application/json</span>
+
+<span class="err">{</span>
+<span class="err">    &quot;status&quot;: &quot;reviewed&quot;,</span>
+<span class="err">    &quot;action&quot;: &quot;false_positive&quot;,</span>
+<span class="err">    &quot;comment&quot;: &quot;Reflet sur les lunettes, pas un téléphone&quot;</span>
+<span class="err">}</span>
+</pre></div>
+</div>
+</section>
+<section id="participants">
+<h3>Participants<a class="headerlink" href="#participants" title="Link to this heading"></a></h3>
+<p><strong>Ajouter un participant</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">POST /api/v1/sessions/1/participants</span>
+<span class="err">Content-Type: application/json</span>
+
+<span class="err">{</span>
+<span class="err">    &quot;name&quot;: &quot;Marie Martin&quot;,</span>
+<span class="err">    &quot;email&quot;: &quot;marie.martin@example.com&quot;,</span>
+<span class="err">    &quot;student_id&quot;: &quot;12346&quot;,</span>
+<span class="err">    &quot;metadata&quot;: {</span>
+<span class="err">        &quot;group&quot;: &quot;A&quot;,</span>
+<span class="err">        &quot;special_needs&quot;: false</span>
+<span class="err">    }</span>
+<span class="err">}</span>
+</pre></div>
+</div>
+<p><strong>Obtenir un participant</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">GET /api/v1/participants/5</span>
+</pre></div>
+</div>
+<p><strong>Réponse :</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Marie Martin&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;marie.martin@example.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;student_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12346&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;active&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;join_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-06-20T14:02:15Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;camera_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;connected&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;detections_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;risk_score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;special_needs&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="controle-en-temps-reel">
+<h3>Contrôle en temps réel<a class="headerlink" href="#controle-en-temps-reel" title="Link to this heading"></a></h3>
+<p><strong>Démarrer une session</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">POST /api/v1/sessions/1/start</span>
+</pre></div>
+</div>
+<p><strong>Arrêter une session</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">POST /api/v1/sessions/1/stop</span>
+</pre></div>
+</div>
+<p><strong>État en temps réel</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">GET /api/v1/sessions/1/status</span>
+</pre></div>
+</div>
+<p><strong>Réponse :</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;session_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;active&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;uptime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3600</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;active_participants&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">27</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;total_detections&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;recent_detections&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">124</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;participant_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eye_movement&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;severity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;medium&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-06-20T15:45:12Z&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;system_health&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;cpu_usage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">45.2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;memory_usage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">67.8</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;gpu_usage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">23.1</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="rapports">
+<h3>Rapports<a class="headerlink" href="#rapports" title="Link to this heading"></a></h3>
+<p><strong>Générer un rapport</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">POST /api/v1/sessions/1/reports</span>
+<span class="err">Content-Type: application/json</span>
+
+<span class="err">{</span>
+<span class="err">    &quot;type&quot;: &quot;full&quot;,</span>
+<span class="err">    &quot;format&quot;: &quot;pdf&quot;,</span>
+<span class="err">    &quot;include_screenshots&quot;: true,</span>
+<span class="err">    &quot;include_videos&quot;: false,</span>
+<span class="err">    &quot;email_to&quot;: &quot;admin@school.com&quot;</span>
+<span class="err">}</span>
+</pre></div>
+</div>
+<p><strong>Réponse :</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;report_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rep_123456&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;generating&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;estimated_completion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-06-20T16:10:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;download_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Obtenir un rapport</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">GET /api/v1/reports/rep_123456</span>
+</pre></div>
+</div>
+<p><strong>Réponse :</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;report_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rep_123456&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;completed&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-06-20T16:05:30Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;download_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/downloads/reports/rep_123456.pdf&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;expires_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-06-27T16:05:30Z&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h3>
+<p><strong>Obtenir la configuration</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">GET /api/v1/config</span>
+</pre></div>
+</div>
+<p><strong>Réponse :</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;detection&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;face_detection&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;confidence_threshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;haarcascade&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;object_detection&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;confidence_threshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;yolo_v5&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;classes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;phone&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;book&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;laptop&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;eye_tracking&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;sensitivity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;medium&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;gaze_threshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;system&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;max_concurrent_sessions&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;video_resolution&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1280</span><span class="p">,</span><span class="w"> </span><span class="mi">720</span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;fps&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;storage_days&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Mettre à jour la configuration</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">PUT /api/v1/config</span>
+<span class="err">Content-Type: application/json</span>
+
+<span class="err">{</span>
+<span class="err">    &quot;detection&quot;: {</span>
+<span class="err">        &quot;object_detection&quot;: {</span>
+<span class="err">            &quot;confidence_threshold&quot;: 0.75</span>
+<span class="err">        }</span>
+<span class="err">    }</span>
+<span class="err">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="websocket-api">
+<h2>WebSocket API<a class="headerlink" href="#websocket-api" title="Link to this heading"></a></h2>
+<p>Pour les mises à jour en temps réel, ExamGuard Pro fournit une API WebSocket.</p>
+<p><strong>Connexion :</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">socket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;ws://localhost:5000/ws&#39;</span><span class="p">);</span>
+
+<span class="nx">socket</span><span class="p">.</span><span class="nx">onmessage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Nouvelle détection:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p><strong>Messages reçus :</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;detection&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;session_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;participant_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;detection_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;confidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.87</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-06-20T15:30:00Z&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Souscrire aux événements :</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;session_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;events&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;detections&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;participant_status&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="codes-d-erreur">
+<h2>Codes d’erreur<a class="headerlink" href="#codes-d-erreur" title="Link to this heading"></a></h2>
+<p>L’API utilise les codes de statut HTTP standards :</p>
+<p><strong>Format des erreurs :</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INVALID_SESSION&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Session not found or expired&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;session_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">999</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="exemples-d-integration">
+<h2>Exemples d’intégration<a class="headerlink" href="#exemples-d-integration" title="Link to this heading"></a></h2>
+<section id="python">
+<h3>Python<a class="headerlink" href="#python" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="k">class</span> <span class="nc">ExamGuardAPI</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_url</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base_url</span> <span class="o">=</span> <span class="n">base_url</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">token</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_authenticate</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Bearer </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">token</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span>
+        <span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">_authenticate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s1">/auth/login&#39;</span><span class="p">,</span>
+            <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="n">password</span><span class="p">}</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;token&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">create_session</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session_data</span><span class="p">):</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s1">/sessions&#39;</span><span class="p">,</span>
+            <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span>
+            <span class="n">json</span><span class="o">=</span><span class="n">session_data</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">get_detections</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">,</span> <span class="o">**</span><span class="n">filters</span><span class="p">):</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">filters</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">}</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s1">/sessions/</span><span class="si">{</span><span class="n">session_id</span><span class="si">}</span><span class="s1">/detections&#39;</span><span class="p">,</span>
+            <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span>
+            <span class="n">params</span><span class="o">=</span><span class="n">params</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="c1"># Utilisation</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">ExamGuardAPI</span><span class="p">(</span><span class="s1">&#39;http://localhost:5000/api/v1&#39;</span><span class="p">,</span> <span class="s1">&#39;admin&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">)</span>
+
+<span class="c1"># Créer une session</span>
+<span class="n">session</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">create_session</span><span class="p">({</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Examen Python&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;start_time&#39;</span><span class="p">:</span> <span class="s1">&#39;2025-06-25T10:00:00Z&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;duration&#39;</span><span class="p">:</span> <span class="mi">90</span>
+<span class="p">})</span>
+
+<span class="c1"># Récupérer les détections</span>
+<span class="n">detections</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_detections</span><span class="p">(</span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span> <span class="n">severity</span><span class="o">=</span><span class="s1">&#39;high&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="javascript">
+<h3>JavaScript<a class="headerlink" href="#javascript" title="Link to this heading"></a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">ExamGuardAPI</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">baseUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">baseUrl</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="nx">authenticate</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">baseUrl</span><span class="si">}</span><span class="sb">/auth/login`</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span><span class="p">},</span>
+<span class="w">            </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="nx">username</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="p">})</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">token</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">data</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="nx">createSession</span><span class="p">(</span><span class="nx">sessionData</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">baseUrl</span><span class="si">}</span><span class="sb">/sessions`</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="s1">&#39;Authorization&#39;</span><span class="o">:</span><span class="w"> </span><span class="sb">`Bearer </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">token</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
+<span class="w">                </span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">sessionData</span><span class="p">)</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="nx">getSessionStatus</span><span class="p">(</span><span class="nx">sessionId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">baseUrl</span><span class="si">}</span><span class="sb">/sessions/</span><span class="si">${</span><span class="nx">sessionId</span><span class="si">}</span><span class="sb">/status`</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;Authorization&#39;</span><span class="o">:</span><span class="w"> </span><span class="sb">`Bearer </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">token</span><span class="si">}</span><span class="sb">`</span><span class="p">}</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Utilisation</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">api</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ExamGuardAPI</span><span class="p">(</span><span class="s1">&#39;http://localhost:5000/api/v1&#39;</span><span class="p">);</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">authenticate</span><span class="p">(</span><span class="s1">&#39;admin&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;password&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">session</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">createSession</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Examen JavaScript&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">start_time</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;2025-06-25T14:00:00Z&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">duration</span><span class="o">:</span><span class="w"> </span><span class="mf">120</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="limites-de-taux">
+<h2>Limites de taux<a class="headerlink" href="#limites-de-taux" title="Link to this heading"></a></h2>
+<p>L’API impose des limites de taux pour éviter les abus :</p>
+<ul class="simple">
+<li><p><strong>Authentification</strong> : 5 tentatives par minute</p></li>
+<li><p><strong>Création de sessions</strong> : 10 par heure</p></li>
+<li><p><strong>Détections</strong> : 100 requêtes par minute</p></li>
+<li><p><strong>Rapports</strong> : 5 générations par heure</p></li>
+</ul>
+</section>
+<section id="sdk-officiels">
+<h2>SDK officiels<a class="headerlink" href="#sdk-officiels" title="Link to this heading"></a></h2>
+<p>Des SDK officiels sont disponibles pour :</p>
+<ul class="simple">
+<li><p><strong>Python</strong> : <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">examguard-sdk</span></code></p></li>
+<li><p><strong>JavaScript/Node.js</strong> : <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">examguard-js</span></code></p></li>
+<li><p><strong>PHP</strong> : <code class="docutils literal notranslate"><span class="pre">composer</span> <span class="pre">require</span> <span class="pre">examguard/php-sdk</span></code></p></li>
+</ul>
+<p><strong>Installation Python SDK :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>examguard-sdk
+</pre></div>
+</div>
+<p><strong>Utilisation :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">examguard</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="s1">&#39;http://localhost:5000&#39;</span><span class="p">,</span> <span class="s1">&#39;admin&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">)</span>
+
+<span class="c1"># Créer une session</span>
+<span class="n">session</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sessions</span><span class="o">.</span><span class="n">create</span><span class="p">({</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Mon Examen&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;duration&#39;</span><span class="p">:</span> <span class="mi">120</span>
+<span class="p">})</span>
+
+<span class="c1"># Écouter les détections en temps réel</span>
+<span class="nd">@client</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s1">&#39;detection&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">handle_detection</span><span class="p">(</span><span class="n">detection</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Détection: </span><span class="si">{</span><span class="n">detection</span><span class="o">.</span><span class="n">type</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">detection</span><span class="o">.</span><span class="n">confidence</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">client</span><span class="o">.</span><span class="n">start_listening</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="support-et-documentation">
+<h2>Support et documentation<a class="headerlink" href="#support-et-documentation" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Documentation interactive</strong> : <code class="docutils literal notranslate"><span class="pre">http://localhost:5000/api/docs</span></code></p></li>
+<li><p><strong>Collection Postman</strong> : <a class="reference external" href="https://github.com/examguard-pro/postman-collection">Télécharger</a></p></li>
+<li><p><strong>Support technique</strong> : <a class="reference external" href="mailto:support&#37;&#52;&#48;examguard-pro&#46;com">support<span>&#64;</span>examguard-pro<span>&#46;</span>com</a></p></li>
+<li><p><strong>Issues GitHub</strong> : <a class="reference external" href="https://github.com/examguard-pro/examguard-pro/issues">GitHub Issues</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="utilisation.html" class="btn btn-neutral float-left" title="Utilisation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="models.html" class="btn btn-neutral float-right" title="Modèles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

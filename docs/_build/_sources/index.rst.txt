@@ -1,0 +1,79 @@
+ExamGuard Pro Documentation
+===========================
+
+Bienvenue dans la documentation d'**ExamGuard Pro** - Système intelligent de surveillance d'examens.
+
+ExamGuard Pro est un système avancé de détection de triche utilisant la vision par ordinateur et l'intelligence artificielle pour surveiller automatiquement les examens en ligne.
+
+.. note::
+   Ce projet est open-source et en constante amélioration. Consultez notre `repository GitHub <https://github.com/examguard-pro/examguard-pro>`_ pour les dernières mises à jour.
+
+Fonctionnalités principales
+---------------------------
+
+🎥 **Détection en temps réel**
+   Analyse les mouvements suspects en temps réel pendant les examens
+
+🧠 **IA Avancée**
+   Utilise des modèles de deep learning pour une détection précise
+
+📊 **Rapports détaillés**
+   Génère des rapports complets sur les comportements détectés
+
+🌐 **Interface Web**
+   Interface Flask moderne et intuitive
+
+Démarrage rapide
+----------------
+
+1. **Installation**::
+
+    git clone https://github.com/examguard-pro/examguard-pro.git
+    cd examguard-pro
+    pip install -r requirements.txt
+
+2. **Configuration**::
+
+    cp config.example.py config.py
+    # Modifiez config.py selon vos besoins
+
+3. **Lancement**::
+
+    python app.py
+
+4. **Accès à l'interface**::
+
+    Ouvrez votre navigateur sur http://localhost:5000
+
+Guide de navigation
+-------------------
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contenu:
+
+   introduction
+   installation
+   utilisation
+   api
+   models
+   download
+
+Indices et tables
+=================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+Support et Communauté
+=====================
+
+- **Issues GitHub**: `Signaler un problème <https://github.com/examguard-pro/examguard-pro/issues>`_
+- **Discussions**: `Forum de discussion <https://github.com/examguard-pro/examguard-pro/discussions>`_
+- **Documentation**: `Documentation complète <https://examguard-pro.readthedocs.io>`_
+
+Licence
+=======
+
+Ce projet est sous licence MIT. Voir le fichier ``LICENSE`` pour plus de détails.

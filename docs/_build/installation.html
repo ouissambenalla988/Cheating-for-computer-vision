@@ -1,0 +1,417 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation &mdash; Cheating-for-computer-vision 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Utilisation" href="utilisation.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Cheating-for-computer-vision
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contenu:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequis">Prérequis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-systeme-recommandee">Configuration système recommandée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-des-dependances">Installation des dépendances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-via-docker">Installation via Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-manuelle-des-dependances">Installation manuelle des dépendances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-sur-differents-os">Installation sur différents OS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ubuntu-debian">Ubuntu/Debian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#windows">Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#macos">macOS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#verification-de-l-installation">Vérification de l’installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#depannage">Dépannage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#variables-d-environnement">Variables d’environnement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mise-a-jour">Mise à jour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prochaine-etape">Prochaine étape</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utilisation.html">Utilisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Modèles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="download.html">Téléchargement</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Cheating-for-computer-vision</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
+<p>Cette section vous guide dans l’installation d’ExamGuard Pro.</p>
+<section id="prerequis">
+<h2>Prérequis<a class="headerlink" href="#prerequis" title="Link to this heading"></a></h2>
+<p>Avant d’installer ExamGuard Pro, assurez-vous d’avoir :</p>
+<ul class="simple">
+<li><p><strong>Python 3.8 ou supérieur</strong></p></li>
+<li><p><strong>OpenCV 4.5+</strong></p></li>
+<li><p><strong>TensorFlow 2.x</strong></p></li>
+<li><p><strong>Flask</strong></p></li>
+<li><p><strong>Une webcam</strong> pour la détection en temps réel</p></li>
+</ul>
+</section>
+<section id="configuration-systeme-recommandee">
+<h2>Configuration système recommandée<a class="headerlink" href="#configuration-systeme-recommandee" title="Link to this heading"></a></h2>
+<p><strong>Minimum requis :</strong></p>
+<ul class="simple">
+<li><p>RAM : 4 GB</p></li>
+<li><p>CPU : Intel Core i3 ou équivalent</p></li>
+<li><p>GPU : Optionnel (accélération recommandée)</p></li>
+<li><p>Stockage : 500 MB d’espace libre</p></li>
+</ul>
+<p><strong>Configuration recommandée :</strong></p>
+<ul class="simple">
+<li><p>RAM : 8 GB ou plus</p></li>
+<li><p>CPU : Intel Core i5 ou supérieur</p></li>
+<li><p>GPU : NVIDIA GTX 1050 ou supérieur (pour CUDA)</p></li>
+<li><p>Stockage : 2 GB d’espace libre</p></li>
+</ul>
+</section>
+<section id="installation-des-dependances">
+<h2>Installation des dépendances<a class="headerlink" href="#installation-des-dependances" title="Link to this heading"></a></h2>
+<p><strong>1. Cloner le repository</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/examguard-pro/examguard-pro.git
+<span class="nb">cd</span><span class="w"> </span>examguard-pro
+</pre></div>
+</div>
+<p><strong>2. Créer un environnement virtuel (recommandé)</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Créer l&#39;environnement virtuel</span>
+python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+
+<span class="c1"># Activer l&#39;environnement (Windows)</span>
+venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+
+<span class="c1"># Activer l&#39;environnement (Linux/macOS)</span>
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</pre></div>
+</div>
+<p><strong>3. Installer les dépendances Python</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<p><strong>4. Installation des modèles pré-entraînés</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Télécharger les modèles (optionnel)</span>
+python<span class="w"> </span>scripts/download_models.py
+</pre></div>
+</div>
+</section>
+<section id="installation-via-docker">
+<h2>Installation via Docker<a class="headerlink" href="#installation-via-docker" title="Link to this heading"></a></h2>
+<p>Pour une installation simplifiée avec Docker :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cloner le repository</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/examguard-pro/examguard-pro.git
+<span class="nb">cd</span><span class="w"> </span>examguard-pro
+
+<span class="c1"># Construire l&#39;image Docker</span>
+docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>examguard-pro<span class="w"> </span>.
+
+<span class="c1"># Lancer le conteneur</span>
+docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">5000</span>:5000<span class="w"> </span>-v<span class="w"> </span>/dev/video0:/dev/video0<span class="w"> </span>examguard-pro
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>L’option <code class="docutils literal notranslate"><span class="pre">-v</span> <span class="pre">/dev/video0:/dev/video0</span></code> permet d’accéder à la webcam depuis le conteneur.</p>
+</div>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
+<p><strong>1. Fichier de configuration</strong></p>
+<p>Copiez le fichier de configuration exemple :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>config.example.py<span class="w"> </span>config.py
+</pre></div>
+</div>
+<p><strong>2. Modifier la configuration</strong></p>
+<p>Éditez le fichier <code class="docutils literal notranslate"><span class="pre">config.py</span></code> :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Configuration de base</span>
+<span class="n">DEBUG</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="s1">&#39;votre-clé-secrète-très-sécurisée&#39;</span>
+
+<span class="c1"># Configuration de la base de données</span>
+<span class="n">DATABASE_URL</span> <span class="o">=</span> <span class="s1">&#39;sqlite:///examguard.db&#39;</span>
+
+<span class="c1"># Configuration de la webcam</span>
+<span class="n">CAMERA_INDEX</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Index de votre webcam</span>
+
+<span class="c1"># Configuration des modèles IA</span>
+<span class="n">MODEL_PATH</span> <span class="o">=</span> <span class="s1">&#39;models/&#39;</span>
+<span class="n">DETECTION_THRESHOLD</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+<span class="c1"># Configuration des alertes</span>
+<span class="n">ENABLE_EMAIL_ALERTS</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">EMAIL_SERVER</span> <span class="o">=</span> <span class="s1">&#39;smtp.gmail.com&#39;</span>
+<span class="n">EMAIL_PORT</span> <span class="o">=</span> <span class="mi">587</span>
+<span class="n">EMAIL_USERNAME</span> <span class="o">=</span> <span class="s1">&#39;your-email@gmail.com&#39;</span>
+<span class="n">EMAIL_PASSWORD</span> <span class="o">=</span> <span class="s1">&#39;your-password&#39;</span>
+</pre></div>
+</div>
+<p><strong>3. Initialiser la base de données</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>scripts/init_db.py
+</pre></div>
+</div>
+</section>
+<section id="installation-manuelle-des-dependances">
+<h2>Installation manuelle des dépendances<a class="headerlink" href="#installation-manuelle-des-dependances" title="Link to this heading"></a></h2>
+<p>Si vous préférez installer les dépendances manuellement :</p>
+<p><strong>Dépendances principales :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">flask</span><span class="o">==</span><span class="m">2</span>.3.3
+pip<span class="w"> </span>install<span class="w"> </span>opencv-python<span class="o">==</span><span class="m">4</span>.8.0.76
+pip<span class="w"> </span>install<span class="w"> </span><span class="nv">tensorflow</span><span class="o">==</span><span class="m">2</span>.13.0
+pip<span class="w"> </span>install<span class="w"> </span><span class="nv">numpy</span><span class="o">==</span><span class="m">1</span>.24.3
+pip<span class="w"> </span>install<span class="w"> </span><span class="nv">pillow</span><span class="o">==</span><span class="m">10</span>.0.0
+</pre></div>
+</div>
+<p><strong>Dépendances pour l’interface web :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>flask-socketio<span class="o">==</span><span class="m">5</span>.3.6
+pip<span class="w"> </span>install<span class="w"> </span>flask-cors<span class="o">==</span><span class="m">4</span>.0.0
+pip<span class="w"> </span>install<span class="w"> </span>flask-restful<span class="o">==</span><span class="m">0</span>.3.10
+</pre></div>
+</div>
+<p><strong>Dépendances pour la base de données :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">sqlalchemy</span><span class="o">==</span><span class="m">2</span>.0.21
+pip<span class="w"> </span>install<span class="w"> </span>flask-sqlalchemy<span class="o">==</span><span class="m">3</span>.0.5
+pip<span class="w"> </span>install<span class="w"> </span><span class="nv">alembic</span><span class="o">==</span><span class="m">1</span>.12.0
+</pre></div>
+</div>
+</section>
+<section id="installation-sur-differents-os">
+<h2>Installation sur différents OS<a class="headerlink" href="#installation-sur-differents-os" title="Link to this heading"></a></h2>
+<section id="ubuntu-debian">
+<h3>Ubuntu/Debian<a class="headerlink" href="#ubuntu-debian" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Installer les dépendances système</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-pip<span class="w"> </span>python3-venv
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libopencv-dev<span class="w"> </span>python3-opencv
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ffmpeg
+
+<span class="c1"># Suivre les étapes d&#39;installation standard</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/examguard-pro/examguard-pro.git
+<span class="nb">cd</span><span class="w"> </span>examguard-pro
+python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</section>
+<section id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Link to this heading"></a></h3>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span><span class="c1">REM Installer Python depuis python.org</span>
+<span class="c1">REM Ouvrir PowerShell en tant qu&#39;administrateur</span>
+
+git clone https://github.com/examguard-pro/examguard-pro.git
+<span class="k">cd</span> examguard-pro
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+</pre></div>
+</div>
+</section>
+<section id="macos">
+<h3>macOS<a class="headerlink" href="#macos" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Installer Homebrew si nécessaire</span>
+/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>
+
+<span class="c1"># Installer Python</span>
+brew<span class="w"> </span>install<span class="w"> </span>python
+
+<span class="c1"># Cloner et installer</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/examguard-pro/examguard-pro.git
+<span class="nb">cd</span><span class="w"> </span>examguard-pro
+python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</section>
+</section>
+<section id="verification-de-l-installation">
+<h2>Vérification de l’installation<a class="headerlink" href="#verification-de-l-installation" title="Link to this heading"></a></h2>
+<p><strong>1. Test des imports Python</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tester les imports principaux</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;import cv2, tensorflow, flask; print(&#39;Installation réussie!&#39;)&quot;</span>
+</pre></div>
+</div>
+<p><strong>2. Test de la webcam</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>scripts/test_camera.py
+</pre></div>
+</div>
+<p><strong>3. Lancement du serveur de test</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>app.py
+</pre></div>
+</div>
+<p>Accédez ensuite à <code class="docutils literal notranslate"><span class="pre">http://localhost:5000</span></code> dans votre navigateur.</p>
+</section>
+<section id="depannage">
+<h2>Dépannage<a class="headerlink" href="#depannage" title="Link to this heading"></a></h2>
+<p><strong>Problème : Erreur d’import OpenCV</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution pour Ubuntu/Debian</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-opencv
+
+<span class="c1"># Solution alternative</span>
+pip<span class="w"> </span>uninstall<span class="w"> </span>opencv-python
+pip<span class="w"> </span>install<span class="w"> </span>opencv-python-headless
+</pre></div>
+</div>
+<p><strong>Problème : TensorFlow ne démarre pas</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vérifier la version de Python</span>
+python<span class="w"> </span>--version<span class="w">  </span><span class="c1"># Doit être 3.8+</span>
+
+<span class="c1"># Réinstaller TensorFlow</span>
+pip<span class="w"> </span>uninstall<span class="w"> </span>tensorflow
+pip<span class="w"> </span>install<span class="w"> </span><span class="nv">tensorflow</span><span class="o">==</span><span class="m">2</span>.13.0
+</pre></div>
+</div>
+<p><strong>Problème : Webcam non détectée</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lister les webcams disponibles</span>
+python<span class="w"> </span>scripts/list_cameras.py
+
+<span class="c1"># Modifier l&#39;index dans config.py</span>
+<span class="nv">CAMERA_INDEX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w">  </span><span class="c1"># Essayer différents index</span>
+</pre></div>
+</div>
+<p><strong>Problème : Permissions webcam sur Linux</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ajouter l&#39;utilisateur au groupe video</span>
+sudo<span class="w"> </span>usermod<span class="w"> </span>-a<span class="w"> </span>-G<span class="w"> </span>video<span class="w"> </span><span class="nv">$USER</span>
+
+<span class="c1"># Redémarrer la session</span>
+<span class="nb">logout</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>login
+</pre></div>
+</div>
+</section>
+<section id="variables-d-environnement">
+<h2>Variables d’environnement<a class="headerlink" href="#variables-d-environnement" title="Link to this heading"></a></h2>
+<p>Vous pouvez utiliser des variables d’environnement pour la configuration :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">EXAMGUARD_DEBUG</span><span class="o">=</span>True
+<span class="nb">export</span><span class="w"> </span><span class="nv">EXAMGUARD_SECRET_KEY</span><span class="o">=</span>your-secret-key
+<span class="nb">export</span><span class="w"> </span><span class="nv">EXAMGUARD_DATABASE_URL</span><span class="o">=</span>sqlite:///examguard.db
+<span class="nb">export</span><span class="w"> </span><span class="nv">EXAMGUARD_CAMERA_INDEX</span><span class="o">=</span><span class="m">0</span>
+</pre></div>
+</div>
+<p>Ou créer un fichier <code class="docutils literal notranslate"><span class="pre">.env</span></code> :</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>EXAMGUARD_DEBUG=True
+EXAMGUARD_SECRET_KEY=your-secret-key
+EXAMGUARD_DATABASE_URL=sqlite:///examguard.db
+EXAMGUARD_CAMERA_INDEX=0
+</pre></div>
+</div>
+</section>
+<section id="mise-a-jour">
+<h2>Mise à jour<a class="headerlink" href="#mise-a-jour" title="Link to this heading"></a></h2>
+<p>Pour mettre à jour ExamGuard Pro :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sauvegarder la configuration</span>
+cp<span class="w"> </span>config.py<span class="w"> </span>config.backup.py
+
+<span class="c1"># Mettre à jour le code</span>
+git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+
+<span class="c1"># Mettre à jour les dépendances</span>
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt<span class="w"> </span>--upgrade
+
+<span class="c1"># Appliquer les migrations de base de données</span>
+python<span class="w"> </span>scripts/migrate_db.py
+
+<span class="c1"># Restaurer la configuration</span>
+cp<span class="w"> </span>config.backup.py<span class="w"> </span>config.py
+</pre></div>
+</div>
+</section>
+<section id="prochaine-etape">
+<h2>Prochaine étape<a class="headerlink" href="#prochaine-etape" title="Link to this heading"></a></h2>
+<p>Une fois l’installation terminée, consultez le guide <a class="reference internal" href="utilisation.html"><span class="doc">Utilisation</span></a> pour apprendre à utiliser ExamGuard Pro.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="utilisation.html" class="btn btn-neutral float-right" title="Utilisation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

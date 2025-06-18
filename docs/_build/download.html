@@ -1,0 +1,747 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Téléchargement &mdash; Cheating-for-computer-vision 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Modèles" href="models.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Cheating-for-computer-vision
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contenu:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilisation.html">Utilisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Modèles</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Téléchargement</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#versions-disponibles">Versions disponibles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#version-stable">Version stable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#version-de-developpement">Version de développement</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#methodes-de-telechargement">Méthodes de téléchargement</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#github-release">GitHub Release</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#git-clone">Git Clone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#docker-hub">Docker Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pypi-package">PyPI Package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#installateurs">Installateurs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#windows">Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#macos">macOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linux">Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#assets-et-modeles">Assets et modèles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modeles-pre-entraines">Modèles pré-entraînés</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modeles-gpu-optimises">Modèles GPU optimisés</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bases-de-donnees-d-exemple">Bases de données d’exemple</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#documentation-hors-ligne">Documentation hors ligne</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#checksums-et-signatures">Checksums et signatures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#verification-d-integrite">Vérification d’intégrité</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#signature-gpg">Signature GPG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-rapide">Installation rapide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#script-d-installation-automatique">Script d’installation automatique</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#docker-compose">Docker Compose</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#versions-anterieures">Versions antérieures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#historique-des-versions">Historique des versions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#support-et-maintenance">Support et maintenance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cycle-de-vie-des-versions">Cycle de vie des versions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mises-a-jour-automatiques">Mises à jour automatiques</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#licences-et-conditions">Licences et conditions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#licence-open-source">Licence Open Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#licence-commerciale">Licence commerciale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dependances-tierces">Dépendances tierces</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#faq-telechargement">FAQ Téléchargement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#assistance-telechargement">Assistance téléchargement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prochaine-etape">Prochaine étape</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Cheating-for-computer-vision</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Téléchargement</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/download.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="telechargement">
+<h1>Téléchargement<a class="headerlink" href="#telechargement" title="Link to this heading"></a></h1>
+<p>Cette section vous guide pour télécharger et installer ExamGuard Pro sur votre système.</p>
+<section id="versions-disponibles">
+<h2>Versions disponibles<a class="headerlink" href="#versions-disponibles" title="Link to this heading"></a></h2>
+<section id="version-stable">
+<h3>Version stable<a class="headerlink" href="#version-stable" title="Link to this heading"></a></h3>
+<p><strong>ExamGuard Pro v3.1</strong> (Recommandée)</p>
+<ul class="simple">
+<li><p>Date de sortie : 18 juin 2025</p></li>
+<li><p>Stabilité : Production</p></li>
+<li><p>Support : LTS (Long Term Support)</p></li>
+<li><p>Compatibilité : Python 3.8+</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>La version 3.1 est la version stable recommandée pour un usage en production.</p>
+</div>
+<p><strong>Nouveautés v3.1 :</strong></p>
+<ul class="simple">
+<li><p>✅ Amélioration des performances de détection (+25%)</p></li>
+<li><p>✅ Nouveau modèle de suivi oculaire</p></li>
+<li><p>✅ Interface utilisateur redesignée</p></li>
+<li><p>✅ Support GPU amélioré</p></li>
+<li><p>✅ API REST complète</p></li>
+<li><p>✅ Rapports PDF automatiques</p></li>
+<li><p>✅ Intégration Moodle/Canvas</p></li>
+</ul>
+</section>
+<section id="version-de-developpement">
+<h3>Version de développement<a class="headerlink" href="#version-de-developpement" title="Link to this heading"></a></h3>
+<p><strong>ExamGuard Pro v3.2-beta</strong></p>
+<ul class="simple">
+<li><p>Statut : Bêta</p></li>
+<li><p>Fonctionnalités expérimentales</p></li>
+<li><p>Tests requis avant production</p></li>
+</ul>
+<p><strong>Nouvelles fonctionnalités (bêta) :</strong></p>
+<ul class="simple">
+<li><p>🧪 Détection audio avancée</p></li>
+<li><p>🧪 Reconnaissance vocale</p></li>
+<li><p>🧪 Analyse comportementale IA</p></li>
+<li><p>🧪 Support multi-caméras</p></li>
+<li><p>🧪 Intégration cloud</p></li>
+</ul>
+</section>
+</section>
+<section id="methodes-de-telechargement">
+<h2>Méthodes de téléchargement<a class="headerlink" href="#methodes-de-telechargement" title="Link to this heading"></a></h2>
+<section id="github-release">
+<h3>GitHub Release<a class="headerlink" href="#github-release" title="Link to this heading"></a></h3>
+<p><strong>Version complète avec assets :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Télécharger la dernière version</span>
+curl<span class="w"> </span>-L<span class="w"> </span>https://github.com/examguard-pro/examguard-pro/archive/v3.1.tar.gz<span class="w"> </span>-o<span class="w"> </span>examguard-pro-v3.1.tar.gz
+
+<span class="c1"># Extraire l&#39;archive</span>
+tar<span class="w"> </span>-xzf<span class="w"> </span>examguard-pro-v3.1.tar.gz
+<span class="nb">cd</span><span class="w"> </span>examguard-pro-3.1
+</pre></div>
+</div>
+<p><strong>Liens directs :</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/examguard-pro/examguard-pro/archive/v3.1.zip">📦 Code source (ZIP)</a></p></li>
+<li><p><a class="reference external" href="https://github.com/examguard-pro/examguard-pro/archive/v3.1.tar.gz">📦 Code source (TAR.GZ)</a></p></li>
+<li><p><a class="reference external" href="https://github.com/examguard-pro/examguard-pro/releases/tag/v3.1">📋 Notes de version</a></p></li>
+</ul>
+</section>
+<section id="git-clone">
+<h3>Git Clone<a class="headerlink" href="#git-clone" title="Link to this heading"></a></h3>
+<p><strong>Cloner le repository complet :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Version stable</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/examguard-pro/examguard-pro.git
+<span class="nb">cd</span><span class="w"> </span>examguard-pro
+git<span class="w"> </span>checkout<span class="w"> </span>v3.1
+</pre></div>
+</div>
+<p><strong>Cloner la branche de développement :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Version de développement</span>
+git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>develop<span class="w"> </span>https://github.com/examguard-pro/examguard-pro.git
+</pre></div>
+</div>
+</section>
+<section id="docker-hub">
+<h3>Docker Hub<a class="headerlink" href="#docker-hub" title="Link to this heading"></a></h3>
+<p><strong>Images Docker officielles :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Image stable</span>
+docker<span class="w"> </span>pull<span class="w"> </span>examguardpro/examguard:3.1
+
+<span class="c1"># Image avec GPU</span>
+docker<span class="w"> </span>pull<span class="w"> </span>examguardpro/examguard:3.1-gpu
+
+<span class="c1"># Image de développement</span>
+docker<span class="w"> </span>pull<span class="w"> </span>examguardpro/examguard:latest
+</pre></div>
+</div>
+</section>
+<section id="pypi-package">
+<h3>PyPI Package<a class="headerlink" href="#pypi-package" title="Link to this heading"></a></h3>
+<p><strong>Installation via pip :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Version stable</span>
+pip<span class="w"> </span>install<span class="w"> </span>examguard-pro<span class="o">==</span><span class="m">3</span>.1.0
+
+<span class="c1"># Dernière version</span>
+pip<span class="w"> </span>install<span class="w"> </span>examguard-pro
+
+<span class="c1"># Version avec dépendances GPU</span>
+pip<span class="w"> </span>install<span class="w"> </span>examguard-pro<span class="o">[</span>gpu<span class="o">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="installateurs">
+<h2>Installateurs<a class="headerlink" href="#installateurs" title="Link to this heading"></a></h2>
+<section id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Link to this heading"></a></h3>
+<p><strong>Installateur MSI (Recommandé) :</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://releases.examguard-pro.com/v3.1/ExamGuard-Pro-3.1-x64.msi">📥 ExamGuard-Pro-3.1-x64.msi</a> (64-bit)</p></li>
+<li><p><a class="reference external" href="https://releases.examguard-pro.com/v3.1/ExamGuard-Pro-3.1-x86.msi">📥 ExamGuard-Pro-3.1-x86.msi</a> (32-bit)</p></li>
+</ul>
+<p><strong>Installation :</strong></p>
+<ol class="arabic simple">
+<li><p>Téléchargez le fichier MSI</p></li>
+<li><p>Double-cliquez pour lancer l’installation</p></li>
+<li><p>Suivez l’assistant d’installation</p></li>
+<li><p>ExamGuard Pro sera installé dans <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\ExamGuard</span> <span class="pre">Pro</span></code></p></li>
+</ol>
+<p><strong>Installateur EXE (Portable) :</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://releases.examguard-pro.com/v3.1/ExamGuard-Pro-3.1-Portable.exe">📥 ExamGuard-Pro-3.1-Portable.exe</a></p></li>
+</ul>
+<p><strong>Configuration système requise Windows :</strong></p>
+<ul class="simple">
+<li><p>Windows 10/11 (64-bit recommandé)</p></li>
+<li><p>4 GB RAM minimum (8 GB recommandé)</p></li>
+<li><p>2 GB d’espace disque</p></li>
+<li><p>Webcam compatible</p></li>
+<li><p>.NET Framework 4.8+</p></li>
+</ul>
+</section>
+<section id="macos">
+<h3>macOS<a class="headerlink" href="#macos" title="Link to this heading"></a></h3>
+<p><strong>Paquet DMG :</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://releases.examguard-pro.com/v3.1/ExamGuard-Pro-3.1.dmg">📥 ExamGuard-Pro-3.1.dmg</a> (Universal Binary)</p></li>
+</ul>
+<p><strong>Installation :</strong></p>
+<ol class="arabic simple">
+<li><p>Téléchargez le fichier DMG</p></li>
+<li><p>Montez l’image disque</p></li>
+<li><p>Glissez ExamGuard Pro vers Applications</p></li>
+<li><p>Lancez depuis le Launchpad</p></li>
+</ol>
+<p><strong>Homebrew (Développeurs) :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ajouter le tap</span>
+brew<span class="w"> </span>tap<span class="w"> </span>examguard-pro/tap
+
+<span class="c1"># Installer</span>
+brew<span class="w"> </span>install<span class="w"> </span>examguard-pro
+</pre></div>
+</div>
+<p><strong>Configuration système requise macOS :</strong></p>
+<ul class="simple">
+<li><p>macOS 10.15+ (Catalina ou plus récent)</p></li>
+<li><p>4 GB RAM minimum</p></li>
+<li><p>2 GB d’espace disque</p></li>
+<li><p>Webcam intégrée ou externe</p></li>
+<li><p>Permissions caméra autorisées</p></li>
+</ul>
+</section>
+<section id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Link to this heading"></a></h3>
+<p><strong>Paquets DEB (Ubuntu/Debian) :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Télécharger le paquet</span>
+wget<span class="w"> </span>https://releases.examguard-pro.com/v3.1/examguard-pro_3.1.0_amd64.deb
+
+<span class="c1"># Installer</span>
+sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>examguard-pro_3.1.0_amd64.deb
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-f<span class="w">  </span><span class="c1"># Résoudre les dépendances</span>
+</pre></div>
+</div>
+<p><strong>Paquets RPM (CentOS/RHEL/Fedora) :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Télécharger le paquet</span>
+wget<span class="w"> </span>https://releases.examguard-pro.com/v3.1/examguard-pro-3.1.0-1.x86_64.rpm
+
+<span class="c1"># Installer (CentOS/RHEL)</span>
+sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>examguard-pro-3.1.0-1.x86_64.rpm
+
+<span class="c1"># Installer (Fedora)</span>
+sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>examguard-pro-3.1.0-1.x86_64.rpm
+</pre></div>
+</div>
+<p><strong>AppImage (Distribution universelle) :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Télécharger</span>
+wget<span class="w"> </span>https://releases.examguard-pro.com/v3.1/ExamGuard-Pro-3.1.AppImage
+
+<span class="c1"># Rendre exécutable</span>
+chmod<span class="w"> </span>+x<span class="w"> </span>ExamGuard-Pro-3.1.AppImage
+
+<span class="c1"># Lancer</span>
+./ExamGuard-Pro-3.1.AppImage
+</pre></div>
+</div>
+<p><strong>Snap Package :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>snap<span class="w"> </span>install<span class="w"> </span>examguard-pro
+</pre></div>
+</div>
+<p><strong>Configuration système requise Linux :</strong></p>
+<ul class="simple">
+<li><p>Distribution Linux moderne (Ubuntu 20.04+, CentOS 8+)</p></li>
+<li><p>4 GB RAM minimum</p></li>
+<li><p>Python 3.8+ (pour l’installation source)</p></li>
+<li><p>Pilotes webcam v4l2</p></li>
+<li><p>X11 ou Wayland</p></li>
+</ul>
+</section>
+</section>
+<section id="assets-et-modeles">
+<h2>Assets et modèles<a class="headerlink" href="#assets-et-modeles" title="Link to this heading"></a></h2>
+<section id="modeles-pre-entraines">
+<h3>Modèles pré-entraînés<a class="headerlink" href="#modeles-pre-entraines" title="Link to this heading"></a></h3>
+<p><strong>Pack de modèles standard :</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://releases.examguard-pro.com/models/examguard-models-v3.1.zip">📦 examguard-models-v3.1.zip</a> (150 MB)</p></li>
+</ul>
+<p><strong>Contenu du pack :</strong></p>
+<ul class="simple">
+<li><p>Modèles de détection faciale (Haar Cascade, MTCNN)</p></li>
+<li><p>Modèles de détection d’objets (YOLOv5, YOLOv8)</p></li>
+<li><p>Modèles de suivi oculaire (MediaPipe)</p></li>
+<li><p>Classificateurs comportementaux</p></li>
+<li><p>Fichiers de configuration</p></li>
+</ul>
+<p><strong>Installation des modèles :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Télécharger et extraire</span>
+wget<span class="w"> </span>https://releases.examguard-pro.com/models/examguard-models-v3.1.zip
+unzip<span class="w"> </span>examguard-models-v3.1.zip<span class="w"> </span>-d<span class="w"> </span>models/
+
+<span class="c1"># Ou utiliser le script d&#39;installation</span>
+python<span class="w"> </span>scripts/download_models.py
+</pre></div>
+</div>
+</section>
+<section id="modeles-gpu-optimises">
+<h3>Modèles GPU optimisés<a class="headerlink" href="#modeles-gpu-optimises" title="Link to this heading"></a></h3>
+<p><strong>Pack GPU (CUDA) :</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://releases.examguard-pro.com/models/examguard-models-gpu-v3.1.zip">📦 examguard-models-gpu-v3.1.zip</a> (300 MB)</p></li>
+</ul>
+<p><strong>Modèles TensorRT :</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://releases.examguard-pro.com/models/examguard-tensorrt-v3.1.zip">📦 examguard-tensorrt-v3.1.zip</a> (200 MB)</p></li>
+</ul>
+</section>
+<section id="bases-de-donnees-d-exemple">
+<h3>Bases de données d’exemple<a class="headerlink" href="#bases-de-donnees-d-exemple" title="Link to this heading"></a></h3>
+<p><strong>Jeu de données de test :</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://releases.examguard-pro.com/data/examguard-test-data.zip">📦 examguard-test-data.zip</a> (50 MB)</p></li>
+</ul>
+<p><strong>Vidéos d’exemple :</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://releases.examguard-pro.com/data/examguard-sample-videos.zip">📦 examguard-sample-videos.zip</a> (100 MB)</p></li>
+</ul>
+</section>
+<section id="documentation-hors-ligne">
+<h3>Documentation hors ligne<a class="headerlink" href="#documentation-hors-ligne" title="Link to this heading"></a></h3>
+<p><strong>Documentation PDF :</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://releases.examguard-pro.com/docs/ExamGuard-Pro-Documentation-v3.1.pdf">📄 ExamGuard-Pro-Documentation-v3.1.pdf</a> (5 MB)</p></li>
+</ul>
+<p><strong>Documentation HTML :</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://releases.examguard-pro.com/docs/examguard-docs-html-v3.1.zip">📦 examguard-docs-html-v3.1.zip</a> (10 MB)</p></li>
+</ul>
+</section>
+</section>
+<section id="checksums-et-signatures">
+<h2>Checksums et signatures<a class="headerlink" href="#checksums-et-signatures" title="Link to this heading"></a></h2>
+<section id="verification-d-integrite">
+<h3>Vérification d’intégrité<a class="headerlink" href="#verification-d-integrite" title="Link to this heading"></a></h3>
+<p><strong>Fichier de checksums SHA256 :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Télécharger les checksums</span>
+wget<span class="w"> </span>https://releases.examguard-pro.com/v3.1/SHA256SUMS
+
+<span class="c1"># Vérifier un fichier</span>
+sha256sum<span class="w"> </span>-c<span class="w"> </span>SHA256SUMS<span class="w"> </span>--ignore-missing
+</pre></div>
+</div>
+<p><strong>Exemple de checksums :</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>a1b2c3d4e5f6... ExamGuard-Pro-3.1-x64.msi
+f6e5d4c3b2a1... examguard-pro-v3.1.tar.gz
+9876543210ab... ExamGuard-Pro-3.1.dmg
+</pre></div>
+</div>
+</section>
+<section id="signature-gpg">
+<h3>Signature GPG<a class="headerlink" href="#signature-gpg" title="Link to this heading"></a></h3>
+<p><strong>Clé publique ExamGuard Pro :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importer la clé publique</span>
+gpg<span class="w"> </span>--keyserver<span class="w"> </span>keyserver.ubuntu.com<span class="w"> </span>--recv-keys<span class="w"> </span>0x12345ABCDEF
+
+<span class="c1"># Vérifier une signature</span>
+gpg<span class="w"> </span>--verify<span class="w"> </span>examguard-pro-v3.1.tar.gz.sig<span class="w"> </span>examguard-pro-v3.1.tar.gz
+</pre></div>
+</div>
+</section>
+</section>
+<section id="installation-rapide">
+<h2>Installation rapide<a class="headerlink" href="#installation-rapide" title="Link to this heading"></a></h2>
+<section id="script-d-installation-automatique">
+<h3>Script d’installation automatique<a class="headerlink" href="#script-d-installation-automatique" title="Link to this heading"></a></h3>
+<p><strong>Linux/macOS :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Installation one-liner</span>
+curl<span class="w"> </span>-sSL<span class="w"> </span>https://install.examguard-pro.com<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</pre></div>
+</div>
+<p><strong>Windows (PowerShell) :</strong></p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="c"># Exécuter en tant qu&#39;administrateur</span>
+<span class="nb">Invoke-WebRequest</span> <span class="n">-Uri</span> <span class="s2">&quot;https://install.examguard-pro.com/windows.ps1&quot;</span> <span class="p">|</span> <span class="nb">Invoke-Expression</span>
+</pre></div>
+</div>
+<p><strong>Script personnalisé :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1"># install.sh - Script d&#39;installation ExamGuard Pro</span>
+
+<span class="nb">set</span><span class="w"> </span>-e
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;🔍 Installation d&#39;ExamGuard Pro v3.1&quot;</span>
+
+<span class="c1"># Détecter l&#39;OS</span>
+<span class="nv">OS</span><span class="o">=</span><span class="k">$(</span>uname<span class="w"> </span>-s<span class="k">)</span>
+<span class="nv">ARCH</span><span class="o">=</span><span class="k">$(</span>uname<span class="w"> </span>-m<span class="k">)</span>
+
+<span class="c1"># Télécharger la version appropriée</span>
+<span class="k">case</span><span class="w"> </span><span class="nv">$OS</span><span class="w"> </span><span class="k">in</span>
+<span class="w">    </span>Linux<span class="o">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nb">command</span><span class="w"> </span>-v<span class="w"> </span>apt<span class="w"> </span><span class="p">&amp;</span>&gt;<span class="w"> </span>/dev/null<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">            </span>wget<span class="w"> </span>https://releases.examguard-pro.com/v3.1/examguard-pro_3.1.0_amd64.deb
+<span class="w">            </span>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>examguard-pro_3.1.0_amd64.deb
+<span class="w">        </span><span class="k">elif</span><span class="w"> </span><span class="nb">command</span><span class="w"> </span>-v<span class="w"> </span>yum<span class="w"> </span><span class="p">&amp;</span>&gt;<span class="w"> </span>/dev/null<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">            </span>wget<span class="w"> </span>https://releases.examguard-pro.com/v3.1/examguard-pro-3.1.0-1.x86_64.rpm
+<span class="w">            </span>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>examguard-pro-3.1.0-1.x86_64.rpm
+<span class="w">        </span><span class="k">fi</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">    </span>Darwin<span class="o">)</span>
+<span class="w">        </span>wget<span class="w"> </span>https://releases.examguard-pro.com/v3.1/ExamGuard-Pro-3.1.dmg
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Ouvrez le fichier DMG et glissez ExamGuard Pro vers Applications&quot;</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="k">esac</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;✅ Installation terminée !&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Lancez &#39;examguard-pro&#39; pour commencer&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="docker-compose">
+<h3>Docker Compose<a class="headerlink" href="#docker-compose" title="Link to this heading"></a></h3>
+<p><strong>Fichier docker-compose.yml :</strong></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.8&#39;</span>
+
+<span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">examguard</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">examguardpro/examguard:3.1</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;5000:5000&quot;</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/app/data</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./models:/app/models</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./logs:/app/logs</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXAMGUARD_DEBUG=false</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXAMGUARD_SECRET_KEY=your-secret-key</span>
+<span class="w">    </span><span class="nt">devices</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/dev/video0:/dev/video0</span><span class="w">  </span><span class="c1"># Webcam</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+
+<span class="w">  </span><span class="nt">database</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres:13</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POSTGRES_DB=examguard</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POSTGRES_USER=examguard</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POSTGRES_PASSWORD=password</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres_data:/var/lib/postgresql/data</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+
+<span class="nt">volumes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">postgres_data</span><span class="p">:</span>
+</pre></div>
+</div>
+<p><strong>Lancement :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Télécharger docker-compose.yml</span>
+wget<span class="w"> </span>https://releases.examguard-pro.com/docker/docker-compose.yml
+
+<span class="c1"># Lancer les services</span>
+docker-compose<span class="w"> </span>up<span class="w"> </span>-d
+</pre></div>
+</div>
+</section>
+</section>
+<section id="versions-anterieures">
+<h2>Versions antérieures<a class="headerlink" href="#versions-anterieures" title="Link to this heading"></a></h2>
+<section id="historique-des-versions">
+<h3>Historique des versions<a class="headerlink" href="#historique-des-versions" title="Link to this heading"></a></h3>
+<p><strong>Version 3.0 (Mars 2025) :</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/examguard-pro/examguard-pro/archive/v3.0.tar.gz">📦 Code source v3.0</a></p></li>
+<li><p>Première version stable</p></li>
+<li><p>Support de base pour la détection</p></li>
+</ul>
+<p><strong>Version 2.5 (Décembre 2024) :</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/examguard-pro/examguard-pro/archive/v2.5.tar.gz">📦 Code source v2.5</a></p></li>
+<li><p>Version bêta</p></li>
+<li><p>Fonctionnalités expérimentales</p></li>
+</ul>
+<p><strong>Notes de migration :</strong></p>
+<p>Les configurations des versions antérieures peuvent nécessiter des ajustements. Consultez le <a class="reference external" href="https://docs.examguard-pro.com/migration/">guide de migration</a> pour plus de détails.</p>
+</section>
+</section>
+<section id="support-et-maintenance">
+<h2>Support et maintenance<a class="headerlink" href="#support-et-maintenance" title="Link to this heading"></a></h2>
+<section id="cycle-de-vie-des-versions">
+<h3>Cycle de vie des versions<a class="headerlink" href="#cycle-de-vie-des-versions" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Date de sortie</p></th>
+<th class="head"><p>Support standard</p></th>
+<th class="head"><p>Support étendu</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3.1</p></td>
+<td><p>Juin 2025</p></td>
+<td><p>2 ans</p></td>
+<td><p>4 ans (LTS)</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.0</p></td>
+<td><p>Mars 2025</p></td>
+<td><p>1 an</p></td>
+<td><p>2 ans</p></td>
+</tr>
+<tr class="row-even"><td><p>2.5</p></td>
+<td><p>Déc 2024</p></td>
+<td><p>6 mois</p></td>
+<td><p>1 an</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Support inclus :</strong></p>
+<ul class="simple">
+<li><p>Corrections de bugs critiques</p></li>
+<li><p>Mises à jour de sécurité</p></li>
+<li><p>Documentation mise à jour</p></li>
+<li><p>Aide communautaire</p></li>
+</ul>
+<p><strong>Support étendu (LTS) :</strong></p>
+<ul class="simple">
+<li><p>Support commercial prioritaire</p></li>
+<li><p>Correctifs personnalisés</p></li>
+<li><p>Consultation technique</p></li>
+<li><p>SLA garanti</p></li>
+</ul>
+</section>
+<section id="mises-a-jour-automatiques">
+<h3>Mises à jour automatiques<a class="headerlink" href="#mises-a-jour-automatiques" title="Link to this heading"></a></h3>
+<p><strong>Configuration des mises à jour :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># config.py</span>
+<span class="n">AUTO_UPDATE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;enabled&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;channel&#39;</span><span class="p">:</span> <span class="s1">&#39;stable&#39;</span><span class="p">,</span>  <span class="c1"># stable, beta, dev</span>
+    <span class="s1">&#39;check_interval&#39;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>  <span class="c1"># heures</span>
+    <span class="s1">&#39;auto_install&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>  <span class="c1"># mise à jour manuelle</span>
+    <span class="s1">&#39;backup_before_update&#39;</span><span class="p">:</span> <span class="kc">True</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Commandes de mise à jour :</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vérifier les mises à jour</span>
+examguard-pro<span class="w"> </span>--check-updates
+
+<span class="c1"># Mettre à jour vers la dernière version</span>
+examguard-pro<span class="w"> </span>--update
+
+<span class="c1"># Mettre à jour vers une version spécifique</span>
+examguard-pro<span class="w"> </span>--update<span class="w"> </span>--version<span class="w"> </span><span class="m">3</span>.1.1
+</pre></div>
+</div>
+</section>
+</section>
+<section id="licences-et-conditions">
+<h2>Licences et conditions<a class="headerlink" href="#licences-et-conditions" title="Link to this heading"></a></h2>
+<section id="licence-open-source">
+<h3>Licence Open Source<a class="headerlink" href="#licence-open-source" title="Link to this heading"></a></h3>
+<p>ExamGuard Pro est distribué sous licence <strong>MIT</strong> :</p>
+<ul class="simple">
+<li><p>✅ Utilisation commerciale autorisée</p></li>
+<li><p>✅ Modification autorisée</p></li>
+<li><p>✅ Distribution autorisée</p></li>
+<li><p>✅ Usage privé autorisé</p></li>
+<li><p>❌ Aucune garantie fournie</p></li>
+</ul>
+<p><strong>Texte complet de la licence :</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>MIT License
+
+Copyright (c) 2025 ExamGuard Pro Team
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction...
+</pre></div>
+</div>
+</section>
+<section id="licence-commerciale">
+<h3>Licence commerciale<a class="headerlink" href="#licence-commerciale" title="Link to this heading"></a></h3>
+<p>Pour un support commercial et des fonctionnalités avancées :</p>
+<ul class="simple">
+<li><p><strong>ExamGuard Pro Enterprise</strong> : 99€/mois</p></li>
+<li><p><strong>ExamGuard Pro Educational</strong> : 49€/mois</p></li>
+<li><p><strong>ExamGuard Pro Cloud</strong> : 149€/mois</p></li>
+</ul>
+<p><strong>Avantages licence commerciale :</strong></p>
+<ul class="simple">
+<li><p>Support technique prioritaire</p></li>
+<li><p>Modèles IA avancés</p></li>
+<li><p>Intégrations enterprise</p></li>
+<li><p>SLA de disponibilité</p></li>
+<li><p>Formation et consultation</p></li>
+</ul>
+<p><strong>Contact commercial :</strong> <a class="reference external" href="mailto:sales&#37;&#52;&#48;examguard-pro&#46;com">sales<span>&#64;</span>examguard-pro<span>&#46;</span>com</a></p>
+</section>
+<section id="dependances-tierces">
+<h3>Dépendances tierces<a class="headerlink" href="#dependances-tierces" title="Link to this heading"></a></h3>
+<p><strong>Licences des dépendances principales :</strong></p>
+<ul class="simple">
+<li><p><strong>OpenCV</strong> : Apache 2.0</p></li>
+<li><p><strong>TensorFlow</strong> : Apache 2.0</p></li>
+<li><p><strong>Flask</strong> : BSD 3-Clause</p></li>
+<li><p><strong>NumPy</strong> : BSD 3-Clause</p></li>
+<li><p><strong>Pillow</strong> : PIL Software License</p></li>
+</ul>
+<p>Toutes les dépendances sont compatibles avec un usage commercial.</p>
+</section>
+</section>
+<section id="faq-telechargement">
+<h2>FAQ Téléchargement<a class="headerlink" href="#faq-telechargement" title="Link to this heading"></a></h2>
+<p><strong>Q: Quelle version choisir ?</strong></p>
+<p>R: Pour la production, utilisez toujours la version stable (v3.1). Pour les tests et le développement, la version bêta peut être intéressante.</p>
+<p><strong>Q: Comment migrer depuis une version antérieure ?</strong></p>
+<p>R: Suivez le guide de migration dans la documentation. Généralement, sauvegardez vos données, installez la nouvelle version et migrez la configuration.</p>
+<p><strong>Q: Les modèles sont-ils inclus dans l’installation ?</strong></p>
+<p>R: Non, les modèles doivent être téléchargés séparément pour réduire la taille du package principal. Utilisez le script <code class="docutils literal notranslate"><span class="pre">download_models.py</span></code>.</p>
+<p><strong>Q: Puis-je utiliser ExamGuard Pro hors ligne ?</strong></p>
+<p>R: Oui, une fois installé et configuré, ExamGuard Pro fonctionne entièrement hors ligne. Seuls les téléchargements initiaux nécessitent une connexion internet.</p>
+<p><strong>Q: Comment vérifier l’intégrité du téléchargement ?</strong></p>
+<p>R: Utilisez les checksums SHA256 fournis avec chaque release pour vérifier l’intégrité des fichiers téléchargés.</p>
+</section>
+<section id="assistance-telechargement">
+<h2>Assistance téléchargement<a class="headerlink" href="#assistance-telechargement" title="Link to this heading"></a></h2>
+<p>En cas de problème lors du téléchargement :</p>
+<ol class="arabic simple">
+<li><p><strong>Vérifiez votre connexion internet</strong></p></li>
+<li><p><strong>Consultez les miroirs de téléchargement</strong> : <a class="reference external" href="https://mirrors.examguard-pro.com">mirrors.examguard-pro.com</a></p></li>
+<li><p><strong>Contactez le support</strong> : <a class="reference external" href="mailto:support&#37;&#52;&#48;examguard-pro&#46;com">support<span>&#64;</span>examguard-pro<span>&#46;</span>com</a></p></li>
+<li><p><strong>Consultez la FAQ</strong> : <a class="reference external" href="https://faq.examguard-pro.com">faq.examguard-pro.com</a></p></li>
+</ol>
+<p><strong>Miroirs de téléchargement disponibles :</strong></p>
+<ul class="simple">
+<li><p><strong>Europe</strong> : eu.releases.examguard-pro.com</p></li>
+<li><p><strong>Amérique du Nord</strong> : us.releases.examguard-pro.com</p></li>
+<li><p><strong>Asie</strong> : asia.releases.examguard-pro.com</p></li>
+</ul>
+</section>
+<section id="prochaine-etape">
+<h2>Prochaine étape<a class="headerlink" href="#prochaine-etape" title="Link to this heading"></a></h2>
+<p>Une fois ExamGuard Pro téléchargé et installé, consultez le guide <a class="reference internal" href="installation.html"><span class="doc">Installation</span></a> pour la configuration initiale, puis <a class="reference internal" href="utilisation.html"><span class="doc">Utilisation</span></a> pour commencer à l’utiliser.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="models.html" class="btn btn-neutral float-left" title="Modèles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
