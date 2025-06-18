@@ -1,202 +1,55 @@
 
 
-
 <!DOCTYPE html>
-<html class="writer-html5" lang="fr" data-content_root="./">
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-    API Documentation - ExamGuard Pro
-  
-
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+  <title>API Documentation &mdash; Cheating-for-computer-vision 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=ff5c896b" />
-      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
 
   
-    <link rel="shortcut icon" href="_static/logo.svg"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=3dfacf08"></script>
+      <script src="_static/documentation_options.js?v=f2a433a1"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-      <script src="_static/copybutton.js?v=30646c52"></script>
-      <script src="_static/translations.js?v=e6b791cb"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Modèles" href="models.html" />
-    <link rel="prev" title="Utilisation" href="utilisation.html" />
-   
-  <meta name="description" content="Documentation complète d'ExamGuard Pro - Système intelligent de surveillance d'examens utilisant l'IA et la vision par ordinateur">
-  <meta name="keywords" content="ExamGuard Pro, détection triche, surveillance examens, IA, vision par ordinateur, Flask, OpenCV, TensorFlow">
-  <meta name="author" content="ExamGuard Pro Team">
-  <meta property="og:title" content="ExamGuard Pro Documentation">
-  <meta property="og:description" content="Système intelligent de surveillance d'examens avec détection automatique de triche">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="_static/logo.svg">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="ExamGuard Pro Documentation">
-  <meta name="twitter:description" content="Documentation complète du système de surveillance d'examens">
-  
-  
-  <link rel="icon" type="image/svg+xml" href="_static/logo.svg">
-  <link rel="shortcut icon" type="image/svg+xml" href="_static/logo.svg">
-  
-  
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Add copy buttons to code blocks
-      const codeBlocks = document.querySelectorAll('pre');
-      codeBlocks.forEach(function(block) {
-        const button = document.createElement('button');
-        button.className = 'copy-btn';
-        button.innerHTML = '<i class="fas fa-copy"></i> Copier';
-        button.addEventListener('click', function() {
-          const code = block.querySelector('code') || block;
-          navigator.clipboard.writeText(code.textContent).then(function() {
-            button.innerHTML = '<i class="fas fa-check"></i> Copié!';
-            setTimeout(function() {
-              button.innerHTML = '<i class="fas fa-copy"></i> Copier';
-            }, 2000);
-          });
-        });
-        block.appendChild(button);
-      });
-      
-      // Add version badge
-      const versionElement = document.querySelector('.wy-side-nav-search .version');
-      if (versionElement) {
-        versionElement.innerHTML += ' <span class="version-badge">Latest</span>';
-      }
-      
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }
-        });
-      });
-    });
-  </script>
-
+    <link rel="prev" title="Utilisation" href="utilisation.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: #2980b9" >
-  <div class="sidebar-brand">
-    <a href="index.html">
-      <img src="_static/logo.svg" alt="ExamGuard Pro" class="logo">
-      <span class="brand-text">ExamGuard Pro</span>
-    </a>
-  </div>
-  <div class="version-info">
-    <span class="version">3.1</span>
-    <span class="version-badge">Latest</span>
-  </div>
+        <div class="wy-side-nav-search" >
 
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Cheating-for-computer-vision
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contenu:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#vision-du-projet">Vision du projet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#problematique">Problématique</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#solution-proposee">Solution proposée</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#fonctionnalites-principales">Fonctionnalités principales</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="introduction.html#detection-en-temps-reel">Détection en temps réel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="introduction.html#ia-avancee">IA Avancée</a></li>
-<li class="toctree-l3"><a class="reference internal" href="introduction.html#rapports-detailles">Rapports détaillés</a></li>
-<li class="toctree-l3"><a class="reference internal" href="introduction.html#interface-web">Interface Web</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#architecture-technique">Architecture technique</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#technologies-utilisees">Technologies utilisées</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#cas-d-usage">Cas d’usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#avantages">Avantages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#prochaines-etapes">Prochaines étapes</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#prerequis">Prérequis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#configuration-systeme-recommandee">Configuration système recommandée</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-des-dependances">Installation des dépendances</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-via-docker">Installation via Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#configuration">Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-manuelle-des-dependances">Installation manuelle des dépendances</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-sur-differents-os">Installation sur différents OS</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="installation.html#ubuntu-debian">Ubuntu/Debian</a></li>
-<li class="toctree-l3"><a class="reference internal" href="installation.html#windows">Windows</a></li>
-<li class="toctree-l3"><a class="reference internal" href="installation.html#macos">macOS</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#verification-de-l-installation">Vérification de l’installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#depannage">Dépannage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#variables-d-environnement">Variables d’environnement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#mise-a-jour">Mise à jour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#prochaine-etape">Prochaine étape</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="utilisation.html">Utilisation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="utilisation.html#demarrage-rapide">Démarrage rapide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilisation.html#interface-principale">Interface principale</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="utilisation.html#tableau-de-bord">Tableau de bord</a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilisation.html#gestion-des-sessions">Gestion des sessions</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="utilisation.html#configuration-d-une-session-d-examen">Configuration d’une session d’examen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilisation.html#surveillance-en-temps-reel">Surveillance en temps réel</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="utilisation.html#pendant-l-examen">Pendant l’examen</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="utilisation.html#types-de-detections">Types de détections</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="utilisation.html#mouvement-des-yeux">Mouvement des yeux</a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilisation.html#detection-d-objets">Détection d’objets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilisation.html#presence-multiple">Présence multiple</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="utilisation.html#rapports-et-analyses">Rapports et analyses</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="utilisation.html#rapport-de-session">Rapport de session</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="utilisation.html#configuration-avancee">Configuration avancée</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="utilisation.html#personnalisation-des-modeles-ia">Personnalisation des modèles IA</a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilisation.html#integrations">Intégrations</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="utilisation.html#bonnes-pratiques">Bonnes pratiques</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="utilisation.html#preparation-de-l-examen">Préparation de l’examen</a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilisation.html#id1">Pendant l’examen</a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilisation.html#apres-l-examen">Après l’examen</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="utilisation.html#resolution-de-problemes">Résolution de problèmes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="utilisation.html#problemes-frequents">Problèmes fréquents</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="utilisation.html#support-technique">Support technique</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilisation.html#prochaine-etape">Prochaine étape</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilisation.html">Utilisation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API Documentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#vue-d-ensemble">Vue d’ensemble</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#base-url">Base URL</a></li>
@@ -222,125 +75,17 @@
 <li class="toctree-l2"><a class="reference internal" href="#support-et-documentation">Support et documentation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="models.html">Modèles</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="models.html#vue-d-ensemble">Vue d’ensemble</a></li>
-<li class="toctree-l2"><a class="reference internal" href="models.html#architecture-des-modeles">Architecture des modèles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="models.html#modeles-de-detection-faciale">Modèles de détection faciale</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="models.html#haar-cascade-par-defaut">Haar Cascade (Par défaut)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="models.html#mtcnn-multi-task-cnn">MTCNN (Multi-task CNN)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="models.html#mediapipe-face-detection">MediaPipe Face Detection</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="models.html#modeles-de-detection-d-objets">Modèles de détection d’objets</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="models.html#yolo-you-only-look-once">YOLO (You Only Look Once)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="models.html#tensorflow-object-detection">TensorFlow Object Detection</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="models.html#modeles-de-suivi-oculaire">Modèles de suivi oculaire</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="models.html#mediapipe-face-mesh">MediaPipe Face Mesh</a></li>
-<li class="toctree-l3"><a class="reference internal" href="models.html#opencv-eye-cascade">OpenCV Eye Cascade</a></li>
-<li class="toctree-l3"><a class="reference internal" href="models.html#gaze-estimation">Gaze Estimation</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="models.html#modeles-d-analyse-audio">Modèles d’analyse audio</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="models.html#detection-de-voix">Détection de voix</a></li>
-<li class="toctree-l3"><a class="reference internal" href="models.html#classification-des-sons">Classification des sons</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="models.html#modeles-personnalises">Modèles personnalisés</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="models.html#entrainement-d-un-modele-personnalise">Entraînement d’un modèle personnalisé</a></li>
-<li class="toctree-l3"><a class="reference internal" href="models.html#transfer-learning">Transfer Learning</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="models.html#optimisation-des-performances">Optimisation des performances</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="models.html#optimisation-gpu">Optimisation GPU</a></li>
-<li class="toctree-l3"><a class="reference internal" href="models.html#quantification-des-modeles">Quantification des modèles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="models.html#parallelisation">Parallélisation</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="models.html#evaluation-des-modeles">Évaluation des modèles</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="models.html#metriques-de-performance">Métriques de performance</a></li>
-<li class="toctree-l3"><a class="reference internal" href="models.html#benchmarking">Benchmarking</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="models.html#deploiement-des-modeles">Déploiement des modèles</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="models.html#sauvegarde-et-chargement">Sauvegarde et chargement</a></li>
-<li class="toctree-l3"><a class="reference internal" href="models.html#versioning-des-modeles">Versioning des modèles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="models.html#monitoring-des-modeles">Monitoring des modèles</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="models.html#troubleshooting">Troubleshooting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="models.html#problemes-frequents">Problèmes fréquents</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="models.html#documentation-des-modeles">Documentation des modèles</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="download.html">Téléchargement</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="download.html#versions-disponibles">Versions disponibles</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="download.html#version-stable">Version stable</a></li>
-<li class="toctree-l3"><a class="reference internal" href="download.html#version-de-developpement">Version de développement</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="download.html#methodes-de-telechargement">Méthodes de téléchargement</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="download.html#github-release">GitHub Release</a></li>
-<li class="toctree-l3"><a class="reference internal" href="download.html#git-clone">Git Clone</a></li>
-<li class="toctree-l3"><a class="reference internal" href="download.html#docker-hub">Docker Hub</a></li>
-<li class="toctree-l3"><a class="reference internal" href="download.html#pypi-package">PyPI Package</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="download.html#installateurs">Installateurs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="download.html#windows">Windows</a></li>
-<li class="toctree-l3"><a class="reference internal" href="download.html#macos">macOS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="download.html#linux">Linux</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="download.html#assets-et-modeles">Assets et modèles</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="download.html#modeles-pre-entraines">Modèles pré-entraînés</a></li>
-<li class="toctree-l3"><a class="reference internal" href="download.html#modeles-gpu-optimises">Modèles GPU optimisés</a></li>
-<li class="toctree-l3"><a class="reference internal" href="download.html#bases-de-donnees-d-exemple">Bases de données d’exemple</a></li>
-<li class="toctree-l3"><a class="reference internal" href="download.html#documentation-hors-ligne">Documentation hors ligne</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="download.html#checksums-et-signatures">Checksums et signatures</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="download.html#verification-d-integrite">Vérification d’intégrité</a></li>
-<li class="toctree-l3"><a class="reference internal" href="download.html#signature-gpg">Signature GPG</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="download.html#installation-rapide">Installation rapide</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="download.html#script-d-installation-automatique">Script d’installation automatique</a></li>
-<li class="toctree-l3"><a class="reference internal" href="download.html#docker-compose">Docker Compose</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="download.html#versions-anterieures">Versions antérieures</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="download.html#historique-des-versions">Historique des versions</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="download.html#support-et-maintenance">Support et maintenance</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="download.html#cycle-de-vie-des-versions">Cycle de vie des versions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="download.html#mises-a-jour-automatiques">Mises à jour automatiques</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="download.html#licences-et-conditions">Licences et conditions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="download.html#licence-open-source">Licence Open Source</a></li>
-<li class="toctree-l3"><a class="reference internal" href="download.html#licence-commerciale">Licence commerciale</a></li>
-<li class="toctree-l3"><a class="reference internal" href="download.html#dependances-tierces">Dépendances tierces</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="download.html#faq-telechargement">FAQ Téléchargement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="download.html#assistance-telechargement">Assistance téléchargement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="download.html#prochaine-etape">Prochaine étape</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Modèles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="download.html">Téléchargement</a></li>
 </ul>
 
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980b9" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">ExamGuard Pro</a>
+          <a href="index.html">Cheating-for-computer-vision</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -350,7 +95,7 @@
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">API Documentation</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/examguard-pro/examguard-pro/blob/main/docs/api.rst" class="fa fa-github"> Éditer sur GitHub</a>
+            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -359,10 +104,10 @@
            <div itemprop="articleBody">
              
   <section id="api-documentation">
-<h1>API Documentation<a class="headerlink" href="#api-documentation" title="Lien vers cette rubrique"></a></h1>
+<h1>API Documentation<a class="headerlink" href="#api-documentation" title="Link to this heading"></a></h1>
 <p>ExamGuard Pro fournit une API REST complète pour intégrer le système de détection de triche dans vos applications existantes.</p>
 <section id="vue-d-ensemble">
-<h2>Vue d’ensemble<a class="headerlink" href="#vue-d-ensemble" title="Lien vers cette rubrique"></a></h2>
+<h2>Vue d’ensemble<a class="headerlink" href="#vue-d-ensemble" title="Link to this heading"></a></h2>
 <p>L’API ExamGuard Pro permet de :</p>
 <ul class="simple">
 <li><p>Gérer les sessions d’examen</p></li>
@@ -373,13 +118,13 @@
 </ul>
 </section>
 <section id="base-url">
-<h2>Base URL<a class="headerlink" href="#base-url" title="Lien vers cette rubrique"></a></h2>
+<h2>Base URL<a class="headerlink" href="#base-url" title="Link to this heading"></a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>http://localhost:5000/api/v1/
 </pre></div>
 </div>
 </section>
 <section id="authentification">
-<h2>Authentification<a class="headerlink" href="#authentification" title="Lien vers cette rubrique"></a></h2>
+<h2>Authentification<a class="headerlink" href="#authentification" title="Link to this heading"></a></h2>
 <p>L’API utilise l’authentification par token JWT.</p>
 <p><strong>Obtenir un token :</strong></p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">POST /api/v1/auth/login</span>
@@ -410,9 +155,9 @@
 </div>
 </section>
 <section id="endpoints-de-l-api">
-<h2>Endpoints de l’API<a class="headerlink" href="#endpoints-de-l-api" title="Lien vers cette rubrique"></a></h2>
+<h2>Endpoints de l’API<a class="headerlink" href="#endpoints-de-l-api" title="Link to this heading"></a></h2>
 <section id="sessions-d-examen">
-<h3>Sessions d’examen<a class="headerlink" href="#sessions-d-examen" title="Lien vers cette rubrique"></a></h3>
+<h3>Sessions d’examen<a class="headerlink" href="#sessions-d-examen" title="Link to this heading"></a></h3>
 <p><strong>Lister les sessions</strong></p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">GET /api/v1/sessions</span>
 </pre></div>
@@ -527,7 +272,7 @@
 </div>
 </section>
 <section id="detections">
-<h3>Détections<a class="headerlink" href="#detections" title="Lien vers cette rubrique"></a></h3>
+<h3>Détections<a class="headerlink" href="#detections" title="Link to this heading"></a></h3>
 <p><strong>Lister les détections</strong></p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">GET /api/v1/sessions/1/detections</span>
 </pre></div>
@@ -578,7 +323,7 @@
 </div>
 </section>
 <section id="participants">
-<h3>Participants<a class="headerlink" href="#participants" title="Lien vers cette rubrique"></a></h3>
+<h3>Participants<a class="headerlink" href="#participants" title="Link to this heading"></a></h3>
 <p><strong>Ajouter un participant</strong></p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">POST /api/v1/sessions/1/participants</span>
 <span class="err">Content-Type: application/json</span>
@@ -618,7 +363,7 @@
 </div>
 </section>
 <section id="controle-en-temps-reel">
-<h3>Contrôle en temps réel<a class="headerlink" href="#controle-en-temps-reel" title="Lien vers cette rubrique"></a></h3>
+<h3>Contrôle en temps réel<a class="headerlink" href="#controle-en-temps-reel" title="Link to this heading"></a></h3>
 <p><strong>Démarrer une session</strong></p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">POST /api/v1/sessions/1/start</span>
 </pre></div>
@@ -657,7 +402,7 @@
 </div>
 </section>
 <section id="rapports">
-<h3>Rapports<a class="headerlink" href="#rapports" title="Lien vers cette rubrique"></a></h3>
+<h3>Rapports<a class="headerlink" href="#rapports" title="Link to this heading"></a></h3>
 <p><strong>Générer un rapport</strong></p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">POST /api/v1/sessions/1/reports</span>
 <span class="err">Content-Type: application/json</span>
@@ -696,7 +441,7 @@
 </div>
 </section>
 <section id="configuration">
-<h3>Configuration<a class="headerlink" href="#configuration" title="Lien vers cette rubrique"></a></h3>
+<h3>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h3>
 <p><strong>Obtenir la configuration</strong></p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">GET /api/v1/config</span>
 </pre></div>
@@ -746,7 +491,7 @@
 </section>
 </section>
 <section id="websocket-api">
-<h2>WebSocket API<a class="headerlink" href="#websocket-api" title="Lien vers cette rubrique"></a></h2>
+<h2>WebSocket API<a class="headerlink" href="#websocket-api" title="Link to this heading"></a></h2>
 <p>Pour les mises à jour en temps réel, ExamGuard Pro fournit une API WebSocket.</p>
 <p><strong>Connexion :</strong></p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">socket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;ws://localhost:5000/ws&#39;</span><span class="p">);</span>
@@ -780,7 +525,7 @@
 </div>
 </section>
 <section id="codes-d-erreur">
-<h2>Codes d’erreur<a class="headerlink" href="#codes-d-erreur" title="Lien vers cette rubrique"></a></h2>
+<h2>Codes d’erreur<a class="headerlink" href="#codes-d-erreur" title="Link to this heading"></a></h2>
 <p>L’API utilise les codes de statut HTTP standards :</p>
 <p><strong>Format des erreurs :</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -796,9 +541,9 @@
 </div>
 </section>
 <section id="exemples-d-integration">
-<h2>Exemples d’intégration<a class="headerlink" href="#exemples-d-integration" title="Lien vers cette rubrique"></a></h2>
+<h2>Exemples d’intégration<a class="headerlink" href="#exemples-d-integration" title="Link to this heading"></a></h2>
 <section id="python">
-<h3>Python<a class="headerlink" href="#python" title="Lien vers cette rubrique"></a></h3>
+<h3>Python<a class="headerlink" href="#python" title="Link to this heading"></a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">json</span>
 
@@ -851,7 +596,7 @@
 </div>
 </section>
 <section id="javascript">
-<h3>JavaScript<a class="headerlink" href="#javascript" title="Lien vers cette rubrique"></a></h3>
+<h3>JavaScript<a class="headerlink" href="#javascript" title="Link to this heading"></a></h3>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">ExamGuardAPI</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">baseUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">baseUrl</span><span class="p">;</span>
@@ -903,7 +648,7 @@
 </section>
 </section>
 <section id="limites-de-taux">
-<h2>Limites de taux<a class="headerlink" href="#limites-de-taux" title="Lien vers cette rubrique"></a></h2>
+<h2>Limites de taux<a class="headerlink" href="#limites-de-taux" title="Link to this heading"></a></h2>
 <p>L’API impose des limites de taux pour éviter les abus :</p>
 <ul class="simple">
 <li><p><strong>Authentification</strong> : 5 tentatives par minute</p></li>
@@ -913,7 +658,7 @@
 </ul>
 </section>
 <section id="sdk-officiels">
-<h2>SDK officiels<a class="headerlink" href="#sdk-officiels" title="Lien vers cette rubrique"></a></h2>
+<h2>SDK officiels<a class="headerlink" href="#sdk-officiels" title="Link to this heading"></a></h2>
 <p>Des SDK officiels sont disponibles pour :</p>
 <ul class="simple">
 <li><p><strong>Python</strong> : <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">examguard-sdk</span></code></p></li>
@@ -945,7 +690,7 @@
 </div>
 </section>
 <section id="support-et-documentation">
-<h2>Support et documentation<a class="headerlink" href="#support-et-documentation" title="Lien vers cette rubrique"></a></h2>
+<h2>Support et documentation<a class="headerlink" href="#support-et-documentation" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><strong>Documentation interactive</strong> : <code class="docutils literal notranslate"><span class="pre">http://localhost:5000/api/docs</span></code></p></li>
 <li><p><strong>Collection Postman</strong> : <a class="reference external" href="https://github.com/examguard-pro/postman-collection">Télécharger</a></p></li>
@@ -958,20 +703,20 @@
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="utilisation.html" class="btn btn-neutral float-left" title="Utilisation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="models.html" class="btn btn-neutral float-right" title="Modèles" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="utilisation.html" class="btn btn-neutral float-left" title="Utilisation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="models.html" class="btn btn-neutral float-right" title="Modèles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Droits d'auteur 2025, ExamGuard Pro Team.</p>
+    <p>&#169; Copyright .</p>
   </div>
 
-  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
-    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
    
 
 </footer>
@@ -983,177 +728,7 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-  <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-    
-      <a href="models.html" class="btn btn-neutral float-right" title="Modèles" accesskey="n" rel="next">
-        <span class="fa fa-arrow-circle-right"></span> Suivant
-      </a>
-    
-    
-      <a href="utilisation.html" class="btn btn-neutral" title="Utilisation" accesskey="p" rel="prev">
-        <span class="fa fa-arrow-circle-left"></span> Précédent
-      </a>
-    
-  </div>
-
-  <hr/>
-
-  <div role="contentinfo" class="custom-footer">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4><i class="fas fa-link"></i> Liens utiles</h4>
-        <ul>
-          <li><a href="https://github.com/examguard-pro/examguard-pro" target="_blank">
-            <i class="fab fa-github"></i> Repository GitHub
-          </a></li>
-          <li><a href="https://github.com/examguard-pro/examguard-pro/issues" target="_blank">
-            <i class="fas fa-bug"></i> Signaler un bug
-          </a></li>
-          <li><a href="https://github.com/examguard-pro/examguard-pro/discussions" target="_blank">
-            <i class="fas fa-comments"></i> Discussions
-          </a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-section">
-        <h4><i class="fas fa-life-ring"></i> Support</h4>
-        <ul>
-          <li><a href="mailto:support@examguard-pro.com">
-            <i class="fas fa-envelope"></i> Support technique
-          </a></li>
-          <li><a href="mailto:sales@examguard-pro.com">
-            <i class="fas fa-shopping-cart"></i> Contact commercial
-          </a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-section">
-        <h4><i class="fas fa-info-circle"></i> À propos</h4>
-        <p>ExamGuard Pro est un système open-source de surveillance d'examens utilisant l'intelligence artificielle.</p>
-        <p>
-          <a href="https://github.com/examguard-pro/examguard-pro/blob/main/LICENSE" target="_blank">
-            <i class="fas fa-balance-scale"></i> Licence MIT
-          </a>
-        </p>
-      </div>
-    </div>
-    
-    <div class="footer-bottom">
-      <p>
-        &copy; 2025, ExamGuard Pro Team. 
-        Construit avec 
-        <a href="https://www.sphinx-doc.org/" target="_blank">Sphinx</a> 
-        en utilisant un
-        <a href="https://github.com/readthedocs/sphinx_rtd_theme" target="_blank">thème</a>
-        fourni par 
-        <a href="https://readthedocs.org" target="_blank">Read the Docs</a>.
-      </p>
-      <p class="built-date">
-        <i class="fas fa-clock"></i> 
-        Dernière mise à jour: None
-      </p>
-    </div>
-  </div>
-  
-  <style>
-    .sidebar-brand {
-      display: flex;
-      align-items: center;
-      padding: 1em;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    .sidebar-brand .logo {
-      width: 32px;
-      height: 32px;
-      margin-right: 0.5em;
-    }
-    
-    .sidebar-brand .brand-text {
-      font-weight: 600;
-      color: white;
-      font-size: 1.1em;
-    }
-    
-    .version-info {
-      text-align: center;
-      padding: 0.5em;
-      font-size: 0.9em;
-    }
-    
-    .custom-footer {
-      margin-top: 2em;
-      padding: 2em 0;
-      border-top: 1px solid #e1e4e5;
-      background-color: #f8f9fa;
-    }
-    
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2em;
-      margin-bottom: 2em;
-    }
-    
-    .footer-section h4 {
-      color: var(--examguard-blue, #2980b9);
-      margin-bottom: 1em;
-      font-size: 1.1em;
-    }
-    
-    .footer-section ul {
-      list-style: none;
-      padding: 0;
-    }
-    
-    .footer-section li {
-      margin-bottom: 0.5em;
-    }
-    
-    .footer-section a {
-      color: #666;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    
-    .footer-section a:hover {
-      color: var(--examguard-blue, #2980b9);
-    }
-    
-    .footer-section i {
-      width: 1.2em;
-      margin-right: 0.5em;
-    }
-    
-    .footer-bottom {
-      text-align: center;
-      padding-top: 2em;
-      border-top: 1px solid #e1e4e5;
-      color: #666;
-      font-size: 0.9em;
-    }
-    
-    .footer-bottom p {
-      margin-bottom: 0.5em;
-    }
-    
-    .built-date {
-      font-style: italic;
-    }
-    
-    @media (max-width: 768px) {
-      .footer-content {
-        grid-template-columns: 1fr;
-        gap: 1em;
-      }
-      
-      .custom-footer {
-        padding: 1em 0;
-      }
-    }
-  </style>
-
+  </script> 
 
 </body>
 </html>
