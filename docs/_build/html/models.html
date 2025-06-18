@@ -11,7 +11,7 @@
     Modèles - ExamGuard Pro
   
 
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="_static/custom.css?v=ff5c896b" />
@@ -465,7 +465,7 @@
 </pre></div>
 </div>
 <p><strong>Utilisation :</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mtcnn</span><span class="w"> </span><span class="kn">import</span> <span class="n">MTCNN</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mtcnn</span> <span class="kn">import</span> <span class="n">MTCNN</span>
 
 <span class="n">detector</span> <span class="o">=</span> <span class="n">MTCNN</span><span class="p">()</span>
 <span class="n">faces</span> <span class="o">=</span> <span class="n">detector</span><span class="o">.</span><span class="n">detect_faces</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
@@ -490,7 +490,7 @@
 </pre></div>
 </div>
 <p><strong>Utilisation :</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">mediapipe</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mp</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mediapipe</span> <span class="k">as</span> <span class="nn">mp</span>
 
 <span class="n">mp_face_detection</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">solutions</span><span class="o">.</span><span class="n">face_detection</span>
 <span class="n">mp_drawing</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">solutions</span><span class="o">.</span><span class="n">drawing_utils</span>
@@ -554,7 +554,7 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>ultralytics
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ultralytics</span><span class="w"> </span><span class="kn">import</span> <span class="n">YOLO</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ultralytics</span> <span class="kn">import</span> <span class="n">YOLO</span>
 
 <span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s1">&#39;yolov5s.pt&#39;</span><span class="p">)</span>
 <span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
@@ -635,9 +635,9 @@
 <section id="gaze-estimation">
 <h3>Gaze Estimation<a class="headerlink" href="#gaze-estimation" title="Lien vers cette rubrique"></a></h3>
 <p><strong>Estimation de la direction du regard :</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">estimate_gaze_direction</span><span class="p">(</span><span class="n">left_eye_landmarks</span><span class="p">,</span> <span class="n">right_eye_landmarks</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">estimate_gaze_direction</span><span class="p">(</span><span class="n">left_eye_landmarks</span><span class="p">,</span> <span class="n">right_eye_landmarks</span><span class="p">):</span>
     <span class="c1"># Calculer le centre des yeux</span>
     <span class="n">left_center</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">left_eye_landmarks</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">right_center</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">right_eye_landmarks</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -666,7 +666,7 @@
 </pre></div>
 </div>
 <p><strong>Utilisation WebRTC VAD :</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">webrtcvad</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">webrtcvad</span>
 
 <span class="n">vad</span> <span class="o">=</span> <span class="n">webrtcvad</span><span class="o">.</span><span class="n">Vad</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Aggressiveness level</span>
 
@@ -706,10 +706,10 @@ datasets/
 </pre></div>
 </div>
 <p><strong>2. Script d’entraînement</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras</span><span class="w"> </span><span class="kn">import</span> <span class="n">layers</span><span class="p">,</span> <span class="n">models</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">layers</span><span class="p">,</span> <span class="n">models</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">create_custom_model</span><span class="p">(</span><span class="n">input_shape</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">create_custom_model</span><span class="p">(</span><span class="n">input_shape</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">):</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
         <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="n">input_shape</span><span class="p">),</span>
         <span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
@@ -750,8 +750,8 @@ datasets/
 <section id="transfer-learning">
 <h3>Transfer Learning<a class="headerlink" href="#transfer-learning" title="Lien vers cette rubrique"></a></h3>
 <p><strong>Utilisation d’un modèle pré-entraîné :</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.applications</span><span class="w"> </span><span class="kn">import</span> <span class="n">ResNet50</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.applications</span> <span class="kn">import</span> <span class="n">ResNet50</span>
 
 <span class="c1"># Charger le modèle pré-entraîné</span>
 <span class="n">base_model</span> <span class="o">=</span> <span class="n">ResNet50</span><span class="p">(</span>
@@ -786,7 +786,7 @@ datasets/
 <section id="optimisation-gpu">
 <h3>Optimisation GPU<a class="headerlink" href="#optimisation-gpu" title="Lien vers cette rubrique"></a></h3>
 <p><strong>Configuration CUDA :</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 
 <span class="c1"># Vérifier la disponibilité GPU</span>
 <span class="n">gpus</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">experimental</span><span class="o">.</span><span class="n">list_physical_devices</span><span class="p">(</span><span class="s1">&#39;GPU&#39;</span><span class="p">)</span>
@@ -799,7 +799,7 @@ datasets/
 </pre></div>
 </div>
 <p><strong>Configuration pour OpenCV :</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
 
 <span class="c1"># Utiliser OpenCL si disponible</span>
 <span class="n">cv2</span><span class="o">.</span><span class="n">ocl</span><span class="o">.</span><span class="n">setUseOpenCL</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
@@ -809,7 +809,7 @@ datasets/
 <section id="quantification-des-modeles">
 <h3>Quantification des modèles<a class="headerlink" href="#quantification-des-modeles" title="Lien vers cette rubrique"></a></h3>
 <p><strong>TensorFlow Lite :</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 
 <span class="c1"># Convertir en TensorFlow Lite</span>
 <span class="n">converter</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">lite</span><span class="o">.</span><span class="n">TFLiteConverter</span><span class="o">.</span><span class="n">from_saved_model</span><span class="p">(</span><span class="s1">&#39;models/my_model&#39;</span><span class="p">)</span>
@@ -831,16 +831,16 @@ datasets/
 <section id="parallelisation">
 <h3>Parallélisation<a class="headerlink" href="#parallelisation" title="Lien vers cette rubrique"></a></h3>
 <p><strong>Traitement multi-thread :</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">concurrent.futures</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">concurrent.futures</span>
+<span class="kn">import</span> <span class="nn">threading</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">ModelPipeline</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">ModelPipeline</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">face_model</span> <span class="o">=</span> <span class="n">load_face_model</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">object_model</span> <span class="o">=</span> <span class="n">load_object_model</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">eye_model</span> <span class="o">=</span> <span class="n">load_eye_model</span><span class="p">()</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">process_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">process_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
         <span class="k">with</span> <span class="n">concurrent</span><span class="o">.</span><span class="n">futures</span><span class="o">.</span><span class="n">ThreadPoolExecutor</span><span class="p">()</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
             <span class="c1"># Lancer les détections en parallèle</span>
             <span class="n">face_future</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">detect_faces</span><span class="p">,</span> <span class="n">frame</span><span class="p">)</span>
@@ -862,10 +862,10 @@ datasets/
 <section id="metriques-de-performance">
 <h3>Métriques de performance<a class="headerlink" href="#metriques-de-performance" title="Lien vers cette rubrique"></a></h3>
 <p><strong>Précision, Rappel, F1-Score :</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">evaluate_model</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">classes</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">evaluate_model</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">classes</span><span class="p">):</span>
     <span class="c1"># Matrice de confusion</span>
     <span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matrice de confusion:&quot;</span><span class="p">)</span>
@@ -889,10 +889,10 @@ datasets/
 </pre></div>
 </div>
 <p><strong>Courbe ROC :</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">plot_roc_curve</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_scores</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">plot_roc_curve</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_scores</span><span class="p">):</span>
     <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_scores</span><span class="p">)</span>
     <span class="n">roc_auc</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
 
@@ -912,10 +912,10 @@ datasets/
 <section id="benchmarking">
 <h3>Benchmarking<a class="headerlink" href="#benchmarking" title="Lien vers cette rubrique"></a></h3>
 <p><strong>Test de performance :</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">benchmark_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">test_images</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">benchmark_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">test_images</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
     <span class="n">total_time</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">):</span>
@@ -953,7 +953,7 @@ datasets/
 </pre></div>
 </div>
 <p><strong>PyTorch :</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
 
 <span class="c1"># Sauvegarder</span>
 <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="s1">&#39;models/my_model.pth&#39;</span><span class="p">)</span>
@@ -992,18 +992,18 @@ datasets/
 <section id="monitoring-des-modeles">
 <h3>Monitoring des modèles<a class="headerlink" href="#monitoring-des-modeles" title="Lien vers cette rubrique"></a></h3>
 <p><strong>Surveillance des performances :</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">ModelMonitor</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">ModelMonitor</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stats</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s1">&#39;total_predictions&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
             <span class="s1">&#39;avg_confidence&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
             <span class="s1">&#39;error_count&#39;</span><span class="p">:</span> <span class="mi">0</span>
         <span class="p">}</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">log_prediction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">confidence</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">log_prediction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">confidence</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">[</span><span class="s1">&#39;total_predictions&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
 
         <span class="k">if</span> <span class="n">error</span><span class="p">:</span>
@@ -1037,10 +1037,10 @@ datasets/
 </div>
 <p><strong>Performance dégradée :</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vérifier l&#39;utilisation des ressources</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">psutil</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">GPUtil</span>
+<span class="kn">import</span> <span class="nn">psutil</span>
+<span class="kn">import</span> <span class="nn">GPUtil</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">check_system_resources</span><span class="p">():</span>
+<span class="k">def</span> <span class="nf">check_system_resources</span><span class="p">():</span>
     <span class="c1"># CPU</span>
     <span class="n">cpu_percent</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">cpu_percent</span><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 

@@ -11,7 +11,7 @@
     API Documentation - ExamGuard Pro
   
 
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="_static/custom.css?v=ff5c896b" />
@@ -799,11 +799,11 @@
 <h2>Exemples d’intégration<a class="headerlink" href="#exemples-d-integration" title="Lien vers cette rubrique"></a></h2>
 <section id="python">
 <h3>Python<a class="headerlink" href="#python" title="Lien vers cette rubrique"></a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">ExamGuardAPI</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_url</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">ExamGuardAPI</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_url</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">base_url</span> <span class="o">=</span> <span class="n">base_url</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">token</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_authenticate</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -811,14 +811,14 @@
             <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span>
         <span class="p">}</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">_authenticate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_authenticate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
         <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
             <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s1">/auth/login&#39;</span><span class="p">,</span>
             <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="n">password</span><span class="p">}</span>
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;token&#39;</span><span class="p">]</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">create_session</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session_data</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">create_session</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session_data</span><span class="p">):</span>
         <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
             <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s1">/sessions&#39;</span><span class="p">,</span>
             <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span>
@@ -826,7 +826,7 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">get_detections</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">,</span> <span class="o">**</span><span class="n">filters</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_detections</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">,</span> <span class="o">**</span><span class="n">filters</span><span class="p">):</span>
         <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">filters</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">}</span>
         <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
             <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s1">/sessions/</span><span class="si">{</span><span class="n">session_id</span><span class="si">}</span><span class="s1">/detections&#39;</span><span class="p">,</span>
@@ -925,7 +925,7 @@
 </pre></div>
 </div>
 <p><strong>Utilisation :</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">examguard</span><span class="w"> </span><span class="kn">import</span> <span class="n">Client</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">examguard</span> <span class="kn">import</span> <span class="n">Client</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="s1">&#39;http://localhost:5000&#39;</span><span class="p">,</span> <span class="s1">&#39;admin&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">)</span>
 
@@ -937,7 +937,7 @@
 
 <span class="c1"># Écouter les détections en temps réel</span>
 <span class="nd">@client</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s1">&#39;detection&#39;</span><span class="p">)</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">handle_detection</span><span class="p">(</span><span class="n">detection</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">handle_detection</span><span class="p">(</span><span class="n">detection</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Détection: </span><span class="si">{</span><span class="n">detection</span><span class="o">.</span><span class="n">type</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">detection</span><span class="o">.</span><span class="n">confidence</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">client</span><span class="o">.</span><span class="n">start_listening</span><span class="p">()</span>
